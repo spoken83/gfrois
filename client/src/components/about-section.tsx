@@ -23,9 +23,7 @@ export default function AboutSection() {
           <ScrollAnimation>
             <h3 className="text-2xl font-semibold mb-6">Building Products, Growing Teams, Creating Impact</h3>
             <div className="space-y-6">
-              <p className="text-secondary leading-relaxed">
-                My journey began with a Computer Engineering degree from NTU Singapore, but it was the intersection of technology and human needs that truly captured my passion. I've had the privilege of wearing many hats – from implementation consultant to product leader, from startup founder to venture builder.
-              </p>
+              <p className="text-secondary leading-relaxed">My journey began with a Computer Engineering degree from NTU Singapore, but it was the intersection of technology and human needs that truly captured my passion. I've had the privilege of wearing many hats – from implementation consultant to product leader, from startup founder to venture lead.</p>
               <p className="text-secondary leading-relaxed">
                 What drives me is the challenge of turning complex problems into elegant solutions. Whether it's scaling a B2B SaaS platform across APAC, launching a consumer fintech app from zero to 5000 MAU, or leading digital transformation at an established insurer, I thrive on the opportunity to create products that genuinely improve people's lives and businesses.
               </p>
