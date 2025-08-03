@@ -58,7 +58,7 @@ export default function HeroSection() {
             <img 
               src={heroImage} 
               alt="Gordon Frois - Product Leader" 
-              className="rounded-2xl shadow-2xl w-full max-w-md mx-auto" 
+              className="rounded-2xl shadow-2xl w-full max-w-sm mx-auto" 
             />
           </ScrollAnimation>
         </div>
