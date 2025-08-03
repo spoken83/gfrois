@@ -7,6 +7,7 @@ This is a personal portfolio website for Gordon Frois, a product leader and entr
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Content positioning: Tone down "Entrepreneur" emphasis - use "Ex-Founder" instead. Focus on product leadership expertise.
 
 ## Recent Changes (January 2025)
 

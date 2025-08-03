@@ -20,7 +20,7 @@ export default function About() {
           <ScrollAnimation>
             <h1 className="text-5xl font-bold text-text-primary mb-6">👋 About Me</h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
-              A journey through technology, entrepreneurship, and product leadership across multiple continents and industries.
+              A journey from capital markets to consumer apps, from enterprise software to startup founding, across fintech, insurtech, and beyond.
             </p>
           </ScrollAnimation>
         </div>
@@ -34,19 +34,22 @@ export default function About() {
                 <h2 className="text-3xl font-bold mb-6">The Full Story</h2>
                 <div className="space-y-6 text-secondary leading-relaxed">
                   <p>
-                    My path to product leadership began in the halls of Nanyang Technological University, where I earned my Computer Engineering degree with Second Upper Honours. But like many great journeys, it took unexpected turns that shaped who I am today.
+                    My journey began in the world of capital markets and B2B finance, where I spent nearly a decade at Murex, delivering front-to-back solutions for banks and financial institutions across Southeast Asia. I led complex, multi-country rollouts and eventually spearheaded the productization of their eDistribution APIs, driving over S$10M in global revenue and shaping FX and Treasury workflows for major banks.
                   </p>
                   <p>
-                    After graduation, I dove into the world of enterprise software as an Implementation Consultant, working with banks and insurers across Southeast Asia. Those early years taught me the importance of understanding not just what technology can do, but how people actually use it in their daily work.
+                    But I wanted more than enterprise transformation — I wanted to build something from scratch. So in 2018, I founded Financial Butler, a mobile-first personal finance app designed to help young adults make smarter financial decisions. I wore every hat — product, growth, fundraising — and hustled my way to 5,000+ MAUs, 34 investor meetings, 3 startup competitions, and partnerships with insurers and fintechs.
                   </p>
                   <p>
-                    The real turning point came when I joined Murex, where I spent nearly a decade growing from Implementation Consultant to APAC Product Lead. Managing multi-million dollar projects across Singapore, Hong Kong, Thailand, and Indonesia taught me that great products aren't just about features—they're about solving real business problems at scale.
+                    Post-startup, I joined Railsr (formerly Railsbank) as the APAC Product Lead, where I helped launch multi-currency ledgers, FX services, and compliance APIs across Singapore and Australia — contributing over $1M in ARR and leading distributed teams from the UK to Vietnam.
                   </p>
                   <p>
-                    In 2018, I took the entrepreneurial leap with Financial Butler, a personal finance app that would challenge everything I thought I knew about product development. Building a fintech startup from zero to 5000 users taught me invaluable lessons about user trust, regulatory complexity, and the delicate balance between vision and execution.
+                    Most recently, I've been driving product and venture strategy at SNACK, Income Insurance's embedded micro-insurance platform for digital-first consumers. I lead a cross-functional team (product, growth, CX), own the P&L, and have doubled revenue while shifting the portfolio toward higher-margin products. I also prototyped an AI advisor-assist tool, launched a new agency management system for 2,000+ users, and won a hackathon with a pay-as-you-use insurance product.
                   </p>
                   <p>
-                    Today, I channel these experiences as a Product Lead at Income Insurance, where I'm driving innovation in the InsureTech space while building the next generation of digital insurance products. It's the perfect blend of my enterprise software background, startup experience, and passion for creating meaningful user experiences.
+                    At the core of everything I do: I build with strategy, lead with empathy, and deliver with urgency. I'm now working on two new ventures — Lockket (a digital memory wall for life's milestones) and Thinkerly (a planning tool for parents and children) — and always looking to partner with others building meaningful, mission-driven products.
+                  </p>
+                  <p>
+                    Outside of work, I'm a dad to two curious daughters, a weekend tennis warrior, and a firm believer in doing purposeful work with great people.
                   </p>
                 </div>
               </ScrollAnimation>

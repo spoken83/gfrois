@@ -7,7 +7,7 @@ export default function AboutSection() {
         <ScrollAnimation>
           <h2 className="text-4xl font-bold text-center mb-4">About Me</h2>
           <p className="text-xl text-secondary text-center mb-16 max-w-3xl mx-auto">
-            From engineering to entrepreneurship, I've spent over 15 years building products that matter, leading teams that deliver, and creating businesses that grow.
+            A product leader, ex-founder, and full-stack operator with over 15 years of experience across fintech, insurtech, B2B SaaS, and consumer apps in Asia-Pacific.
           </p>
         </ScrollAnimation>
         
@@ -21,13 +21,13 @@ export default function AboutSection() {
           </ScrollAnimation>
           
           <ScrollAnimation>
-            <h3 className="text-2xl font-semibold mb-6">Building Products, Growing Teams, Creating Impact</h3>
+            <h3 className="text-2xl font-semibold mb-6">Building with Strategy, Leading with Empathy</h3>
             <div className="space-y-6">
-              <p className="text-secondary leading-relaxed">My journey began with a Computer Engineering degree from NTU Singapore, but it was the intersection of technology and human needs that truly captured my passion. I've had the privilege of wearing many hats – from implementation consultant to product leader, from startup founder to venture lead.</p>
+              <p className="text-secondary leading-relaxed">My journey began in capital markets and B2B finance, spending nearly a decade at Murex delivering front-to-back solutions for banks and financial institutions across Southeast Asia. I led complex, multi-country rollouts and spearheaded the productization of their eDistribution APIs, driving over S$10M in global revenue.</p>
               <p className="text-secondary leading-relaxed">
-                What drives me is the challenge of turning complex problems into elegant solutions. Whether it's scaling a B2B SaaS platform across APAC, launching a consumer fintech app from zero to 5000 MAU, or leading digital transformation at an established insurer, I thrive on the opportunity to create products that genuinely improve people's lives and businesses.
+                But I wanted more than enterprise transformation — I wanted to build something from scratch. In 2018, I founded Financial Butler, a mobile-first personal finance app, hustling my way to 5,000+ MAUs, 34 investor meetings, and partnerships with insurers and fintechs.
               </p>
-              <p className="text-secondary leading-relaxed">When I'm not obsessing over user journeys and growth metrics, you'll find me on a tennis court, exploring hiking trails with my two daughters, planning our next family adventure, or occasionally creating TikTok videos with my kids.</p>
+              <p className="text-secondary leading-relaxed">Currently, I'm driving product and venture strategy at Income Insurance's SNACK platform, leading cross-functional teams and doubling revenue while shifting toward higher-margin products. Outside work, I'm a dad to two curious daughters and a weekend tennis warrior.</p>
             </div>
           </ScrollAnimation>
         </div>
