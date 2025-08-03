@@ -19,7 +19,7 @@ export default function AboutSection() {
                 src={sketchImage} 
                 alt="Gordon Frois sketch portrait" 
                 className="rounded-2xl shadow-lg mx-auto md:mx-0" 
-                style={{ width: '320px', height: 'auto' }}
+                style={{ width: '400px', height: 'auto', minWidth: '400px' }}
               />
             </div>
           </ScrollAnimation>
