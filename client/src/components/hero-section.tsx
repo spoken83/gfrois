@@ -22,7 +22,7 @@ export default function HeroSection() {
           <ScrollAnimation>
             <h1 className="text-5xl md:text-6xl font-bold text-text-primary mb-6 leading-tight">
               Product Leader
-              <span className="text-primary"> Across B2B, SaaS & B2C</span>
+              <span className="text-primary"> in tech, startups, enterprise</span>
             </h1>
             <p className="text-xl text-secondary mb-8 leading-relaxed">
               Product leader with 15+ years of experience across fintech, insurtech, B2B SaaS, and consumer apps in Asia-Pacific. Ex-founder, team builder, and strategic product executive.
