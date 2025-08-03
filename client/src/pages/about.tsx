@@ -18,7 +18,7 @@ export default function About() {
       <section className="py-20 bg-gradient-to-br from-white to-blue-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <ScrollAnimation>
-            <h1 className="text-5xl font-bold text-text-primary mb-6">👋 About Me</h1>
+            <h1 className="text-5xl font-bold text-primary mb-6">👋 About Me</h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
               A journey from capital markets to consumer apps, from enterprise software to startup founding, across fintech, insurtech, and beyond.
             </p>

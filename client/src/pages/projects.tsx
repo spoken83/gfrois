@@ -21,7 +21,7 @@ export default function Projects() {
       <section className="py-20 bg-gradient-to-br from-white to-blue-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <ScrollAnimation>
-            <h1 className="text-5xl font-bold text-text-primary mb-6">My Projects</h1>
+            <h1 className="text-5xl font-bold text-primary mb-6">My Projects</h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
               A collection of products and experiences I've built, from early-stage startups to enterprise solutions, showcasing the journey from idea to impact.
             </p>

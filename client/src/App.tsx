@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -14,8 +14,16 @@ import ArticleDetail from "@/pages/article-detail";
 import NotFound from "@/pages/not-found";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import { useEffect } from "react";
 
 function Router() {
+  const [location] = useLocation();
+  
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <>
       <Navigation />
