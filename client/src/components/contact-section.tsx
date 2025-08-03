@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Download } from "lucide-react";
 import ScrollAnimation from "./scroll-animation";
+import cvFile from "@assets/GordonFrois_cv_2025_1754244128872.pdf";
 
 export default function ContactSection() {
   return (
@@ -42,6 +43,12 @@ export default function ContactSection() {
               <Button variant="outline" className="border-2 border-primary text-primary px-8 py-3 hover:bg-primary hover:text-white transition-all duration-200">
                 <Linkedin className="mr-2 h-4 w-4" />
                 Connect on LinkedIn
+              </Button>
+            </a>
+            <a href={cvFile} download="Gordon_Frois_CV_2025.pdf">
+              <Button variant="outline" className="border-2 border-accent text-accent px-8 py-3 hover:bg-accent hover:text-white transition-all duration-200">
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
               </Button>
             </a>
           </div>
