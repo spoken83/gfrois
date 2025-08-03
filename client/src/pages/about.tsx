@@ -10,14 +10,13 @@ export default function About() {
       <section className="py-20 bg-gradient-to-br from-white to-blue-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <ScrollAnimation>
-            <h1 className="text-5xl font-bold text-text-primary mb-6">About Gordon</h1>
+            <h1 className="text-5xl font-bold text-text-primary mb-6">👋 About Me</h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
               A journey through technology, entrepreneurship, and product leadership across multiple continents and industries.
             </p>
           </ScrollAnimation>
         </div>
       </section>
-
       {/* Detailed Bio */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
@@ -87,7 +86,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Core Values */}
       <section className="py-20 bg-neutral-bg">
         <div className="max-w-6xl mx-auto px-6">
@@ -140,7 +138,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Skills & Expertise */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
