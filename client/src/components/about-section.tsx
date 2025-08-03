@@ -1,5 +1,5 @@
 import ScrollAnimation from "./scroll-animation";
-import sketchImage from "@assets/me-sketch_1754250116063.jpeg";
+import sketchImage from "@assets/me-sketch-2_1754250571514.jpeg";
 
 export default function AboutSection() {
   return (
@@ -12,17 +12,20 @@ export default function AboutSection() {
           </p>
         </ScrollAnimation>
         
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-4 gap-12 items-start">
           <ScrollAnimation>
-            <img 
-              src={sketchImage} 
-              alt="Gordon Frois sketch portrait" 
-              className="rounded-xl shadow-lg w-full max-w-md mx-auto" 
-            />
+            <div className="md:col-span-1">
+              <img 
+                src={sketchImage} 
+                alt="Gordon Frois sketch portrait" 
+                className="rounded-2xl shadow-lg w-full max-w-xs mx-auto" 
+              />
+            </div>
           </ScrollAnimation>
           
           <ScrollAnimation>
-            <h3 className="text-2xl font-semibold mb-6">Building with Strategy, Leading with Empathy</h3>
+            <div className="md:col-span-3">
+              <h3 className="text-2xl font-semibold mb-6">Building with Strategy, Leading with Empathy</h3>
             <div className="space-y-6">
               <p className="text-secondary leading-relaxed">My journey began in capital markets and B2B finance, spending nearly a decade at Murex delivering front-to-back solutions for banks and financial institutions across Southeast Asia. I led complex, multi-country rollouts and spearheaded the productization of their eDistribution APIs, driving over S$10M in global revenue.</p>
               <p className="text-secondary leading-relaxed">
@@ -30,6 +33,7 @@ export default function AboutSection() {
               </p>
               <p className="text-secondary leading-relaxed">Post-startup, I joined Railsr as the APAC Product Lead, launching multi-currency ledgers, FX services, and compliance APIs across Singapore and Australia — contributing over $1M in ARR and leading distributed teams from the UK to Vietnam.</p>
               <p className="text-secondary leading-relaxed">Most recently, I've been driving product and venture strategy at SNACK, Income Insurance's embedded micro-insurance platform. I lead cross-functional teams, own the P&L, and have doubled revenue while shifting toward higher-margin products. I'm now working on two new ventures — Lockket and Thinkerly — always looking to partner with others building meaningful, mission-driven products.</p>
+            </div>
             </div>
           </ScrollAnimation>
         </div>
