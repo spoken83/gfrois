@@ -12,19 +12,19 @@ export default function AboutSection() {
           </p>
         </ScrollAnimation>
         
-        <div className="grid md:grid-cols-5 gap-8 items-start">
+        <div className="flex flex-col md:flex-row gap-8 items-start">
           <ScrollAnimation>
-            <div className="md:col-span-1">
+            <div className="flex-shrink-0">
               <img 
                 src={sketchImage} 
                 alt="Gordon Frois sketch portrait" 
-                className="rounded-2xl shadow-lg w-full max-w-xs mx-auto" 
+                className="rounded-2xl shadow-lg w-48 h-auto mx-auto md:mx-0" 
               />
             </div>
           </ScrollAnimation>
           
           <ScrollAnimation>
-            <div className="md:col-span-4">
+            <div className="flex-1">
               <h3 className="text-2xl font-semibold mb-6">Building with Strategy, Leading with Empathy</h3>
               <div className="space-y-6">
                 <p className="text-secondary leading-relaxed">My journey began in capital markets and B2B finance, spending nearly a decade at Murex delivering front-to-back solutions for banks and financial institutions across Southeast Asia. I led complex, multi-country rollouts and spearheaded the productization of their eDistribution APIs, driving over S$10M in global revenue.</p>
