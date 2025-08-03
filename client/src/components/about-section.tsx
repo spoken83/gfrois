@@ -18,7 +18,7 @@ export default function AboutSection() {
               <img 
                 src={sketchImage} 
                 alt="Gordon Frois sketch portrait" 
-                className="rounded-2xl shadow-lg w-72 h-auto mx-auto md:mx-0" 
+                className="rounded-2xl shadow-lg w-96 h-auto mx-auto md:mx-0" 
               />
             </div>
           </ScrollAnimation>
