@@ -12,13 +12,14 @@ export default function AboutSection() {
           </p>
         </ScrollAnimation>
         
-        <div className="flex flex-col md:flex-row gap-8 items-start">
+        <div className="flex flex-col md:flex-row gap-12 items-start">
           <ScrollAnimation>
             <div className="flex-shrink-0">
               <img 
                 src={sketchImage} 
                 alt="Gordon Frois sketch portrait" 
-                className="rounded-2xl shadow-lg w-96 h-auto mx-auto md:mx-0" 
+                className="rounded-2xl shadow-lg mx-auto md:mx-0" 
+                style={{ width: '320px', height: 'auto' }}
               />
             </div>
           </ScrollAnimation>
