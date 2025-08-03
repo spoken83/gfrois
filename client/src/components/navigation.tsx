@@ -5,11 +5,11 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
 const navItems = [
-  { href: "/#about", label: "About" },
-  { href: "/#experience", label: "Experience" },
+  { href: "/about", label: "About" },
+  { href: "/experience", label: "Experience" },
   { href: "/projects", label: "Projects" },
   { href: "/articles", label: "Articles" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navigation() {
@@ -25,18 +25,7 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
-    if (href.startsWith('/#')) {
-      const element = document.getElementById(href.substring(2));
-      if (element) {
-        const offsetTop = element.offsetTop - 80;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth'
-        });
-      }
-    }
-  };
+
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -53,19 +42,13 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
-                onClick={(e) => {
-                  if (item.href.startsWith('/#')) {
-                    e.preventDefault();
-                    handleNavClick(item.href);
-                  }
-                }}
                 className="text-secondary hover:text-primary transition-colors duration-200"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -79,19 +62,13 @@ export default function Navigation() {
             <SheetContent side="right" className="w-[250px]">
               <div className="flex flex-col space-y-4 mt-8">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.href}
                     href={item.href}
-                    onClick={(e) => {
-                      if (item.href.startsWith('/#')) {
-                        e.preventDefault();
-                        handleNavClick(item.href);
-                      }
-                    }}
                     className="text-lg text-secondary hover:text-primary transition-colors"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </SheetContent>
