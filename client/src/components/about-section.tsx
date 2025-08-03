@@ -5,7 +5,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
-          <h2 className="text-4xl font-bold text-center mb-4">My Story</h2>
+          <h2 className="text-4xl font-bold text-center mb-4">About Me</h2>
           <p className="text-xl text-secondary text-center mb-16 max-w-3xl mx-auto">
             From engineering to entrepreneurship, I've spent over 15 years building products that matter, leading teams that deliver, and creating businesses that grow.
           </p>

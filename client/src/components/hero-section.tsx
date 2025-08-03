@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail, MapPin } from "lucide-react";
 import ScrollAnimation from "./scroll-animation";
+import heroImage from "@assets/me-suitup-1_1754241940920.png";
 
 export default function HeroSection() {
   const handleNavClick = (elementId: string) => {
@@ -21,7 +22,7 @@ export default function HeroSection() {
           <ScrollAnimation>
             <h1 className="text-5xl md:text-6xl font-bold text-text-primary mb-6 leading-tight">
               Product Leader & 
-              <span className="text-primary"> Venture Builder</span>
+              <span className="text-primary"> Entrepreneur</span>
             </h1>
             <p className="text-xl text-secondary mb-8 leading-relaxed">
               Entrepreneurial product leader with 15+ years of experience driving innovation and scaling products across SaaS, B2B, and B2C markets. Ex-founder, team builder, growth hacker.
@@ -55,7 +56,7 @@ export default function HeroSection() {
           
           <ScrollAnimation delay={0.2}>
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+              src={heroImage} 
               alt="Gordon Frois - Product Leader" 
               className="rounded-2xl shadow-2xl w-full max-w-md mx-auto" 
             />

@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-2xl font-semibold mb-4">Gordon Frois</h3>
             <p className="text-gray-300 mb-4">
-              Product Leader & Venture Builder passionate about creating meaningful technology experiences that drive business growth and user satisfaction.
+              Product Leader & Entrepreneur passionate about creating meaningful technology experiences that drive business growth and user satisfaction.
             </p>
             <div className="flex space-x-4">
               <a 

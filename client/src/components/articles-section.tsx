@@ -12,7 +12,7 @@ export default function ArticlesSection() {
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Latest Thoughts</h2>
+            <h2 className="text-4xl font-bold mb-4">Insights & Articles</h2>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
               Insights on product strategy, leadership, and the evolving landscape of technology and innovation.
             </p>

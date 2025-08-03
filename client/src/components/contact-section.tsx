@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Linkedin } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 import ScrollAnimation from "./scroll-animation";
 
 export default function ContactSection() {
@@ -9,10 +9,10 @@ export default function ContactSection() {
         <ScrollAnimation>
           <h2 className="text-4xl font-bold mb-6">Let's Build Something Great Together</h2>
           <p className="text-xl text-secondary mb-12 max-w-2xl mx-auto">
-            Whether you're looking for a product leader, venture builder, or strategic advisor, I'd love to explore how we can create meaningful impact together.
+            Whether you're looking for a product leader, entrepreneur, or strategic advisor, I'd love to explore how we can create meaningful impact together.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto">
             <div className="p-6">
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Mail className="text-primary h-8 w-8" />
@@ -28,13 +28,6 @@ export default function ContactSection() {
               <a href="https://linkedin.com/in/gordonfrois" className="text-primary hover:text-blue-700 hover:underline">
                 linkedin.com/in/gordonfrois
               </a>
-            </div>
-            <div className="p-6">
-              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="text-primary h-8 w-8" />
-              </div>
-              <h3 className="font-semibold mb-2">Phone</h3>
-              <p className="text-secondary">(+65) 9189-7325</p>
             </div>
           </div>
 

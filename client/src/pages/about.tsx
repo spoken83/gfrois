@@ -39,7 +39,7 @@ export default function About() {
                     In 2018, I took the entrepreneurial leap with Financial Butler, a personal finance app that would challenge everything I thought I knew about product development. Building a fintech startup from zero to 5000 users taught me invaluable lessons about user trust, regulatory complexity, and the delicate balance between vision and execution.
                   </p>
                   <p>
-                    Today, I channel these experiences as a Product & Venture Lead at Income Insurance, where I'm driving innovation in the InsureTech space while building the next generation of digital insurance products. It's the perfect blend of my enterprise software background, startup experience, and passion for creating meaningful user experiences.
+                    Today, I channel these experiences as a Product Lead at Income Insurance, where I'm driving innovation in the InsureTech space while building the next generation of digital insurance products. It's the perfect blend of my enterprise software background, startup experience, and passion for creating meaningful user experiences.
                   </p>
                 </div>
               </ScrollAnimation>

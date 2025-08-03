@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a personal portfolio website for Gordon Frois, a product leader and venture builder with 15+ years of experience in SaaS, B2B, and B2C markets. The site showcases his professional experience, projects, articles, and contact information through a modern, responsive web interface built as a full-stack application.
+This is a personal portfolio website for Gordon Frois, a product leader and entrepreneur with 15+ years of experience in SaaS, B2B, and B2C markets. The site showcases his professional experience, projects, articles, and contact information through a modern, responsive web interface built as a full-stack application.
 
 ## User Preferences
 

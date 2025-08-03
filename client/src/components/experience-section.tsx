@@ -58,29 +58,15 @@ export default function ExperienceSection() {
                     </div>
                   )}
                   
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h4 className="font-semibold mb-3">Key Achievements</h4>
-                      <ul className="space-y-2 text-secondary">
-                        {exp.achievements.map((achievement, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <TrendingUp className="text-accent mr-3 mt-1 h-4 w-4 flex-shrink-0" />
-                            {achievement}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-3">Leadership Impact</h4>
-                      <ul className="space-y-2 text-secondary">
-                        {exp.leadership.map((item, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <Users className="text-accent mr-3 mt-1 h-4 w-4 flex-shrink-0" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  <div className="mb-4">
+                    <ul className="space-y-2 text-secondary">
+                      {exp.achievements.slice(0, 2).map((achievement, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <TrendingUp className="text-accent mr-3 mt-1 h-4 w-4 flex-shrink-0" />
+                          {achievement}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </CardContent>
               </Card>
