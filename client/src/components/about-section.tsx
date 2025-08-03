@@ -27,9 +27,7 @@ export default function AboutSection() {
               <p className="text-secondary leading-relaxed">
                 What drives me is the challenge of turning complex problems into elegant solutions. Whether it's scaling a B2B SaaS platform across APAC, launching a consumer fintech app from zero to 5000 MAU, or leading digital transformation at an established insurer, I thrive on the opportunity to create products that genuinely improve people's lives and businesses.
               </p>
-              <p className="text-secondary leading-relaxed">
-                When I'm not obsessing over user journeys and growth metrics, you'll find me exploring Singapore's hiking trails with my two daughters, planning our next family adventure, or occasionally creating TikTok videos that make my kids cringe.
-              </p>
+              <p className="text-secondary leading-relaxed">When I'm not obsessing over user journeys and growth metrics, you'll find me on a tennis court, exploring hiking trails with my two daughters, planning our next family adventure, or occasionally creating TikTok videos with my kids.</p>
             </div>
           </ScrollAnimation>
         </div>
