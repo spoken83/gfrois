@@ -7,6 +7,7 @@ import { articles } from "@/data/articles";
 import { ArrowRight, Clock, Search } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
+import SEOHead from "@/components/seo-head";
 
 export default function Articles() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,7 +23,14 @@ export default function Articles() {
   });
 
   return (
-    <main className="pt-20">
+    <>
+      <SEOHead
+        title="Gordon Frois Articles - Product Strategy & Leadership Insights"
+        description="Read Gordon Frois's thoughts on product strategy, team leadership, startup building, and innovation. Insights from 15+ years experience in SaaS, fintech, and insurtech across Singapore and Southeast Asia."
+        keywords="Gordon Frois articles, product strategy insights, leadership articles, startup advice, fintech insights, product management blog, Singapore tech leader"
+        canonicalUrl="https://gordonfrois.com/articles"
+      />
+      <main className="pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-white to-blue-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -138,6 +146,7 @@ export default function Articles() {
           )}
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

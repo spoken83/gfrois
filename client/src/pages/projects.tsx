@@ -5,10 +5,18 @@ import { projects } from "@/data/projects";
 import { ArrowRight, Calendar, User } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
+import SEOHead from "@/components/seo-head";
 
 export default function Projects() {
   return (
-    <main className="pt-20">
+    <>
+      <SEOHead
+        title="Gordon Frois Projects - Product Case Studies & Startup Portfolio"
+        description="Explore Gordon Frois's product portfolio including Financial Butler (fintech startup), Lockket (digital safe), and Thinkerly (social learning). Case studies showing product strategy, user growth, and business impact."
+        keywords="Gordon Frois projects, Financial Butler fintech, Lockket digital safe, Thinkerly social learning, product case studies, startup portfolio, product strategy examples"
+        canonicalUrl="https://gordonfrois.com/projects"
+      />
+      <main className="pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-white to-blue-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -82,6 +90,7 @@ export default function Projects() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

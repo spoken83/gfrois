@@ -1,11 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ScrollAnimation from "@/components/scroll-animation";
+import SEOHead from "@/components/seo-head";
 import { GraduationCap, MapPin, Calendar, Users, Trophy, Target } from "lucide-react";
 
 export default function About() {
   return (
-    <main className="pt-20">
+    <>
+      <SEOHead
+        title="About Gordon Frois - Product Leader Journey & Background"
+        description="Learn about Gordon Frois's journey from Computer Engineering at NTU to product leadership at Income Insurance. 15+ years experience across enterprise software, fintech startups, and digital transformation."
+        keywords="Gordon Frois background, product leader career, Nanyang Technological University, Murex, Financial Butler founder, Income Insurance, Singapore product manager"
+        canonicalUrl="https://gordonfrois.com/about"
+      />
+      <main className="pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-white to-blue-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -200,6 +208,7 @@ export default function About() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

@@ -8,6 +8,17 @@ This is a personal portfolio website for Gordon Frois, a product leader and entr
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes (January 2025)
+
+### SEO Optimization Implementation
+- **Comprehensive Meta Tags**: Added title, description, keywords, author, and robots meta tags to all pages
+- **Open Graph & Twitter Cards**: Implemented social media sharing optimization with proper OG and Twitter meta tags
+- **Structured Data**: Added JSON-LD schema markup for Person and Organization entities to improve search engine understanding
+- **Technical SEO**: Created robots.txt and sitemap.xml for better crawling and indexing
+- **Per-Page SEO**: Each page (Home, About, Experience, Projects, Articles, Contact) has unique, optimized meta information
+- **SEO Components**: Built reusable SEOHead component for dynamic meta tag management across pages
+- **Performance**: Added preconnect links for Google Fonts to improve loading performance
+
 ## System Architecture
 
 ### Frontend Architecture

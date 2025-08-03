@@ -1,11 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Download, MapPin, Clock } from "lucide-react";
 import ScrollAnimation from "@/components/scroll-animation";
+import SEOHead from "@/components/seo-head";
 import cvFile from "@assets/GordonFrois_cv_2025_1754244128872.pdf";
 
 export default function ContactPage() {
   return (
-    <div className="pt-24 pb-16 bg-gradient-to-br from-white to-blue-50 min-h-screen">
+    <>
+      <SEOHead
+        title="Contact Gordon Frois - Product Leader & Entrepreneur"
+        description="Get in touch with Gordon Frois for product leadership opportunities, strategic consulting, or collaboration. Download CV, connect on LinkedIn, or send an email. Based in Singapore."
+        keywords="contact Gordon Frois, product leader hire, product consultant Singapore, Gordon Frois email, LinkedIn Gordon Frois, product manager contact"
+        canonicalUrl="https://gordonfrois.com/contact"
+      />
+      <div className="pt-24 pb-16 bg-gradient-to-br from-white to-blue-50 min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
         <ScrollAnimation>
           <div className="text-center mb-16">
@@ -90,6 +98,7 @@ export default function ContactPage() {
           </ScrollAnimation>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

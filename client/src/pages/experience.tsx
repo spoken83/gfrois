@@ -3,10 +3,18 @@ import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Users } from "lucide-react";
 import { experiences } from "@/data/experience";
 import ScrollAnimation from "@/components/scroll-animation";
+import SEOHead from "@/components/seo-head";
 
 export default function ExperiencePage() {
   return (
-    <div className="pt-24 pb-16 bg-gradient-to-br from-white to-blue-50 min-h-screen">
+    <>
+      <SEOHead
+        title="Gordon Frois Professional Experience - Product Leadership Career"
+        description="Explore Gordon Frois's 15+ year career journey from Implementation Consultant to Product Leader. Experience at Income Insurance, Railsbank, Financial Butler (founder), and Murex across Singapore, Hong Kong, and Southeast Asia."
+        keywords="Gordon Frois experience, product manager career, Income Insurance, Railsbank, Financial Butler founder, Murex, Singapore product leader, fintech experience, insurtech"
+        canonicalUrl="https://gordonfrois.com/experience"
+      />
+      <div className="pt-24 pb-16 bg-gradient-to-br from-white to-blue-50 min-h-screen">
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
           <div className="text-center mb-16">
@@ -77,6 +85,7 @@ export default function ExperiencePage() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
