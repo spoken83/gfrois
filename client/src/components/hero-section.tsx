@@ -25,7 +25,7 @@ export default function HeroSection() {
               <span className="text-primary"> Ex-Founder</span>
             </h1>
             <p className="text-xl text-secondary mb-8 leading-relaxed">
-              Product leader with 15+ years of experience across fintech, insurtech, B2B SaaS, and consumer apps in Asia-Pacific. Ex-founder, team builder, full-stack operator.
+              Product leader with 15+ years of experience across fintech, insurtech, B2B SaaS, and consumer apps in Asia-Pacific. Ex-founder, team builder, and strategic product executive.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button 
