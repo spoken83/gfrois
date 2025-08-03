@@ -12,7 +12,7 @@ export default function AboutSection() {
           </p>
         </ScrollAnimation>
         
-        <div className="grid md:grid-cols-4 gap-12 items-start">
+        <div className="grid md:grid-cols-5 gap-8 items-start">
           <ScrollAnimation>
             <div className="md:col-span-1">
               <img 
@@ -24,16 +24,16 @@ export default function AboutSection() {
           </ScrollAnimation>
           
           <ScrollAnimation>
-            <div className="md:col-span-3">
+            <div className="md:col-span-4">
               <h3 className="text-2xl font-semibold mb-6">Building with Strategy, Leading with Empathy</h3>
-            <div className="space-y-6">
-              <p className="text-secondary leading-relaxed">My journey began in capital markets and B2B finance, spending nearly a decade at Murex delivering front-to-back solutions for banks and financial institutions across Southeast Asia. I led complex, multi-country rollouts and spearheaded the productization of their eDistribution APIs, driving over S$10M in global revenue.</p>
-              <p className="text-secondary leading-relaxed">
-                But I wanted more than enterprise transformation — I wanted to build something from scratch. In 2018, I founded Financial Butler, a mobile-first personal finance app, hustling my way to 5,000+ MAUs, 34 investor meetings, and partnerships with insurers and fintechs.
-              </p>
-              <p className="text-secondary leading-relaxed">Post-startup, I joined Railsr as the APAC Product Lead, launching multi-currency ledgers, FX services, and compliance APIs across Singapore and Australia — contributing over $1M in ARR and leading distributed teams from the UK to Vietnam.</p>
-              <p className="text-secondary leading-relaxed">Most recently, I've been driving product and venture strategy at SNACK, Income Insurance's embedded micro-insurance platform. I lead cross-functional teams, own the P&L, and have doubled revenue while shifting toward higher-margin products. I'm now working on two new ventures — Lockket and Thinkerly — always looking to partner with others building meaningful, mission-driven products.</p>
-            </div>
+              <div className="space-y-6">
+                <p className="text-secondary leading-relaxed">My journey began in capital markets and B2B finance, spending nearly a decade at Murex delivering front-to-back solutions for banks and financial institutions across Southeast Asia. I led complex, multi-country rollouts and spearheaded the productization of their eDistribution APIs, driving over S$10M in global revenue.</p>
+                <p className="text-secondary leading-relaxed">
+                  But I wanted more than enterprise transformation — I wanted to build something from scratch. In 2018, I founded Financial Butler, a mobile-first personal finance app, hustling my way to 5,000+ MAUs, 34 investor meetings, and partnerships with insurers and fintechs.
+                </p>
+                <p className="text-secondary leading-relaxed">Post-startup, I joined Railsr as the APAC Product Lead, launching multi-currency ledgers, FX services, and compliance APIs across Singapore and Australia — contributing over $1M in ARR and leading distributed teams from the UK to Vietnam.</p>
+                <p className="text-secondary leading-relaxed">Most recently, I've been driving product and venture strategy at SNACK, Income Insurance's embedded micro-insurance platform. I lead cross-functional teams, own the P&L, and have doubled revenue while shifting toward higher-margin products. I'm now working on two new ventures — Lockket and Thinkerly — always looking to partner with others building meaningful, mission-driven products.</p>
+              </div>
             </div>
           </ScrollAnimation>
         </div>
