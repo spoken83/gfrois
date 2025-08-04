@@ -4,7 +4,6 @@ import { experiences } from "@/data/experience";
 import { TrendingUp, Users, DollarSign, Trophy, Globe, BarChart3, Network, Target, ArrowRight } from "lucide-react";
 import ScrollAnimation from "./scroll-animation";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
 
 const iconMap = {
   "TrendingUp": TrendingUp,
@@ -79,10 +78,8 @@ export default function ExperienceSection() {
         </div>
         
         <div className="text-center mt-12">
-          <Link href="/experience">
-            <Button className="inline-flex items-center bg-primary hover:bg-blue-700 text-white">
-              View Detailed Experience <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+          <Link href="/experience" className="text-primary hover:text-blue-700 font-medium inline-flex items-center">
+            View detailed experience <ArrowRight className="ml-1 h-4 w-4" />
           </Link>
         </div>
       </div>
