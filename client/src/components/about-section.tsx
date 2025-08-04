@@ -25,9 +25,7 @@ export default function AboutSection() {
           
           <ScrollAnimation>
             <div className="flex-1">
-              <h3 className="text-2xl font-semibold mb-6">Founder mindset, building with purpose.
-
-</h3>
+              
               <div className="space-y-6">
                 <p className="text-secondary leading-relaxed">I’m Gordon, a founder, product manager, builder, operator with deep experience across fintech, SaaS, and consumer apps in Asia-Pacific.</p>
                 <p className="text-secondary leading-relaxed">I've shaped capital markets Sales-API solutions at Murex, founded and scaled a personal finance app, expanded embedded banking products at Railsr in Singapore and into Australia, and led product transformation at Income Insurance's SNACK vertical.</p>
