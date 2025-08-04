@@ -34,7 +34,9 @@ export default function AboutSection() {
 </p>
                 <p className="text-secondary leading-relaxed">I began in capital markets, shaping and scaling Sales-API solutions at Murex that powered RFQ workflows for sales-trader desks across Asia. In 2018, I founded Financial Butler, a personal finance app that grew to 5,000 MAUs, and learned firsthand what it takes to build from zero.
 </p>
-                <p className="text-secondary leading-relaxed">Post-startup, I joined Railsr as the APAC Product Lead, launching multi-currency ledgers, FX services, and compliance APIs across Singapore and Australia — contributing over $1M in ARR and leading distributed teams from the UK to Vietnam.</p>
+                <p className="text-secondary leading-relaxed">Post startup, I joined Railsr as APAC Product Lead and scaled embedded banking products, launched a multi-currency wallet, and led product expansion into Australia. 
+                Most recently at Income Insurance, I led transformation at SNACK, streamlining operations, reducing OPEX, and shifting the portfolio toward higher-margin microinsurance.
+</p>
                 <p className="text-secondary leading-relaxed">Most recently, I've been driving product and venture strategy at SNACK, Income Insurance's embedded micro-insurance platform. I lead cross-functional teams, own the P&L, and have doubled revenue while shifting toward higher-margin products. I'm now working on two new ventures — Lockket and Thinkerly — always looking to partner with others building meaningful, mission-driven products.</p>
               </div>
             </div>
