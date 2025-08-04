@@ -71,7 +71,7 @@ export default function Projects() {
                       
                       <div className="flex flex-wrap gap-2 mb-6">
                         {project.tags.map((tag) => (
-                          <Badge key={tag} variant="outline" className="text-xs">
+                          <Badge key={tag} className="bg-green-100 text-green-700 hover:bg-green-200 text-xs">
                             {tag}
                           </Badge>
                         ))}

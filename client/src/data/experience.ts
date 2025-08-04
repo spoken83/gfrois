@@ -15,8 +15,8 @@ export const experiences: Experience[] = [
   {
     id: "income-insurance",
     company: "Income Insurance",
-    role: "Product & Venture Lead | Senior Product Manager",
-    period: "Jan 2024 – Present | Aug 2022 – Dec 2023",
+    role: "Product & Venture Lead | Platform Lead ",
+    period: "Jan 2024 – Jul 2025   | Aug 2022 – Jul 2025",
     category: "InsureTech · B2C · B2B2C",
     tags: ["InsureTech", "B2C", "B2B2C"],
     achievements: [
@@ -37,7 +37,7 @@ export const experiences: Experience[] = [
     role: "Lead / Senior Product Manager | APAC Product Lead",
     period: "Jul 2021 – Aug 2022",
     category: "Banking-as-a-Service · APIs · B2B · B2B2C",
-    tags: ["Banking-as-a-Service", "APIs", "B2B", "B2B2C"],
+    tags: ["Banking-as-a-Service", "APIs", "B2B2C"],
     achievements: [
       "Spearheaded cross-product strategy spanning Singapore and Australia",
       "Launched multi-currency ledgers, payment schemes, and compliance services",
