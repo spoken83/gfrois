@@ -30,7 +30,7 @@ export default function AboutSection() {
 
 </h3>
               <div className="space-y-6">
-                <p className="text-secondary leading-relaxed">I’m Gordon, a product leader with 15+ years across B2B SaaS, fintech, insuretech, and B2C consumer apps.
+                <p className="text-secondary leading-relaxed">I’m Gordon, a founder, operator, and product builder with deep experience across fintech, SaaS, and consumer apps in Asia-Pacific.
 </p>
                 <p className="text-secondary leading-relaxed">I began in capital markets, shaping and scaling Sales-API solutions at Murex that powered RFQ workflows for sales-trader desks across Asia. In 2018, I founded Financial Butler, a personal finance app that grew to 5,000 MAUs, and learned firsthand what it takes to build from zero.
 </p>
