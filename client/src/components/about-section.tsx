@@ -32,8 +32,7 @@ export default function AboutSection() {
               <div className="space-y-6">
                 <p className="text-secondary leading-relaxed">I’m Gordon, a founder, operator, and product builder with deep experience across fintech, SaaS, and consumer apps in Asia-Pacific.
 </p>
-                <p className="text-secondary leading-relaxed">I began in capital markets, shaping and scaling Sales-API solutions at Murex that powered RFQ workflows for sales-trader desks across Asia. In 2018, I founded Financial Butler, a personal finance app that grew to 5,000 MAUs, and learned firsthand what it takes to build from zero.
-</p>
+                <p className="text-secondary leading-relaxed">I've shaped capital markets Sales-API solutions at Murex, founded and scaled a personal finance app, expanded embedded banking products at Railsr in Singapore and into Australia, and led product transformation at Income Insurance's SNACK vertical.</p>
                 <p className="text-secondary leading-relaxed">Post startup, I joined Railsr as APAC Product Lead and scaled embedded banking products, launched a multi-currency wallet, and led product expansion into Australia. 
                 Most recently at Income Insurance, I led transformation at SNACK, streamlining operations, reducing OPEX, and shifting the portfolio toward higher-margin microinsurance.
 </p>
