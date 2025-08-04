@@ -58,7 +58,7 @@ export const projects: Project[] = [
   },
   {
     id: "lockket",
-    title: "Lockket",
+    title: "Lockket.app",
     description: "Current project focused on solving productivity challenges through innovative product design and user experience optimization.",
     longDescription: "Lockket is an innovative productivity platform designed to help individuals and teams manage their time, tasks, and goals more effectively. The project focuses on creating seamless workflows that adapt to different working styles and organizational needs.",
     category: "Productivity",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
   },
   {
     id: "thinkerly",
-    title: "Thinkerly",
+    title: "Thinkerly.app",
     description: "Knowledge management platform designed to help professionals organize thoughts, insights, and learnings for better decision-making.",
     longDescription: "Thinkerly is a knowledge management and learning platform that helps professionals capture, organize, and connect their insights and learnings. The platform is designed to support continuous learning and better decision-making through structured knowledge organization.",
     category: "Knowledge Management",

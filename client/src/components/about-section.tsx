@@ -1,5 +1,8 @@
 import ScrollAnimation from "./scroll-animation";
 import sketchImage from "@assets/me-sketch-2_1754250571514.jpeg";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export default function AboutSection() {
   return (
@@ -40,6 +43,14 @@ export default function AboutSection() {
                 <p className="text-secondary leading-relaxed">I’m now building personal ventures like Lockket and Thinkerly, and always open to collaborating on meaningful products in embedded finance, education, or tech. 
 
                 Be humble. Stay hungry.</p>
+              </div>
+              
+              <div className="mt-8">
+                <Link href="/about">
+                  <Button className="inline-flex items-center bg-primary hover:bg-blue-700 text-white">
+                    Learn More About Me <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </ScrollAnimation>

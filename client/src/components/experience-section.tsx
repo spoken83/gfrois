@@ -1,8 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { experiences } from "@/data/experience";
-import { TrendingUp, Users, DollarSign, Trophy, Globe, BarChart3, Network, Target } from "lucide-react";
+import { TrendingUp, Users, DollarSign, Trophy, Globe, BarChart3, Network, Target, ArrowRight } from "lucide-react";
 import ScrollAnimation from "./scroll-animation";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 
 const iconMap = {
   "TrendingUp": TrendingUp,
@@ -74,6 +76,14 @@ export default function ExperienceSection() {
               </Card>
             </ScrollAnimation>
           ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <Link href="/experience">
+            <Button className="inline-flex items-center bg-primary hover:bg-blue-700 text-white">
+              View Detailed Experience <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
