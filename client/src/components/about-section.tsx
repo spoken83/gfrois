@@ -37,7 +37,7 @@ export default function AboutSection() {
                 <p className="text-secondary leading-relaxed">Post startup, I joined Railsr as APAC Product Lead and scaled embedded banking products, launched a multi-currency wallet, and led product expansion into Australia. 
                 Most recently at Income Insurance, I led transformation at SNACK, streamlining operations, reducing OPEX, and shifting the portfolio toward higher-margin microinsurance.
 </p>
-                <p className="text-secondary leading-relaxed">I’m now building personal ventures like Lockket and Thinkerly, and always open to collaborating on meaningful products in embedded finance, education, or tech.
+                <p className="text-secondary leading-relaxed">I’m now building personal ventures like Lockket and Thinkerly, and always open to collaborating on meaningful products in embedded finance, education, or tech. 
 
                 Be humble. Stay hungry.</p>
               </div>
