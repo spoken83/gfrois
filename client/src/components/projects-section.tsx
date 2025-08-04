@@ -38,7 +38,7 @@ export default function ProjectsSection() {
                     <p className="text-secondary mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="text-xs">
+                        <Badge key={tag} className="bg-green-100 text-green-700 hover:bg-green-200 text-xs">
                           {tag}
                         </Badge>
                       ))}
