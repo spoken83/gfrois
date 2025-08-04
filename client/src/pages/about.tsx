@@ -36,9 +36,7 @@ export default function About() {
                   <p>
                     My journey began in the world of capital markets and B2B finance, where I spent nearly a decade at Murex, delivering front-to-back solutions for banks and financial institutions across Southeast Asia. I led complex, multi-country rollouts and eventually spearheaded the productization of their eDistribution APIs, driving over S$10M in global revenue and shaping FX and Treasury workflows for major banks.
                   </p>
-                  <p>
-                    But I wanted more than enterprise transformation — I wanted to build something from scratch. So in 2018, I founded Financial Butler, a mobile-first personal finance app designed to help young adults make smarter financial decisions. I wore every hat — product, growth, fundraising — and hustled my way to 5,000+ MAUs, 34 investor meetings, 3 startup competitions, and partnerships with insurers and fintechs.
-                  </p>
+                  <p>But I wanted more than enterprise transformation; I wanted to build something from scratch. So in 2018, I founded Financial Butler, a mobile-first personal finance app designed to help young adults make smarter financial decisions. I wore every hat — product, growth, fundraising — and hustled my way to 5,000+ MAUs, 34 investor meetings, 3 startup competitions, and partnerships with insurers and fintechs.</p>
                   <p>
                     Post-startup, I joined Railsr (formerly Railsbank) as the APAC Product Lead, where I helped launch multi-currency ledgers, FX services, and compliance APIs across Singapore and Australia — contributing over $1M in ARR and leading distributed teams from the UK to Vietnam.
                   </p>
