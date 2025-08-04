@@ -36,7 +36,14 @@ export default function ExperiencePage() {
                     <div>
                       <h3 className="text-2xl font-semibold text-primary mb-2">{exp.company}</h3>
                       <p className="text-lg text-secondary mb-2">{exp.role}</p>
-                      <p className="text-accent font-medium">{exp.period}</p>
+                      <p className="text-accent font-medium mb-3">{exp.period}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.tags.map((tag, tagIndex) => (
+                          <Badge key={tagIndex} className="bg-primary/10 text-primary hover:bg-primary/20">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
                     <div className="mt-4 md:mt-0">
                       <Badge variant={exp.isHighlighted ? "default" : "secondary"} className={

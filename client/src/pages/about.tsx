@@ -161,11 +161,11 @@ export default function About() {
               <div>
                 <h3 className="font-semibold mb-4 text-primary">Product Strategy</h3>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">Product-Led Growth</Badge>
-                  <Badge variant="secondary">Market Research</Badge>
-                  <Badge variant="secondary">Competitive Analysis</Badge>
-                  <Badge variant="secondary">Roadmap Planning</Badge>
-                  <Badge variant="secondary">OKRs & KPIs</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Product-Led Growth</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Market Research</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Competitive Analysis</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Roadmap Planning</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">OKRs & KPIs</Badge>
                 </div>
               </div>
             </ScrollAnimation>
@@ -174,11 +174,11 @@ export default function About() {
               <div>
                 <h3 className="font-semibold mb-4 text-primary">Leadership</h3>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">Team Building</Badge>
-                  <Badge variant="secondary">Cross-functional Leadership</Badge>
-                  <Badge variant="secondary">Stakeholder Management</Badge>
-                  <Badge variant="secondary">Mentoring</Badge>
-                  <Badge variant="secondary">Change Management</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Team Building</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Cross-functional Leadership</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Stakeholder Management</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Mentoring</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Change Management</Badge>
                 </div>
               </div>
             </ScrollAnimation>
@@ -187,11 +187,11 @@ export default function About() {
               <div>
                 <h3 className="font-semibold mb-4 text-primary">Technical</h3>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">API Design</Badge>
-                  <Badge variant="secondary">System Architecture</Badge>
-                  <Badge variant="secondary">Data Analytics</Badge>
-                  <Badge variant="secondary">UX/UI Principles</Badge>
-                  <Badge variant="secondary">Agile/Scrum</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">API Design</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">System Architecture</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Data Analytics</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">UX/UI Principles</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Agile/Scrum</Badge>
                 </div>
               </div>
             </ScrollAnimation>
@@ -200,11 +200,11 @@ export default function About() {
               <div>
                 <h3 className="font-semibold mb-4 text-primary">Business</h3>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">P&L Management</Badge>
-                  <Badge variant="secondary">Business Development</Badge>
-                  <Badge variant="secondary">Fundraising</Badge>
-                  <Badge variant="secondary">Go-to-Market</Badge>
-                  <Badge variant="secondary">Partnership Strategy</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">P&L Management</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Business Development</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Fundraising</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Go-to-Market</Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Partnership Strategy</Badge>
                 </div>
               </div>
             </ScrollAnimation>

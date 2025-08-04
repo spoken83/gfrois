@@ -4,6 +4,7 @@ export interface Experience {
   role: string;
   period: string;
   category: string;
+  tags: string[];
   achievements: string[];
   leadership: string[];
   image: string;
@@ -17,6 +18,7 @@ export const experiences: Experience[] = [
     role: "Product & Venture Lead | Senior Product Manager",
     period: "Jan 2024 – Present | Aug 2022 – Dec 2023",
     category: "InsureTech",
+    tags: ["InsureTech", "B2C", "B2B2C"],
     achievements: [
       "Achieved 2x growth in top-line revenue with 8-10% shift to higher profitability products",
       "Built scalable user management module (RBAC) for 2000+ users across 2 agency units",
@@ -35,6 +37,7 @@ export const experiences: Experience[] = [
     role: "Lead / Senior Product Manager | APAC Product Lead",
     period: "Jul 2021 – Aug 2022",
     category: "BaaS",
+    tags: ["Banking-as-a-Service", "APIs", "B2B", "B2B2C"],
     achievements: [
       "Spearheaded cross-product strategy spanning Singapore and Australia",
       "Launched multi-currency ledgers, payment schemes, and compliance services",
@@ -53,6 +56,7 @@ export const experiences: Experience[] = [
     role: "Founder",
     period: "Dec 2018 – Mar 2021",
     category: "Startup Founder",
+    tags: ["Startup Founder", "B2C"],
     achievements: [
       "Designed MVP and interactive wireframes end-to-end",
       "34 investor connections, 22 pitches delivered",
@@ -72,6 +76,7 @@ export const experiences: Experience[] = [
     role: "Project Manager | Product Lead | Implementation Consultant",
     period: "Jun 2011 – Jun 2021",
     category: "FinTech Enterprise",
+    tags: ["Fintech Enterprise", "APIs"],
     achievements: [
       "Delivered 5 Murex projects across APAC (300-3000 man-days)",
       "Led project teams of 5-20 members",
