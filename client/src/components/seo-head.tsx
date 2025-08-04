@@ -11,7 +11,7 @@ interface SEOHeadProps {
 
 export default function SEOHead({
   title = "Gordon Frois - Product Leader & Ex-Founder | 15+ Years Experience",
-  description = "Product leader with 15+ years experience across fintech, insurtech, B2B SaaS, and consumer apps in Asia-Pacific. Ex-founder of Financial Butler, full-stack operator.",
+  description = "Product leader and ex-founder with 15+ years in fintech, SaaS, APIs, B2B, B2C and consumer tech. Building ventures with purpose across embedded finance, education, and digital experiences.",
   keywords = "product leader, product manager, ex-founder, startup founder, SaaS, B2B, B2C, fintech, insurtech, product strategy, team leadership, Gordon Frois",
   canonicalUrl = "https://gordonfrois.com",
   ogImage = "https://gordonfrois.com/og-image.jpg",
