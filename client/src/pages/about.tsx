@@ -42,9 +42,7 @@ export default function About() {
                   <p>
                     Post-startup, I joined Railsr (formerly Railsbank) as the APAC Product Lead, where I helped launch multi-currency ledgers, FX services, and compliance APIs across Singapore and Australia — contributing over $1M in ARR and leading distributed teams from the UK to Vietnam.
                   </p>
-                  <p>
-                    Most recently, I've been driving product and venture strategy at SNACK, Income Insurance's embedded micro-insurance platform for digital-first consumers. I lead a cross-functional team (product, growth, CX), own the P&L, and have doubled revenue while shifting the portfolio toward higher-margin products. I also prototyped an AI advisor-assist tool, launched a new agency management system for 2,000+ users, and won a hackathon with a pay-as-you-use insurance product.
-                  </p>
+                  <p>Most recently, I've been driving product and venture strategy at SNACK, Income Insurance's embedded micro-insurance platform for digital-first consumers. I lead a cross-functional team (product, growth, CX), own the P&L, and have doubled revenue while shifting the portfolio toward higher-margin products. I also prototyped an AI advisor-assist tool, launched an RBAC system for 2,000+ users, and won a hackathon with a pay-as-you-use insurance product.</p>
                   <p>At the core of everything I do: I build with strategy, lead with empathy, and deliver with urgency. I'm now working on two new ventures — Lockket (a digital memory wall for life's milestones) and Thinkerly (an AI-powered heuristics math app for primary students) — and always looking to partner with others building meaningful, mission-driven products.</p>
                   <p>Outside of work, I'm a dad to two curious daughters, a tennis enthusiast, and a firm believer in doing purposeful work with great people.</p>
                 </div>
