@@ -45,9 +45,7 @@ export default function About() {
                   <p>
                     Most recently, I've been driving product and venture strategy at SNACK, Income Insurance's embedded micro-insurance platform for digital-first consumers. I lead a cross-functional team (product, growth, CX), own the P&L, and have doubled revenue while shifting the portfolio toward higher-margin products. I also prototyped an AI advisor-assist tool, launched a new agency management system for 2,000+ users, and won a hackathon with a pay-as-you-use insurance product.
                   </p>
-                  <p>
-                    At the core of everything I do: I build with strategy, lead with empathy, and deliver with urgency. I'm now working on two new ventures — Lockket (a digital memory wall for life's milestones) and Thinkerly (a planning tool for parents and children) — and always looking to partner with others building meaningful, mission-driven products.
-                  </p>
+                  <p>At the core of everything I do: I build with strategy, lead with empathy, and deliver with urgency. I'm now working on two new ventures — Lockket (a digital memory wall for life's milestones) and Thinkerly (an AI-powered heuristics math app for primary students) — and always looking to partner with others building meaningful, mission-driven products.</p>
                   <p>
                     Outside of work, I'm a dad to two curious daughters, a weekend tennis warrior, and a firm believer in doing purposeful work with great people.
                   </p>
