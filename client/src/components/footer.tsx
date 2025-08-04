@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-300">
-            © {currentYear} Gordon Frois. All rights reserved. | Building products that matter
+            © {currentYear} Gordon Frois. All rights reserved. Building meaningful products in fintech, edtech, and beyond. Be humble. Stay hungry.
           </p>
         </div>
       </div>
