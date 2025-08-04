@@ -31,7 +31,8 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-12">
             <div className="md:col-span-2">
               <ScrollAnimation>
-                <h2 className="text-3xl font-bold mb-6">The Full Story</h2>
+                <h2 className="font-bold mb-6 text-[26px]">Founder mindset, building with purpose.
+</h2>
                 <div className="space-y-6 text-secondary leading-relaxed">
                   <p>
                     My journey began in the world of capital markets and B2B finance, where I spent nearly a decade at Murex, delivering front-to-back solutions for banks and financial institutions across Southeast Asia. I led complex, multi-country rollouts and eventually spearheaded the productization of their eDistribution APIs, driving over S$10M in global revenue and shaping FX and Treasury workflows for major banks.
