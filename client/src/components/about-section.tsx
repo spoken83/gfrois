@@ -34,9 +34,7 @@ export default function AboutSection() {
 </p>
                 <p className="text-secondary leading-relaxed">I've shaped capital markets Sales-API solutions at Murex, founded and scaled a personal finance app, expanded embedded banking products at Railsr in Singapore and into Australia, and led product transformation at Income Insurance's SNACK vertical.</p>
                 <p className="text-secondary leading-relaxed">These days, I’m building ventures like Lockket and Thinkerly, and always open to collaborating on meaningful products in embedded finance, education, or digital life.</p>
-                <p className="text-secondary leading-relaxed">I’m now building personal ventures like Lockket and Thinkerly, and always open to collaborating on meaningful products in embedded finance, education, or tech. 
-
-                Be humble. Stay hungry.</p>
+                <p className="text-secondary leading-relaxed">My motto is to always Be Humble & Stay Hungry.</p>
               </div>
               
               <div className="mt-8">
