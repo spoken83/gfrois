@@ -97,8 +97,8 @@ export const projects: Project[] = [
   {
     id: "thinkerly",
     title: "Thinkerly.app",
-    description: "Knowledge management platform designed to help professionals organize thoughts, insights, and learnings for better decision-making.",
-    longDescription: "Thinkerly is a knowledge management and learning platform that helps professionals capture, organize, and connect their insights and learnings. The platform is designed to support continuous learning and better decision-making through structured knowledge organization.",
+    description: "AI-powered math learning for primary students to help kids master problem-solving skills through heuristics-based math questions, for confident, PSLE-ready thinkers.",
+    longDescription: "Thinkerly is AI-powered math learning for primary students to help kids master problem-solving skills through heuristics-based math questions beyond tradional rote learning. Building confidence for PSLE and beyond through deep thinking, not drilling.",
     category: "Knowledge Management",
     tags: ["Knowledge Mgmt", "Web App", "Active"],
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",

@@ -9,9 +9,7 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
           <h2 className="text-4xl font-bold text-center mb-4">About Me</h2>
-          <p className="text-xl text-secondary text-center mb-16 max-w-3xl mx-auto">
-            A product leader and ex-founder with over 15 years of experience across fintech, insurtech, B2B SaaS, and consumer apps in Asia-Pacific.
-          </p>
+          <p className="text-xl text-secondary text-center mb-16 max-w-3xl mx-auto">.</p>
         </ScrollAnimation>
         
         <div className="flex flex-col md:flex-row gap-12 items-start">
