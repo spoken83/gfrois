@@ -41,15 +41,7 @@ export default function ExperienceSection() {
                       <p className="text-lg text-secondary mb-2">{exp.role}</p>
                       <p className="text-accent font-medium">{exp.period}</p>
                     </div>
-                    <div className="mt-4 md:mt-0">
-                      <div className="flex flex-wrap gap-2">
-                        {exp.tags.map((tag, tagIndex) => (
-                          <Badge key={tagIndex} className="bg-blue-100 text-blue-700 hover:bg-blue-200">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
+                    
                   </div>
                   
                   {exp.company === "Financial Butler" && (
