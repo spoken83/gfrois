@@ -17,7 +17,7 @@ export const experiences: Experience[] = [
     company: "Income Insurance",
     role: "Product & Venture Lead | Senior Product Manager",
     period: "Jan 2024 – Present | Aug 2022 – Dec 2023",
-    category: "InsureTech",
+    category: "InsureTech · B2C · B2B2C",
     tags: ["InsureTech", "B2C", "B2B2C"],
     achievements: [
       "Achieved 2x growth in top-line revenue with 8-10% shift to higher profitability products",
@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
     company: "Railsbank (now Railsr)",
     role: "Lead / Senior Product Manager | APAC Product Lead",
     period: "Jul 2021 – Aug 2022",
-    category: "BaaS",
+    category: "Banking-as-a-Service · APIs · B2B · B2B2C",
     tags: ["Banking-as-a-Service", "APIs", "B2B", "B2B2C"],
     achievements: [
       "Spearheaded cross-product strategy spanning Singapore and Australia",
@@ -55,7 +55,7 @@ export const experiences: Experience[] = [
     company: "Financial Butler",
     role: "Founder",
     period: "Dec 2018 – Mar 2021",
-    category: "Startup Founder",
+    category: "Startup Founder · B2C",
     tags: ["Startup Founder", "B2C"],
     achievements: [
       "Designed MVP and interactive wireframes end-to-end",
@@ -75,7 +75,7 @@ export const experiences: Experience[] = [
     company: "Murex",
     role: "Project Manager | Product Lead | Implementation Consultant",
     period: "Jun 2011 – Jun 2021",
-    category: "FinTech Enterprise",
+    category: "Fintech Enterprise · APIs",
     tags: ["Fintech Enterprise", "APIs"],
     achievements: [
       "Delivered 5 Murex projects across APAC (300-3000 man-days)",
