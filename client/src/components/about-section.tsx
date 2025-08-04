@@ -26,7 +26,9 @@ export default function AboutSection() {
           
           <ScrollAnimation>
             <div className="flex-1">
-              <h3 className="text-2xl font-semibold mb-6">Building with Strategy, Leading with Empathy</h3>
+              <h3 className="text-2xl font-semibold mb-6">Founder mindset, building with purpose.
+
+</h3>
               <div className="space-y-6">
                 <p className="text-secondary leading-relaxed">My journey began in capital markets and B2B finance, spending nearly a decade at Murex delivering front-to-back solutions for banks and financial institutions across Southeast Asia. I led complex, multi-country rollouts and spearheaded the productization of their eDistribution APIs, driving over S$10M in global revenue.</p>
                 <p className="text-secondary leading-relaxed">
