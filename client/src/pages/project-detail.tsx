@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Calendar, User, Target, Lightbulb, TrendingUp, Code } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
+import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
+import financialButlerLogo from "@assets/Financial-Butler_1754363007000.png";
 
 export default function ProjectDetail() {
   const [, params] = useRoute("/projects/:slug");
@@ -75,11 +77,28 @@ export default function ProjectDetail() {
             </ScrollAnimation>
             
             <ScrollAnimation delay={0.2}>
-              <img 
-                src={project.image} 
-                alt={`${project.title} Interface`} 
-                className="rounded-xl shadow-2xl w-full" 
-              />
+              {project.id === "financial-butler" ? (
+                <div className="space-y-6">
+                  <img 
+                    src={financialButlerCover} 
+                    alt="Financial Butler Mobile App Interface" 
+                    className="rounded-xl shadow-2xl w-full" 
+                  />
+                  <div className="flex justify-center">
+                    <img 
+                      src={financialButlerLogo} 
+                      alt="Financial Butler Logo" 
+                      className="h-20 w-auto" 
+                    />
+                  </div>
+                </div>
+              ) : (
+                <img 
+                  src={project.image} 
+                  alt={`${project.title} Interface`} 
+                  className="rounded-xl shadow-2xl w-full" 
+                />
+              )}
             </ScrollAnimation>
           </div>
         </div>

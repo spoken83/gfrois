@@ -6,6 +6,7 @@ import { ArrowRight, Calendar, User } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
 import SEOHead from "@/components/seo-head";
+import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 
 export default function Projects() {
   return (
@@ -39,7 +40,7 @@ export default function Projects() {
                   <div className="grid md:grid-cols-2 gap-0">
                     <div className="relative">
                       <img 
-                        src={project.image} 
+                        src={project.id === "financial-butler" ? financialButlerCover : project.image} 
                         alt={`${project.title} Interface`} 
                         className="w-full h-64 md:h-full object-cover" 
                       />

@@ -21,38 +21,42 @@ export const projects: Project[] = [
   {
     id: "financial-butler",
     title: "Financial Butler",
-    description: "Personal finance management app that aggregates financial data and provides actionable insights for better financial decisions.",
-    longDescription: "Financial Butler was a mobile-first personal finance application designed to help users take control of their financial lives. The app aggregated data from credit cards, savings accounts, investments, and insurance policies, providing users with a comprehensive view of their financial health and actionable insights to make better decisions.",
+    description: "AI-driven personal finance management platform providing 360° financial insights and automated decision-making tools for consumers across ASEAN.",
+    longDescription: "Financial Butler was a comprehensive fintech platform that revolutionized personal finance management in Asia-Pacific. The mobile-first application aggregated financial data from banks, credit cards, investments, and insurance, utilizing machine learning to provide personalized insights and automated financial management. The platform addressed critical gaps in emergency savings, insurance coverage, and investment optimization across Singapore, Malaysia, and Thailand markets.",
     category: "FinTech",
-    tags: ["FinTech", "Mobile App", "B2C"],
+    tags: ["FinTech", "AI/ML", "B2C", "Mobile App", "Data Analytics"],
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     status: "completed",
     year: "2018-2021",
-    role: "Founder & Product Lead",
+    role: "Founder & CEO",
     challenges: [
-      "Building trust with users for financial data aggregation",
-      "Navigating complex regulatory requirements across multiple financial institutions",
-      "Creating intuitive UX for complex financial concepts",
-      "Securing funding in a competitive fintech landscape"
+      "Addressing under-insurance crisis: 66-80% of users across ASEAN lacked adequate emergency savings",
+      "Navigating complex multi-market regulatory compliance (MAS, Bank Negara, SEC Thailand)",
+      "Building trust for financial data aggregation in privacy-conscious markets",
+      "Competing against established banks and emerging fintech players",
+      "Scaling technical infrastructure across multiple banking APIs and data formats"
     ],
     solutions: [
-      "Implemented bank-level security protocols and transparent privacy policies",
-      "Developed API integrations with major Singaporean banks and financial institutions",
-      "Conducted extensive user research and iterative design testing",
-      "Built compelling product demos and data-driven pitch presentations"
+      "Developed AI-driven financial profiling system to identify spending patterns and insurance gaps",
+      "Implemented bank-level security with end-to-end encryption and regulatory compliance frameworks",
+      "Created intuitive UX with bubble-based visualization for complex financial relationships",
+      "Built strategic partnerships with banks, insurers, and robo-advisors for product distribution",
+      "Established scalable API integration architecture supporting 15+ financial institutions"
     ],
     results: [
-      "Achieved ~5000 Monthly Active Users within first year",
-      "60% increase in user conversion rates through optimization",
-      "Connected with 34 investors and delivered 22 pitches",
-      "Participated in 3 startup competitions and 1 tech conference"
+      "Achieved 5,000+ Monthly Active Users with 30% month-over-month growth",
+      "Processed 84,000+ financial transactions across aggregated accounts",
+      "Connected with 34 investors, delivered 22+ pitch presentations",
+      "Secured 4 strategic partnerships with major financial institutions",
+      "Achieved S$50M+ in insurance policy referrals and 8,350+ investment account openings (projected)"
     ],
-    technologies: ["React Native", "Node.js", "MongoDB", "AWS", "Plaid API", "Chart.js"],
+    technologies: ["React Native", "Node.js", "Python", "MongoDB", "AWS", "Machine Learning", "Banking APIs", "Chart.js", "Real-time Analytics"],
     learnings: [
-      "The importance of regulatory compliance in fintech products",
-      "Building trust is paramount when handling sensitive financial data",
-      "User education is crucial for adoption of complex financial tools",
-      "MVP validation is essential before heavy feature development"
+      "Financial education and user onboarding are critical for fintech adoption in emerging markets",
+      "Data-driven personalization significantly improves user engagement and product stickiness",
+      "Strategic partnerships with incumbent financial institutions accelerate market penetration",
+      "Regulatory compliance must be embedded from day one, not retrofitted",
+      "Market expansion requires deep understanding of local financial behaviors and preferences"
     ],
     slug: "financial-butler"
   },
