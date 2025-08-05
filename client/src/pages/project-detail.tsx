@@ -8,6 +8,10 @@ import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
 import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 import financialButlerLogo from "@assets/Financial-Butler_1754363007000.png";
+import gordonPitchingOnline from "@assets/WIN_20200729_11_39_26_Pro_1754372487151.jpg";
+import gordonMediaInterview from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (2)_1754372504202.jpeg";
+import gordonConference1 from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (1)_1754372516417.jpeg";
+import gordonConference2 from "@assets/WhatsApp Image 2020-11-14 at 16.46.01 (3)_1754372527235.jpeg";
 
 export default function ProjectDetail() {
   const [, params] = useRoute("/projects/:slug");
@@ -274,6 +278,80 @@ export default function ProjectDetail() {
           </ScrollAnimation>
         </div>
       </section>
+
+      {/* Behind the Scenes - Photos */}
+      {project.id === "financial-butler" && (
+        <section className="py-20 bg-neutral-bg">
+          <div className="max-w-6xl mx-auto px-6">
+            <ScrollAnimation>
+              <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold mb-4">Behind the Scenes</h2>
+                <p className="text-xl text-secondary max-w-3xl mx-auto">
+                  From virtual pitches to media interviews and startup competitions - capturing key moments in the Financial Butler journey.
+                </p>
+              </div>
+            </ScrollAnimation>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <ScrollAnimation delay={0.1}>
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                  <img 
+                    src={gordonPitchingOnline} 
+                    alt="Gordon Frois pitching Financial Butler online during COVID-19"
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-4">
+                    <h4 className="font-semibold text-sm mb-2">Virtual Pitch Presentation</h4>
+                    <p className="text-xs text-secondary">Presenting Financial Butler to investors during COVID-19 pivot to virtual pitching</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+
+              <ScrollAnimation delay={0.2}>
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                  <img 
+                    src={gordonMediaInterview} 
+                    alt="Gordon Frois in media interview about Financial Butler"
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-4">
+                    <h4 className="font-semibold text-sm mb-2">Media Interview</h4>
+                    <p className="text-xs text-secondary">Discussing fintech innovation and Financial Butler's mission in media coverage</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+
+              <ScrollAnimation delay={0.3}>
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                  <img 
+                    src={gordonConference1} 
+                    alt="Gordon Frois at startup conference presenting Financial Butler"
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-4">
+                    <h4 className="font-semibold text-sm mb-2">Startup Conference</h4>
+                    <p className="text-xs text-secondary">Participating in NTT Startup Challenge 2020 and industry events</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+
+              <ScrollAnimation delay={0.4}>
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                  <img 
+                    src={gordonConference2} 
+                    alt="Gordon Frois at fintech conference discussing Financial Butler"
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-4">
+                    <h4 className="font-semibold text-sm mb-2">Industry Events</h4>
+                    <p className="text-xs text-secondary">Networking and presenting at fintech conferences across ASEAN markets</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Call to Action */}
       <section className="py-20 bg-neutral-bg">
