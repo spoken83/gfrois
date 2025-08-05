@@ -83,13 +83,13 @@ export default function ProjectDetail() {
                     <img 
                       src={financialButlerLogo} 
                       alt="Financial Butler Logo" 
-                      className="h-20 w-auto" 
+                      className="h-32 w-auto" 
                     />
                   </div>
                   <img 
                     src={financialButlerCover} 
                     alt="Financial Butler Mobile App Interface" 
-                    className="rounded-xl shadow-2xl w-full" 
+                    className="rounded-xl shadow-2xl w-3/4 mx-auto" 
                   />
                 </div>
               ) : (
