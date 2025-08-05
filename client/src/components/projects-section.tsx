@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "./scroll-animation";
 import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
+import lockketLogo from "@assets/logo-colored_1754411804329.png";
 
 export default function ProjectsSection() {
   return (
@@ -27,9 +28,15 @@ export default function ProjectsSection() {
                 <CardContent className="p-0">
                   <div className="mb-6">
                     <img 
-                      src={project.id === "financial-butler" ? financialButlerCover : project.image} 
+                      src={
+                        project.id === "financial-butler" ? financialButlerCover :
+                        project.id === "lockket" ? lockketLogo :
+                        project.image
+                      } 
                       alt={`${project.title} Interface`} 
-                      className="w-full h-48 object-cover rounded-t-lg" 
+                      className={`w-full h-48 rounded-t-lg ${
+                        project.id === "lockket" ? "object-contain bg-gray-50 p-8" : "object-cover"
+                      }`}
                     />
                   </div>
                   <div className="p-8 pt-0">

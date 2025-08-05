@@ -8,6 +8,7 @@ import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
 import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 import financialButlerLogo from "@assets/Financial-Butler_1754363007000.png";
+import lockketLogo from "@assets/logo-colored_1754411804329.png";
 import gordonPitchingOnline from "@assets/WIN_20200729_11_39_26_Pro_1754372487151.jpg";
 import gordonMediaInterview from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (2)_1754372504202.jpeg";
 import gordonConference1 from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (1)_1754372516417.jpeg";
@@ -96,6 +97,14 @@ export default function ProjectDetail() {
                     className="rounded-xl shadow-2xl w-3/4 mx-auto" 
                   />
                 </div>
+              ) : project.id === "lockket" ? (
+                <div className="flex justify-center bg-gray-50 rounded-xl p-12">
+                  <img 
+                    src={lockketLogo} 
+                    alt="Lockket Logo" 
+                    className="h-32 w-auto" 
+                  />
+                </div>
               ) : (
                 <img 
                   src={project.image} 
@@ -151,16 +160,18 @@ export default function ProjectDetail() {
               </Card>
             </ScrollAnimation>
 
-            {/* Results */}
+            {/* Results or Current Execution */}
             <ScrollAnimation delay={0.2}>
               <Card className="h-full">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <TrendingUp className="h-6 w-6 text-primary mr-2" />
-                    <h3 className="font-semibold">Results</h3>
+                    <h3 className="font-semibold">
+                      {project.currentExecution ? "Current Execution" : "Results"}
+                    </h3>
                   </div>
                   <ul className="space-y-2 text-sm text-secondary">
-                    {project.results.map((result, index) => (
+                    {(project.currentExecution || project.results || []).map((result, index) => (
                       <li key={index} className="flex items-start">
                         <span className="text-accent mr-2 mt-1">•</span>
                         {result}
@@ -256,19 +267,19 @@ export default function ProjectDetail() {
             </ScrollAnimation>
           </div>
 
-          {/* Key Learnings */}
+          {/* Key Learnings or Roadmap */}
           <ScrollAnimation>
             <Card className="shadow-lg">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold mb-6 flex items-center">
                   <Lightbulb className="h-6 w-6 text-primary mr-3" />
-                  Key Learnings
+                  {project.roadmap ? "Roadmap" : "Key Learnings"}
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  {project.learnings.map((learning, index) => (
+                  {(project.roadmap || project.learnings || []).map((item, index) => (
                     <div key={index} className="flex items-start">
                       <span className="text-accent mr-3 mt-1 text-lg">•</span>
-                      <p className="text-secondary">{learning}</p>
+                      <p className="text-secondary">{item}</p>
                     </div>
                   ))}
                 </div>

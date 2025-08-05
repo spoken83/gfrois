@@ -11,7 +11,8 @@ export interface Project {
   role: string;
   challenges: string[];
   solutions: string[];
-  results: string[];
+  results?: string[];
+  currentExecution?: string[];
   technologies: string[];
   techStack?: {
     frontend: string[];
@@ -21,7 +22,8 @@ export interface Project {
     thirdPartyIntegrations: string[];
     machineLearning: string[];
   };
-  learnings: string[];
+  learnings?: string[];
+  roadmap?: string[];
   slug: string;
 }
 
@@ -95,7 +97,7 @@ export const projects: Project[] = [
       "Created simple QR code access system allowing instant participation from any mobile device",
       "Built multilingual support (English/Chinese) with automatic detection for inclusive participation"
     ],
-    results: [
+    currentExecution: [
       "Successfully launched live platform with credit-based pricing model ($70-$100 per event)",
       "Serving multiple event types: weddings, memorials, graduations, and corporate events",
       "Integrated photo book creation service (20x20cm hardcover, 30 pages) for lasting memories",
@@ -110,11 +112,11 @@ export const projects: Project[] = [
       machineLearning: ["AI Content Moderation", "Automatic Content Detection", "Language Detection"]
     },
     technologies: ["React", "TypeScript", "WebSocket", "AI Moderation", "Stripe", "Real-time Database"],
-    learnings: [
-      "Real-time user experiences require careful balance between immediacy and content safety",
-      "Event technology must be accessible to all demographics - QR codes eliminate app download friction",
-      "Credit-based pricing works well for event-driven businesses with clear per-use value",
-      "Multilingual support is essential for inclusive event experiences across diverse communities"
+    roadmap: [
+      "Enhanced AI moderation with custom content filters for different event types",
+      "Advanced analytics dashboard for event organizers to track engagement metrics",
+      "Integration with major event planning platforms and wedding vendors",
+      "Expanded photo book customization options and international shipping"
     ],
     slug: "lockket"
   },
@@ -141,14 +143,14 @@ export const projects: Project[] = [
       "Gamification elements for learning engagement",
       "Tiered pricing model based on usage and features"
     ],
-    results: [
+    currentExecution: [
       "Growing user base of knowledge workers and consultants",
       "Strong retention rates among active users",
       "Positive feedback on knowledge discovery features",
       "Expanding into enterprise team features"
     ],
     technologies: ["Next.js", "PostgreSQL", "Redis", "Algolia", "Stripe", "OpenAI"],
-    learnings: [
+    roadmap: [
       "Knowledge management is highly personal and contextual",
       "Search and discovery are crucial for knowledge tools",
       "Regular usage habits are essential for knowledge platforms",
