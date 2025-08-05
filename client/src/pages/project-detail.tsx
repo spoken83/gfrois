@@ -9,6 +9,7 @@ import ScrollAnimation from "@/components/scroll-animation";
 import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 import financialButlerLogo from "@assets/Financial-Butler_1754363007000.png";
 import lockketLogo from "@assets/logo-colored_1754411804329.png";
+import thinkerlyImage from "@assets/generated_images/Thinkerly_math_learning_app_c425b595.png";
 import gordonPitchingOnline from "@assets/WIN_20200729_11_39_26_Pro_1754372487151.jpg";
 import gordonMediaInterview from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (2)_1754372504202.jpeg";
 import gordonConference1 from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (1)_1754372516417.jpeg";
@@ -105,6 +106,12 @@ export default function ProjectDetail() {
                     className="h-32 w-auto" 
                   />
                 </div>
+              ) : project.id === "thinkerly" ? (
+                <img 
+                  src={thinkerlyImage} 
+                  alt="Thinkerly Math Learning Interface" 
+                  className="rounded-xl shadow-2xl w-full" 
+                />
               ) : (
                 <img 
                   src={project.image} 
@@ -222,36 +229,66 @@ export default function ProjectDetail() {
                           ))}
                         </div>
                       </div>
-                      <div>
-                        <h5 className="text-xs font-medium text-gray-600 mb-1">Data Security</h5>
-                        <div className="flex flex-wrap gap-1">
-                          {project.techStack.dataSecurity.map((tech, index) => (
-                            <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
-                              {tech}
-                            </Badge>
-                          ))}
+                      {project.techStack.dataSecurity && (
+                        <div>
+                          <h5 className="text-xs font-medium text-gray-600 mb-1">Data Security</h5>
+                          <div className="flex flex-wrap gap-1">
+                            {project.techStack.dataSecurity.map((tech, index) => (
+                              <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                      <div>
-                        <h5 className="text-xs font-medium text-gray-600 mb-1">3rd Party Integrations</h5>
-                        <div className="flex flex-wrap gap-1">
-                          {project.techStack.thirdPartyIntegrations.map((tech, index) => (
-                            <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
-                              {tech}
-                            </Badge>
-                          ))}
+                      )}
+                      {project.techStack.thirdPartyIntegrations && (
+                        <div>
+                          <h5 className="text-xs font-medium text-gray-600 mb-1">3rd Party Integrations</h5>
+                          <div className="flex flex-wrap gap-1">
+                            {project.techStack.thirdPartyIntegrations.map((tech, index) => (
+                              <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                      <div>
-                        <h5 className="text-xs font-medium text-gray-600 mb-1">Machine Learning</h5>
-                        <div className="flex flex-wrap gap-1">
-                          {project.techStack.machineLearning.map((tech, index) => (
-                            <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
-                              {tech}
-                            </Badge>
-                          ))}
+                      )}
+                      {project.techStack.machineLearning && (
+                        <div>
+                          <h5 className="text-xs font-medium text-gray-600 mb-1">Machine Learning</h5>
+                          <div className="flex flex-wrap gap-1">
+                            {project.techStack.machineLearning.map((tech, index) => (
+                              <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
                         </div>
-                      </div>
+                      )}
+                      {project.techStack.ai && (
+                        <div>
+                          <h5 className="text-xs font-medium text-gray-600 mb-1">AI & Assessment</h5>
+                          <div className="flex flex-wrap gap-1">
+                            {project.techStack.ai.map((tech, index) => (
+                              <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      {project.techStack.education && (
+                        <div>
+                          <h5 className="text-xs font-medium text-gray-600 mb-1">Educational Framework</h5>
+                          <div className="flex flex-wrap gap-1">
+                            {project.techStack.education.map((tech, index) => (
+                              <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <div className="flex flex-wrap gap-1">

@@ -7,6 +7,8 @@ import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
 import SEOHead from "@/components/seo-head";
 import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
+import lockketLogo from "@assets/logo-colored_1754411804329.png";
+import thinkerlyImage from "@assets/generated_images/Thinkerly_math_learning_app_c425b595.png";
 
 export default function Projects() {
   return (
@@ -40,9 +42,16 @@ export default function Projects() {
                   <div className="grid md:grid-cols-2 gap-0">
                     <div className="relative">
                       <img 
-                        src={project.id === "financial-butler" ? financialButlerCover : project.image} 
+                        src={
+                          project.id === "financial-butler" ? financialButlerCover :
+                          project.id === "lockket" ? lockketLogo :
+                          project.id === "thinkerly" ? thinkerlyImage :
+                          project.image
+                        } 
                         alt={`${project.title} Interface`} 
-                        className="w-full h-64 md:h-full object-cover" 
+                        className={`w-full h-64 md:h-full ${
+                          project.id === "lockket" ? "object-contain bg-gray-50 p-8" : "object-cover"
+                        }`}
                       />
                       <div className="absolute top-4 left-4">
                         <Badge 

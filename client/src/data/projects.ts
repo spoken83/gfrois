@@ -18,9 +18,11 @@ export interface Project {
     frontend: string[];
     backend: string[];
     database: string[];
-    dataSecurity: string[];
-    thirdPartyIntegrations: string[];
-    machineLearning: string[];
+    dataSecurity?: string[];
+    thirdPartyIntegrations?: string[];
+    machineLearning?: string[];
+    ai?: string[];
+    education?: string[];
   };
   learnings?: string[];
   roadmap?: string[];
@@ -123,38 +125,45 @@ export const projects: Project[] = [
   {
     id: "thinkerly",
     title: "Thinkerly.app",
-    description: "AI-powered math learning for primary students to help kids master problem-solving skills through heuristics-based math questions, for confident, PSLE-ready thinkers.",
-    longDescription: "Thinkerly is AI-powered math learning for primary students to help kids master problem-solving skills through heuristics-based math questions beyond tradional rote learning. Building confidence for PSLE and beyond through deep thinking, not drilling.",
-    category: "Knowledge Management",
-    tags: ["Knowledge Mgmt", "Web App", "Active"],
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-    status: "active",
-    year: "2023-Present",
-    role: "Product Advisor & Investor",
+    description: "AI-powered math learning platform for primary students using heuristics-based problem solving to build confident, PSLE-ready thinkers beyond traditional rote learning.",
+    longDescription: "Thinkerly is a comprehensive math heuristics assessment and learning platform designed for primary school students. The platform goes beyond traditional drilling methods by teaching students structured problem-solving approaches through proven mathematical heuristics, helping them become confident and strategic thinkers ready for PSLE and beyond.",
+    category: "EdTech",
+    tags: ["EdTech", "AI Learning", "Math Heuristics", "Current"],
+    image: "https://images.unsplash.com/photo-1596496050827-8299e0220269?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
+    status: "current",
+    year: "2024-Present",
+    role: "Product Lead & Co-founder", 
     challenges: [
-      "Creating intuitive knowledge organization systems",
-      "Balancing structure with flexibility in knowledge capture",
-      "Building engagement in learning-focused products",
-      "Monetizing knowledge management tools effectively"
+      "Moving beyond traditional rote learning methods to conceptual understanding",
+      "Teaching structured problem-solving heuristics to young learners effectively",
+      "Creating engaging math content that builds confidence rather than anxiety",
+      "Designing assessment tools that accurately measure mathematical thinking skills"
     ],
     solutions: [
-      "AI-powered content categorization and insights",
-      "Flexible tagging and connection systems",
-      "Gamification elements for learning engagement",
-      "Tiered pricing model based on usage and features"
+      "Developed comprehensive heuristics-based problem solving framework covering key strategies",
+      "Built AI-powered assessment system that evaluates mathematical thinking processes",
+      "Created role-based platform serving students, parents, and educators with tailored experiences",
+      "Implemented structured learning pathways that gradually introduce complex problem-solving concepts"
     ],
     currentExecution: [
-      "Growing user base of knowledge workers and consultants",
-      "Strong retention rates among active users",
-      "Positive feedback on knowledge discovery features",
-      "Expanding into enterprise team features"
+      "Live platform with demo accounts showcasing full student assessment journey",
+      "Multi-role system supporting admin, parent, and student user experiences",
+      "Comprehensive heuristics curriculum covering mathematical problem-solving strategies",
+      "AI-powered assessment engine providing detailed analysis of student thinking patterns"
     ],
-    technologies: ["Next.js", "PostgreSQL", "Redis", "Algolia", "Stripe", "OpenAI"],
+    techStack: {
+      frontend: ["React", "TypeScript", "Responsive Design", "Modern UI"],
+      backend: ["Node.js", "Express", "Authentication System", "Role Management"],
+      database: ["PostgreSQL", "User Management", "Assessment Data", "Progress Tracking"],
+      ai: ["AI Assessment Engine", "Problem Analysis", "Personalized Learning"],
+      education: ["Heuristics Framework", "PSLE Preparation", "Math Curriculum"]
+    },
+    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "AI Assessment", "Educational Framework"],
     roadmap: [
-      "Knowledge management is highly personal and contextual",
-      "Search and discovery are crucial for knowledge tools",
-      "Regular usage habits are essential for knowledge platforms",
-      "Enterprise vs individual use cases require different approaches"
+      "Expanded heuristics library covering advanced problem-solving strategies for higher primary levels",
+      "Parent dashboard with detailed progress analytics and home practice recommendations",
+      "Integration with Singapore math curriculum standards and school assessment systems",
+      "Adaptive learning algorithms that personalize difficulty based on individual student progress"
     ],
     slug: "thinkerly"
   }
