@@ -75,38 +75,46 @@ export const projects: Project[] = [
   {
     id: "lockket",
     title: "Lockket.app",
-    description: "Current project focused on solving productivity challenges through innovative product design and user experience optimization.",
-    longDescription: "Lockket is an innovative productivity platform designed to help individuals and teams manage their time, tasks, and goals more effectively. The project focuses on creating seamless workflows that adapt to different working styles and organizational needs.",
-    category: "Productivity",
-    tags: ["Productivity", "SaaS", "Current"],
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    description: "Interactive memory walls for special events - capture memories together through real-time photo and message sharing.",
+    longDescription: "Lockket turns special events into interactive memory walls where guests share photos and messages in real-time. From weddings to memorials, Lockket helps create and preserve special moments with AI content moderation, QR code access, and multilingual support for seamless memory collection.",
+    category: "Event Technology",
+    tags: ["B2B", "SaaS", "Events", "Memory Sharing", "Current"],
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
     status: "current",
     year: "2024-Present",
     role: "Product Lead & Co-founder",
     challenges: [
-      "Differentiating in a crowded productivity software market",
-      "Balancing simplicity with powerful features",
-      "Creating workflows that work for diverse user types",
-      "Building sustainable growth in a competitive landscape"
+      "Creating engaging real-time experiences for diverse event types (weddings, funerals, graduations, corporate)",
+      "Ensuring appropriate content through AI moderation while maintaining authentic user expression",
+      "Building seamless mobile experience with QR code access requiring no app downloads",
+      "Balancing feature richness with simplicity for event organizers and guests"
     ],
     solutions: [
-      "Focus on unique AI-powered insights and automation",
-      "Progressive disclosure UI design philosophy",
-      "Extensive user research across different industries",
-      "Community-driven growth and feedback loops"
+      "Developed real-time animated memory walls that update instantly as guests contribute",
+      "Implemented advanced AI content moderation to ensure appropriate contributions before display",
+      "Created simple QR code access system allowing instant participation from any mobile device",
+      "Built multilingual support (English/Chinese) with automatic detection for inclusive participation"
     ],
     results: [
-      "Currently in private beta with select users",
-      "Positive early user feedback on core features",
-      "Strategic partnerships being developed",
-      "Preparing for public launch in Q2 2025"
+      "Successfully launched live platform with credit-based pricing model ($70-$100 per event)",
+      "Serving multiple event types: weddings, memorials, graduations, and corporate events",
+      "Integrated photo book creation service (20x20cm hardcover, 30 pages) for lasting memories",
+      "Offering 3 free credits for new service providers to encourage platform adoption"
     ],
-    technologies: ["React", "TypeScript", "Supabase", "Vercel", "OpenAI API", "Stripe"],
+    techStack: {
+      frontend: ["React", "TypeScript", "Real-time UI", "Responsive Design"],
+      backend: ["Node.js", "Real-time WebSocket", "API Services", "Payment Processing"],
+      database: ["Real-time Database", "Media Storage", "User Management"],
+      dataSecurity: ["AI Content Moderation", "Secure Payment", "Privacy Protection"],
+      thirdPartyIntegrations: ["Stripe Payment", "Photo Book Printing", "Email Services"],
+      machineLearning: ["AI Content Moderation", "Automatic Content Detection", "Language Detection"]
+    },
+    technologies: ["React", "TypeScript", "WebSocket", "AI Moderation", "Stripe", "Real-time Database"],
     learnings: [
-      "Current project - learnings in progress",
-      "The importance of focused feature development",
-      "User feedback loops are critical for product-market fit",
-      "AI integration requires thoughtful UX design"
+      "Real-time user experiences require careful balance between immediacy and content safety",
+      "Event technology must be accessible to all demographics - QR codes eliminate app download friction",
+      "Credit-based pricing works well for event-driven businesses with clear per-use value",
+      "Multilingual support is essential for inclusive event experiences across diverse communities"
     ],
     slug: "lockket"
   },
