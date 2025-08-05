@@ -13,6 +13,14 @@ export interface Project {
   solutions: string[];
   results: string[];
   technologies: string[];
+  techStack?: {
+    frontend: string[];
+    backend: string[];
+    database: string[];
+    dataSecurity: string[];
+    thirdPartyIntegrations: string[];
+    machineLearning: string[];
+  };
   learnings: string[];
   slug: string;
 }
@@ -50,6 +58,14 @@ export const projects: Project[] = [
       "Secured 4 strategic partnerships with major financial institutions",
       "Achieved S$50M+ in insurance policy referrals and 8,350+ investment account openings (projected)"
     ],
+    techStack: {
+      frontend: ["React Native", "JavaScript", "Chart.js", "Redux"],
+      backend: ["Node.js", "Express.js", "Python", "RESTful APIs"],
+      database: ["MongoDB", "Redis Cache", "Data Warehousing"],
+      dataSecurity: ["End-to-End Encryption", "OAuth 2.0", "JWT Tokens", "Bank-level Security"],
+      thirdPartyIntegrations: ["Banking APIs", "Plaid", "MAS Regulatory APIs", "Insurance APIs", "Investment Platform APIs"],
+      machineLearning: ["Python ML Libraries", "Predictive Analytics", "Financial Risk Modeling", "Behavioral Pattern Recognition"]
+    },
     technologies: ["React Native", "Node.js", "Python", "MongoDB", "AWS", "Machine Learning", "Banking APIs", "Chart.js", "Real-time Analytics"],
     learnings: [
       "Financial education and user onboarding are critical for fintech adoption in emerging markets",

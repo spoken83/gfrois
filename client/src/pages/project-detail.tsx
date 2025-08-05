@@ -168,21 +168,86 @@ export default function ProjectDetail() {
               </Card>
             </ScrollAnimation>
 
-            {/* Technologies */}
+            {/* Tech Stack */}
             <ScrollAnimation delay={0.3}>
               <Card className="h-full">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Code className="h-6 w-6 text-primary mr-2" />
-                    <h3 className="font-semibold">Technologies</h3>
+                    <h3 className="font-semibold">Tech Stack</h3>
                   </div>
-                  <div className="flex flex-wrap gap-1">
-                    {project.technologies.map((tech, index) => (
-                      <Badge key={index} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
+                  {project.techStack ? (
+                    <div className="space-y-3">
+                      <div>
+                        <h5 className="text-xs font-medium text-gray-600 mb-1">Frontend</h5>
+                        <div className="flex flex-wrap gap-1">
+                          {project.techStack.frontend.map((tech, index) => (
+                            <Badge key={index} variant="secondary" className="text-xs">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h5 className="text-xs font-medium text-gray-600 mb-1">Backend</h5>
+                        <div className="flex flex-wrap gap-1">
+                          {project.techStack.backend.map((tech, index) => (
+                            <Badge key={index} variant="secondary" className="text-xs">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h5 className="text-xs font-medium text-gray-600 mb-1">Database</h5>
+                        <div className="flex flex-wrap gap-1">
+                          {project.techStack.database.map((tech, index) => (
+                            <Badge key={index} variant="secondary" className="text-xs">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h5 className="text-xs font-medium text-gray-600 mb-1">Data Security</h5>
+                        <div className="flex flex-wrap gap-1">
+                          {project.techStack.dataSecurity.map((tech, index) => (
+                            <Badge key={index} variant="secondary" className="text-xs">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h5 className="text-xs font-medium text-gray-600 mb-1">3rd Party Integrations</h5>
+                        <div className="flex flex-wrap gap-1">
+                          {project.techStack.thirdPartyIntegrations.map((tech, index) => (
+                            <Badge key={index} variant="secondary" className="text-xs">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h5 className="text-xs font-medium text-gray-600 mb-1">Machine Learning</h5>
+                        <div className="flex flex-wrap gap-1">
+                          {project.techStack.machineLearning.map((tech, index) => (
+                            <Badge key={index} variant="secondary" className="text-xs">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-wrap gap-1">
+                      {project.technologies.map((tech, index) => (
+                        <Badge key={index} variant="secondary" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </ScrollAnimation>
