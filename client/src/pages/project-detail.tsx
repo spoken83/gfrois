@@ -107,7 +107,6 @@ export default function ProjectDetail() {
           </div>
         </div>
       </section>
-
       {/* Project Details */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
@@ -278,7 +277,6 @@ export default function ProjectDetail() {
           </ScrollAnimation>
         </div>
       </section>
-
       {/* Behind the Scenes - Photos */}
       {project.id === "financial-butler" && (
         <section className="py-20 bg-neutral-bg">
@@ -330,7 +328,8 @@ export default function ProjectDetail() {
                   />
                   <div className="p-4">
                     <h4 className="font-semibold text-sm mb-2">Startup Conference</h4>
-                    <p className="text-xs text-secondary">Participating in NTT Startup Challenge 2020 and industry events</p>
+                    <p className="text-xs text-secondary">Participating in Tech in Asia 2020 in Jakarta
+</p>
                   </div>
                 </div>
               </ScrollAnimation>
@@ -352,7 +351,6 @@ export default function ProjectDetail() {
           </div>
         </section>
       )}
-
       {/* Call to Action */}
       <section className="py-20 bg-neutral-bg">
         <div className="max-w-4xl mx-auto px-6 text-center">
