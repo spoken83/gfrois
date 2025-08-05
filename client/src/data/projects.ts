@@ -29,8 +29,8 @@ export const projects: Project[] = [
   {
     id: "financial-butler",
     title: "Financial Butler",
-    description: "AI-driven personal finance management app providing 360° financial insights and decision-making tools for consumers.",
-    longDescription: "Financial Butler was a comprehensive mobile-first application aggregated financial data from banks, credit cards, investments, CPF and insurance, utilizing machine learning to provide personalized insights and automated financial management. Addressing a critical gap in financial literacy amongst the emerging affluent",
+    description: "Personal finance at your fingertips - A 360° customer journey platform with AI-driven financial management connecting all financial touchpoints.",
+    longDescription: "Financial Butler was a comprehensive personal finance management platform that provided users with a complete 360° view of their financial lives. The platform connected all financial touchpoints - spending, savings, insurance, and investments - through a single app, leveraging machine learning for auto-categorization and personalized insights. Addressing the critical under-insurance crisis across ASEAN markets (66% in Singapore, 76% in Malaysia, 80% in Thailand lack 6-month emergency savings), Financial Butler guided users toward smarter spending, better saving, adequate insurance, and intelligent investing.",
     category: "FinTech",
     tags: ["B2C","PFM", "Machine Learning", "Mobile App", "Data"],
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
@@ -38,41 +38,41 @@ export const projects: Project[] = [
     year: "2018-2021",
     role: "Founder & CEO",
     challenges: [
-      "Addressing under-insurance crisis: 66-80% of users across ASEAN lacked adequate emergency savings",
-      "Navigating complex multi-market regulatory compliance (MAS, Bank Negara, SEC Thailand)",
-      "Building trust for financial data aggregation in privacy-conscious markets",
-      "Competing against established banks and emerging fintech players",
-      "Scaling technical infrastructure across multiple banking APIs and data formats"
+      "Emergency savings crisis: 66% (Singapore), 76% (Malaysia), 80% (Thailand) lack 6-month emergency funds",
+      "Under-insurance epidemic across ASEAN markets affecting financial security",
+      "Fragmented financial management - users managing money across multiple disconnected platforms",
+      "Building trust for comprehensive financial data aggregation in privacy-conscious markets",
+      "Competing against established financial advisors, banks, and digital comparison tools like GoBear"
     ],
     solutions: [
-      "Developed AI-driven financial profiling system to identify spending patterns and insurance gaps",
-      "Implemented bank-level security with end-to-end encryption and regulatory compliance frameworks",
-      "Created intuitive UX with bubble-based visualization for complex financial relationships",
-      "Built strategic partnerships with banks, insurers, and robo-advisors for product distribution",
-      "Established scalable API integration architecture supporting 15+ financial institutions"
+      "Built 360° financial profile connecting all accounts, assets, and liabilities in one platform",
+      "Implemented AI-driven insights with machine learning auto-categorization for spending patterns",
+      "Created financial marketplace with tailored product recommendations and educational content",
+      "Developed roadmap features for insurance needs analysis and emergency savings management",
+      "Established multi-revenue model: subscriptions, referrals (insurance/investments), and partnerships"
     ],
     results: [
-      "Achieved 5,000+ Monthly Active Users with 30% month-over-month growth",
-      "Processed 84,000+ financial transactions across aggregated accounts",
-      "Connected with 34 investors, delivered 22+ pitch presentations",
-      "Secured 4 strategic partnerships with major financial institutions",
-      "Achieved S$50M+ in insurance policy referrals and 8,350+ investment account openings (projected)"
+      "MVP launched March 2020 with ~30% month-over-month growth achieving 500+ active users",
+      "1,200+ app downloads in Singapore market within first year",
+      "Processed 84,000+ financial transactions with average user age of 27.1 years",
+      "Secured 4 signed strategic partnerships with banks, insurers, and robo-advisors",
+      "Projected S$50M+ insurance policy referrals and 8,350+ investment account openings over 3 years"
     ],
     techStack: {
-      frontend: ["React Native", "JavaScript", "Chart.js", "Redux"],
-      backend: ["Node.js", "Express.js", "Python", "RESTful APIs"],
-      database: ["MongoDB", "Redis Cache", "Data Warehousing"],
-      dataSecurity: ["End-to-End Encryption", "OAuth 2.0", "JWT Tokens", "Bank-level Security"],
-      thirdPartyIntegrations: ["Banking APIs", "Plaid", "MAS Regulatory APIs", "Insurance APIs", "Investment Platform APIs"],
-      machineLearning: ["Python ML Libraries", "Predictive Analytics", "Financial Risk Modeling", "Behavioral Pattern Recognition"]
+      frontend: ["React Native", "JavaScript", "Chart.js", "Mobile UI/UX"],
+      backend: ["Node.js", "Express.js", "Python", "RESTful APIs", "Financial Data Processing"],
+      database: ["MongoDB", "Financial Transaction Storage", "User Profile Management", "Real-time Analytics"],
+      dataSecurity: ["Bank-level Security", "Data Encryption", "Privacy Compliance", "Secure API Integration"],
+      thirdPartyIntegrations: ["Banking APIs", "Insurance Provider APIs", "Robo-advisor Platforms", "CPF Integration", "Investment Services"],
+      machineLearning: ["Auto-categorization", "Spending Pattern Analysis", "Financial Profiling", "Predictive Insights", "Risk Assessment"]
     },
     technologies: ["React Native", "Node.js", "Python", "MongoDB", "AWS", "Machine Learning", "Banking APIs", "Chart.js", "Real-time Analytics"],
     learnings: [
-      "Financial education and user onboarding are critical for fintech adoption in emerging markets",
-      "Data-driven personalization significantly improves user engagement and product stickiness",
-      "Strategic partnerships with incumbent financial institutions accelerate market penetration",
-      "Regulatory compliance must be embedded from day one, not retrofitted",
-      "Market expansion requires deep understanding of local financial behaviors and preferences"
+      "ASEAN markets show massive opportunity: Total Addressable Market of S$4.3bn (insurance) + S$4.5bn AUM (robo-investment)",
+      "Strategic partnerships with banks, insurers, and robo-advisors are essential for customer acquisition and revenue growth", 
+      "Building trust through education and transparency is critical when handling personal financial data",
+      "Multi-revenue model approach (subscriptions + referrals + partnerships) provides sustainable business foundation",
+      "Timing and market readiness matter - launched during COVID-19 when digital financial services adoption accelerated"
     ],
     slug: "financial-butler"
   },
