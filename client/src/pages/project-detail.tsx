@@ -79,11 +79,6 @@ export default function ProjectDetail() {
             <ScrollAnimation delay={0.2}>
               {project.id === "financial-butler" ? (
                 <div className="space-y-6">
-                  <img 
-                    src={financialButlerCover} 
-                    alt="Financial Butler Mobile App Interface" 
-                    className="rounded-xl shadow-2xl w-full" 
-                  />
                   <div className="flex justify-center">
                     <img 
                       src={financialButlerLogo} 
@@ -91,6 +86,11 @@ export default function ProjectDetail() {
                       className="h-20 w-auto" 
                     />
                   </div>
+                  <img 
+                    src={financialButlerCover} 
+                    alt="Financial Butler Mobile App Interface" 
+                    className="rounded-xl shadow-2xl w-full" 
+                  />
                 </div>
               ) : (
                 <img 
