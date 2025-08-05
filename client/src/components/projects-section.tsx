@@ -7,6 +7,7 @@ import { Link } from "wouter";
 import ScrollAnimation from "./scroll-animation";
 import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 import lockketLogo from "@assets/logo-colored_1754411804329.png";
+import thinkerlyImage from "@assets/generated_images/Thinkerly_math_learning_app_c425b595.png";
 
 export default function ProjectsSection() {
   return (
@@ -31,6 +32,7 @@ export default function ProjectsSection() {
                       src={
                         project.id === "financial-butler" ? financialButlerCover :
                         project.id === "lockket" ? lockketLogo :
+                        project.id === "thinkerly" ? thinkerlyImage :
                         project.image
                       } 
                       alt={`${project.title} Interface`} 
