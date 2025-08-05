@@ -326,8 +326,7 @@ export default function ProjectDetail() {
                   />
                   <div className="p-4">
                     <h4 className="font-semibold text-sm mb-2">Startup Conference</h4>
-                    <p className="text-xs text-secondary">Participating in Tech in Asia 2020 in Jakarta
-</p>
+                    <p className="text-xs text-secondary">Startup booth at Tech in Asia 2020 in Jakarta</p>
                   </div>
                 </div>
               </ScrollAnimation>
