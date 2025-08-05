@@ -11,7 +11,7 @@ import financialButlerLogo from "@assets/Financial-Butler_1754363007000.png";
 import gordonPitchingOnline from "@assets/WIN_20200729_11_39_26_Pro_1754372487151.jpg";
 import gordonMediaInterview from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (2)_1754372504202.jpeg";
 import gordonConference1 from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (1)_1754372516417.jpeg";
-import gordonConference2 from "@assets/WhatsApp Image 2020-11-14 at 16.46.01 (3)_1754372527235.jpeg";
+import gordonConference2 from "@assets/conference_1754375525780.jpg";
 
 export default function ProjectDetail() {
   const [, params] = useRoute("/projects/:slug");
@@ -335,12 +335,12 @@ export default function ProjectDetail() {
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                   <img 
                     src={gordonConference2} 
-                    alt="Gordon Frois at fintech conference discussing Financial Butler"
+                    alt="Gordon Frois at tech conference with startup community"
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-4">
-                    <h4 className="font-semibold text-sm mb-2">Industry Events</h4>
-                    <p className="text-xs text-secondary">Networking and presenting at fintech conferences across ASEAN markets</p>
+                    <h4 className="font-semibold text-sm mb-2">Tech Conference</h4>
+                    <p className="text-xs text-secondary">Engaging with the startup ecosystem and tech community at industry conferences</p>
                   </div>
                 </div>
               </ScrollAnimation>
