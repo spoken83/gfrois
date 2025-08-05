@@ -58,9 +58,9 @@ export const experiences: Experience[] = [
     category: "Startup Founder · B2C",
     tags: ["Startup Founder", "B2C"],
     achievements: [
-      "Designed MVP and interactive wireframes end-to-end",
+      "Launched and scaled app to ~5000 MAU in the first 2 years",
       "34 investor connections, 22 pitches delivered",
-      "60% increase in user conversion, ~5000 MAU within first year"
+      "30% increase in user acquisition, 1,200 downloads within first year"
     ],
     leadership: [
       "Successful launch within 6 months",
@@ -78,14 +78,14 @@ export const experiences: Experience[] = [
     category: "Fintech Enterprise · APIs",
     tags: ["Fintech Enterprise", "APIs"],
     achievements: [
-      "Delivered 5 Murex projects across APAC (300-3000 man-days)",
-      "Led project teams of 5-20 members",
+      "7 years Product Management expertise across presales to implementation",
+      "Led first successful Mx.3 FX Cash eDistribution, generating S$10m+ revenue",
       "Complex front-to-back implementations and offshore rollouts"
     ],
     leadership: [
-      "7 years Product Management expertise across presales to implementation",
-      "Led first successful Mx.3 FX Cash eDistribution, generating S$10m+ revenue",
-      "Product expert for Distribution across Asia markets"
+      "Product expert for Distribution across Asia markets",
+      "Delivered 6 Murex projects across APAC (300-3000 man-days)",
+      "Led project teams of 5-20 members"
     ],
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400"
   }

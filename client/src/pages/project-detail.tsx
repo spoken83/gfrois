@@ -185,7 +185,7 @@ export default function ProjectDetail() {
                         <h5 className="text-xs font-medium text-gray-600 mb-1">Frontend</h5>
                         <div className="flex flex-wrap gap-1">
                           {project.techStack.frontend.map((tech, index) => (
-                            <Badge key={index} variant="secondary" className="text-xs">
+                            <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
                               {tech}
                             </Badge>
                           ))}
@@ -195,7 +195,7 @@ export default function ProjectDetail() {
                         <h5 className="text-xs font-medium text-gray-600 mb-1">Backend</h5>
                         <div className="flex flex-wrap gap-1">
                           {project.techStack.backend.map((tech, index) => (
-                            <Badge key={index} variant="secondary" className="text-xs">
+                            <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
                               {tech}
                             </Badge>
                           ))}
@@ -205,7 +205,7 @@ export default function ProjectDetail() {
                         <h5 className="text-xs font-medium text-gray-600 mb-1">Database</h5>
                         <div className="flex flex-wrap gap-1">
                           {project.techStack.database.map((tech, index) => (
-                            <Badge key={index} variant="secondary" className="text-xs">
+                            <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
                               {tech}
                             </Badge>
                           ))}
@@ -215,7 +215,7 @@ export default function ProjectDetail() {
                         <h5 className="text-xs font-medium text-gray-600 mb-1">Data Security</h5>
                         <div className="flex flex-wrap gap-1">
                           {project.techStack.dataSecurity.map((tech, index) => (
-                            <Badge key={index} variant="secondary" className="text-xs">
+                            <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
                               {tech}
                             </Badge>
                           ))}
@@ -225,7 +225,7 @@ export default function ProjectDetail() {
                         <h5 className="text-xs font-medium text-gray-600 mb-1">3rd Party Integrations</h5>
                         <div className="flex flex-wrap gap-1">
                           {project.techStack.thirdPartyIntegrations.map((tech, index) => (
-                            <Badge key={index} variant="secondary" className="text-xs">
+                            <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
                               {tech}
                             </Badge>
                           ))}
@@ -235,7 +235,7 @@ export default function ProjectDetail() {
                         <h5 className="text-xs font-medium text-gray-600 mb-1">Machine Learning</h5>
                         <div className="flex flex-wrap gap-1">
                           {project.techStack.machineLearning.map((tech, index) => (
-                            <Badge key={index} variant="secondary" className="text-xs">
+                            <Badge key={index} variant="default" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
                               {tech}
                             </Badge>
                           ))}

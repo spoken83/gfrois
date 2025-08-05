@@ -32,14 +32,14 @@ export const projects: Project[] = [
     description: "Personal finance at your fingertips - A 360° customer journey platform with AI-driven financial management connecting all financial touchpoints.",
     longDescription: "Financial Butler was a personal finance management app that provided users with a complete 360° view of their finances by connecting all financial touchpoints - spending, savings, insurance, and investments - through a single app and leveraging machine learning for auto-categorization and personalized insights. My goal was to address financial literacy for the emerging affluent in Asia, guiding users toward smarter spending, better saving, adequate insurance, and intelligent investing.",
     category: "FinTech",
-    tags: ["B2C","PFM", "Machine Learning", "Mobile App", "Data"],
+    tags: ["B2C","PFM", "Machine Learning", "Mobile App", "Data Analytics"],
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     status: "completed",
     year: "2018-2021",
-    role: "Founder & CEO",
+    role: "Founder",
     challenges: [
-      "Emergency savings crisis: 66% (Singapore), 76% (Malaysia), 80% (Thailand) lack 6-month emergency funds",
-      "Under-insurance epidemic across ASEAN markets affecting financial security",
+      "Inadequet savings: 66% (Singapore), 76% (Malaysia), 80% (Thailand) lack 6-month emergency funds",
+      "Singaporeans were under-insured despite high awareness, many chose traditional savings for growing wealth",
       "Fragmented financial management - users managing money across multiple disconnected platforms",
       "Building trust for comprehensive financial data aggregation in privacy-conscious markets",
       "Competing against established financial advisors, banks, and digital comparison tools like GoBear"
@@ -48,8 +48,7 @@ export const projects: Project[] = [
       "Built 360° financial profile connecting all accounts, assets, and liabilities in one platform",
       "Implemented AI-driven insights with machine learning auto-categorization for spending patterns",
       "Created financial marketplace with tailored product recommendations and educational content",
-      "Developed roadmap features for insurance needs analysis and emergency savings management",
-      "Established multi-revenue model: subscriptions, referrals (insurance/investments), and partnerships"
+      "Developed roadmap features for insurance needs analysis and emergency savings management"
     ],
     results: [
       "MVP launched March 2019 with ~30% month-over-month growth achieving 5000+ active users",
@@ -58,20 +57,18 @@ export const projects: Project[] = [
       "Secured 4 signed strategic partnerships with banks, insurers, and robo-advisors"
     ],
     techStack: {
-      frontend: ["React Native", "JavaScript", "Chart.js", "Mobile UI/UX"],
-      backend: ["Node.js", "Express.js", "Python", "RESTful APIs", "Financial Data Processing"],
-      database: ["MongoDB", "Financial Transaction Storage", "User Profile Management", "Real-time Analytics"],
-      dataSecurity: ["Bank-level Security", "Data Encryption", "Privacy Compliance", "Secure API Integration"],
-      thirdPartyIntegrations: ["Open Banking APIs", "Insurance Provider APIs", "Robo-advisor Platforms", "Investment Services"],
+      frontend: ["React Native", "JavaScript", "Chart.js"],
+      backend: ["Node.js", "Express.js", "Python"],
+      database: ["MongoDB"],
+      dataSecurity: ["Bank-level Security", "Data Encryption & Privacy", "Secured API Integration"],
+      thirdPartyIntegrations: ["Open Banking APIs"],
       machineLearning: ["Auto-categorization", "Spending Pattern Analysis", "Financial Profiling", "Predictive Insights", "Risk Assessment"]
     },
     technologies: ["React Native", "Node.js", "Python", "MongoDB", "AWS", "Machine Learning", "Banking APIs", "Chart.js", "Real-time Analytics"],
     learnings: [
-      "ASEAN markets show massive opportunity: Total Addressable Market of S$4.3bn (insurance) + S$4.5bn AUM (robo-investment)",
-      "Strategic partnerships with banks, insurers, and robo-advisors are essential for customer acquisition and revenue growth", 
-      "Building trust through education and transparency is critical when handling personal financial data",
-      "Multi-revenue model approach (subscriptions + referrals + partnerships) provides sustainable business foundation",
-      "Timing and market readiness matter - launched during COVID-19 when digital financial services adoption accelerated"
+      "Establishing multi-revenue model (subscriptions + referral/affiliate + partnerships) early is crucial for sustainability and growth",
+      "Product-led growth is key, and very powerful especially when built on trust, transparency and security",
+      "ASEAN markets has massive opportunity: Total Addressable Market of S$4.3bn (insurance) + S$4.5bn AUM (robo-investment) and is very fragmented and nuanced"
     ],
     slug: "financial-butler"
   },
