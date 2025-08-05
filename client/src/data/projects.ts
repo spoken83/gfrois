@@ -30,7 +30,7 @@ export const projects: Project[] = [
     id: "financial-butler",
     title: "Financial Butler",
     description: "Personal finance at your fingertips - A 360° customer journey platform with AI-driven financial management connecting all financial touchpoints.",
-    longDescription: "Financial Butler was a comprehensive personal finance management platform that provided users with a complete 360° view of their financial lives. The platform connected all financial touchpoints - spending, savings, insurance, and investments - through a single app, leveraging machine learning for auto-categorization and personalized insights. Addressing the critical under-insurance crisis across ASEAN markets (66% in Singapore, 76% in Malaysia, 80% in Thailand lack 6-month emergency savings), Financial Butler guided users toward smarter spending, better saving, adequate insurance, and intelligent investing.",
+    longDescription: "Financial Butler was a personal finance management app that provided users with a complete 360° view of their finances by connecting all financial touchpoints - spending, savings, insurance, and investments - through a single app and leveraging machine learning for auto-categorization and personalized insights. My goal was to address financial literacy for the emerging affluent in Asia, guiding users toward smarter spending, better saving, adequate insurance, and intelligent investing.",
     category: "FinTech",
     tags: ["B2C","PFM", "Machine Learning", "Mobile App", "Data"],
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
