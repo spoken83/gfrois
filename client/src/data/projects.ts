@@ -52,18 +52,17 @@ export const projects: Project[] = [
       "Established multi-revenue model: subscriptions, referrals (insurance/investments), and partnerships"
     ],
     results: [
-      "MVP launched March 2020 with ~30% month-over-month growth achieving 500+ active users",
+      "MVP launched March 2019 with ~30% month-over-month growth achieving 5000+ active users",
       "1,200+ app downloads in Singapore market within first year",
       "Processed 84,000+ financial transactions with average user age of 27.1 years",
-      "Secured 4 signed strategic partnerships with banks, insurers, and robo-advisors",
-      "Projected S$50M+ insurance policy referrals and 8,350+ investment account openings over 3 years"
+      "Secured 4 signed strategic partnerships with banks, insurers, and robo-advisors"
     ],
     techStack: {
       frontend: ["React Native", "JavaScript", "Chart.js", "Mobile UI/UX"],
       backend: ["Node.js", "Express.js", "Python", "RESTful APIs", "Financial Data Processing"],
       database: ["MongoDB", "Financial Transaction Storage", "User Profile Management", "Real-time Analytics"],
       dataSecurity: ["Bank-level Security", "Data Encryption", "Privacy Compliance", "Secure API Integration"],
-      thirdPartyIntegrations: ["Banking APIs", "Insurance Provider APIs", "Robo-advisor Platforms", "CPF Integration", "Investment Services"],
+      thirdPartyIntegrations: ["Open Banking APIs", "Insurance Provider APIs", "Robo-advisor Platforms", "Investment Services"],
       machineLearning: ["Auto-categorization", "Spending Pattern Analysis", "Financial Profiling", "Predictive Insights", "Risk Assessment"]
     },
     technologies: ["React Native", "Node.js", "Python", "MongoDB", "AWS", "Machine Learning", "Banking APIs", "Chart.js", "Real-time Analytics"],

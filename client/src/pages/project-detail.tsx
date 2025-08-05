@@ -284,9 +284,7 @@ export default function ProjectDetail() {
             <ScrollAnimation>
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold mb-4">Behind the Scenes</h2>
-                <p className="text-xl text-secondary max-w-3xl mx-auto">
-                  From virtual pitches to media interviews and startup competitions - capturing key moments in the Financial Butler journey.
-                </p>
+                <p className="text-secondary max-w-3xl mx-auto text-[18px]">From virtual pitches to media interviews and startup competitions - capturing key moments in Financial Butler journey.</p>
               </div>
             </ScrollAnimation>
 
