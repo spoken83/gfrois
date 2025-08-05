@@ -312,7 +312,7 @@ export default function ProjectDetail() {
                   />
                   <div className="p-4">
                     <h4 className="font-semibold text-sm mb-2">Media Interview</h4>
-                    <p className="text-xs text-secondary">Discussing fintech innovation and Financial Butler's mission in media coverage</p>
+                    <p className="text-xs text-secondary">Discussing fintech innovation and Financial Butler's mission to the media</p>
                   </div>
                 </div>
               </ScrollAnimation>
