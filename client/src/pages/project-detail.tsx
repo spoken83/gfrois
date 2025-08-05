@@ -297,7 +297,7 @@ export default function ProjectDetail() {
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-4">
-                    <h4 className="font-semibold text-sm mb-2">Virtual Pitch Presentation</h4>
+                    <h4 className="font-semibold text-sm mb-2">Virtual Pitches</h4>
                     <p className="text-xs text-secondary">Presenting Financial Butler to investors during COVID-19 pivot to virtual pitching</p>
                   </div>
                 </div>
