@@ -6,6 +6,7 @@ import { ArrowRight, Calendar, User } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
 import SEOHead from "@/components/seo-head";
+import { trackEvent } from "@/lib/analytics";
 import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 import lockketLogo from "@assets/logo-colored_1754411804329.png";
 import thinkerlyImage from "@assets/generated_images/Thinkerly_math_learning_app_c425b595.png";
@@ -87,7 +88,10 @@ export default function Projects() {
                         ))}
                       </div>
                       
-                      <Link href={`/projects/${project.slug}`}>
+                      <Link 
+                        href={`/projects/${project.slug}`}
+                        onClick={() => trackEvent('view_case_study_projects_page', 'project_engagement', project.title)}
+                      >
                         <Button className="inline-flex items-center bg-primary hover:bg-blue-700 text-white">
                           View Case Study <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>

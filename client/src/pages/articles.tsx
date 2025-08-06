@@ -8,6 +8,7 @@ import { ArrowRight, Clock, Search } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
 import SEOHead from "@/components/seo-head";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Articles() {
   const [searchTerm, setSearchTerm] = useState("");

@@ -8,6 +8,7 @@ import ScrollAnimation from "./scroll-animation";
 import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 import lockketLogo from "@assets/logo-colored_1754411804329.png";
 import thinkerlyImage from "@assets/generated_images/Thinkerly_math_learning_app_c425b595.png";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ProjectsSection() {
   return (
@@ -53,7 +54,10 @@ export default function ProjectsSection() {
                         </Badge>
                       ))}
                     </div>
-                    <Link href={`/projects/${project.slug}`}>
+                    <Link 
+                      href={`/projects/${project.slug}`}
+                      onClick={() => trackEvent('view_case_study', 'project_engagement', project.title)}
+                    >
                       <Button variant="ghost" className="inline-flex items-center text-primary font-medium hover:text-blue-700 p-0">
                         View Case Study <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
@@ -67,7 +71,10 @@ export default function ProjectsSection() {
 
         <ScrollAnimation>
           <div className="text-center mt-12">
-            <Link href="/projects">
+            <Link 
+              href="/projects"
+              onClick={() => trackEvent('view_all_projects', 'navigation', 'homepage_projects_section')}
+            >
               <Button className="bg-primary text-white px-8 py-3 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-200">
                 View All Projects
               </Button>

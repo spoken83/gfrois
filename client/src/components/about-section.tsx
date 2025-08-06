@@ -2,6 +2,7 @@ import ScrollAnimation from "./scroll-animation";
 import sketchImage from "@assets/me-sketch-2_1754250571514.jpeg";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 export default function AboutSection() {
   return (
@@ -34,7 +35,11 @@ export default function AboutSection() {
               </div>
               
               <div className="mt-8">
-                <Link href="/about" className="text-primary hover:text-blue-700 font-medium inline-flex items-center">
+                <Link 
+                  href="/about" 
+                  className="text-primary hover:text-blue-700 font-medium inline-flex items-center"
+                  onClick={() => trackEvent('learn_more_about_me', 'navigation', 'homepage_about_section')}
+                >
                   Learn more about me <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </div>

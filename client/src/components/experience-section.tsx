@@ -4,6 +4,7 @@ import { experiences } from "@/data/experience";
 import { TrendingUp, Users, DollarSign, Trophy, Globe, BarChart3, Network, Target, ArrowRight } from "lucide-react";
 import ScrollAnimation from "./scroll-animation";
 import { Link } from "wouter";
+import { trackEvent } from "@/lib/analytics";
 
 const iconMap = {
   "TrendingUp": TrendingUp,
@@ -22,7 +23,12 @@ export default function ExperienceSection() {
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Where I've Worked</h2>
+            <h2 
+              className="text-4xl font-bold mb-4" 
+              onClick={() => trackEvent('where_ive_worked_viewed', 'section_view', 'homepage_experience_section')}
+            >
+              Where I've Worked
+            </h2>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
               A journey through innovative companies, from enterprise software to fintech startups, across multiple markets and stages of growth.
             </p>
@@ -78,7 +84,11 @@ export default function ExperienceSection() {
         </div>
         
         <div className="text-center mt-12">
-          <Link href="/experience" className="text-primary hover:text-blue-700 font-medium inline-flex items-center">
+          <Link 
+            href="/experience" 
+            className="text-primary hover:text-blue-700 font-medium inline-flex items-center"
+            onClick={() => trackEvent('view_detailed_experience', 'navigation', 'homepage_experience_section')}
+          >
             View detailed experience <ArrowRight className="ml-1 h-4 w-4" />
           </Link>
         </div>
