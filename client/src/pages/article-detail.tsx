@@ -150,9 +150,22 @@ export default function ArticleDetail() {
               I'd love to hear your thoughts and continue the conversation.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href={`mailto:gordon.matthew@gmail.com?subject=Re: ${article.title}`}>
+              <a 
+                href="https://www.linkedin.com/in/gordonfrois/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <Button className="bg-primary text-white hover:bg-blue-700">
-                  Share Your Thoughts
+                  Connect on LinkedIn
+                </Button>
+              </a>
+              <a 
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+                  Share Article
                 </Button>
               </a>
               <Link href="/articles">
