@@ -6,6 +6,15 @@ import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
 
+// Function to render markdown formatting
+function renderMarkdown(text: string) {
+  // Convert **bold** to <strong>
+  let formatted = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  // Convert *italic* to <em>
+  formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  return formatted;
+}
+
 export default function ArticleDetail() {
   const [, params] = useRoute("/articles/:slug");
   const article = params?.slug ? getArticleBySlug(params.slug) : null;
@@ -96,14 +105,16 @@ export default function ArticleDetail() {
                   return (
                     <ul key={index} className="list-disc list-inside space-y-2 mb-6 text-secondary">
                       {listItems.map((item, itemIndex) => (
-                        <li key={itemIndex}>{item.replace('- ', '')}</li>
+                        <li key={itemIndex} 
+                            dangerouslySetInnerHTML={{ __html: renderMarkdown(item.replace('- ', '')) }}>
+                        </li>
                       ))}
                     </ul>
                   );
                 } else if (paragraph.trim() !== '') {
                   return (
-                    <p key={index} className="mb-6 text-secondary leading-relaxed">
-                      {paragraph}
+                    <p key={index} className="mb-6 text-secondary leading-relaxed"
+                       dangerouslySetInnerHTML={{ __html: renderMarkdown(paragraph) }}>
                     </p>
                   );
                 }
