@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
+import { trackEvent } from "@/lib/analytics";
 
 // Function to render markdown formatting
 function renderMarkdown(text: string) {
@@ -154,6 +155,7 @@ export default function ArticleDetail() {
                 href="https://www.linkedin.com/in/gordonfrois/" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('linkedin_connect', 'engagement', article.title)}
               >
                 <Button className="bg-primary text-white hover:bg-blue-700">
                   Connect on LinkedIn
@@ -163,6 +165,7 @@ export default function ArticleDetail() {
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('article_share', 'engagement', article.title)}
               >
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
                   Share Article
