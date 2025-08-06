@@ -172,8 +172,8 @@ The role of Product isn't dying.
 It's evolving.
 And it's evolving fast.`,
     category: "Product Strategy",
-    publishedAt: "Jan 6, 2025",
-    readTime: "8 min read",
+    publishedAt: "Aug 6, 2025",
+    readTime: "7 min read",
     slug: "ai-enabled-pm",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
     tags: ["Product Management", "AI", "Strategy", "Leadership"]
