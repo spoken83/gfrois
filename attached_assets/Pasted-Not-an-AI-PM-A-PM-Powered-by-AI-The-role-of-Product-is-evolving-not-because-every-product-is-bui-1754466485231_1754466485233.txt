@@ -1,0 +1,157 @@
+Not an AI PM. A PM Powered by AI.
+The role of Product is evolving — not because every product is built with AI, but because every Product Manager can now build smarter with AI.
+
+This shift isn’t about becoming an “AI PM.”
+It’s about being a PM powered by AI — and when done right, it changes everything.
+
+We’re entering a new era where AI doesn't just speed things up.
+It amplifies product sense, accelerates decision-making, and raises the bar for what great product management looks like.
+
+Here’s what that looks like in practice — and how I’m applying it in my own work:
+
+🔍 Research is no longer passive. It’s live, sharp, and continuous.
+Traditionally, research was something we scheduled: interviews, survey cycles, competitor reviews. Valuable, but often slow and stale.
+
+Now, with AI in the loop, research becomes something you can run every day.
+
+I use ChatGPT to break down unfamiliar domains, quickly ramp up on new topics, or explore edge-case use scenarios. It’s like having a research assistant that never tires.
+
+Grok helps me track real-time market sentiment — what users are actually saying, asking, and complaining about in the wild.
+
+Claude by Anthropic is my go-to for summarising long documents and support logs, clustering feedback, or identifying themes across large qualitative datasets.
+
+What used to take weeks now takes hours.
+But more importantly, I’m closer to my customers and market than ever before.
+
+✍️ Writing user stories is now a collaborative act — with AI as your challenger.
+I no longer write user stories in isolation. I write them with a copilot.
+
+Here’s how: I’ll draft a story or an epic, then prompt ChatGPT with things like:
+
+“What edge cases am I missing?”
+“Does this acceptance criteria hold up?”
+“Challenge the assumptions behind this flow.”
+
+The point isn’t to outsource the thinking — it’s to pressure-test it.
+
+The “so that…” has never been more important. If the outcome isn’t clear, AI will expose the vagueness. If the job-to-be-done isn’t sharp, the story won’t hold.
+
+The result?
+Tighter stories. Stronger logic. Clearer intentions.
+And more aligned conversations with stakeholders and engineers.
+
+🗺️ Roadmaps are becoming dynamic, signal-driven systems.
+Roadmaps used to be planning documents. Now they’re feedback systems.
+
+With AI tools giving me faster research, earlier prototypes, and sharper signals, I no longer plan in rigid quarters. I plan in learning loops.
+
+I focus on:
+
+Capabilities, not features.
+
+Signals, not assumptions.
+
+Jobs-to-be-done, not just timelines.
+
+AI helps simulate flows, map outcomes, and identify blockers early — all of which informs what’s truly needed now, and what can wait.
+
+Roadmaps are no longer a wishlist.
+They’re living systems grounded in real user behaviour, market signals, and business impact.
+
+⚡ Prototyping happens faster — and validation comes earlier.
+We often talk about “failing fast.” But what if you could validate fast instead?
+
+I use Replit to quickly vibe-code journeys and build rough flows that users can interact with — sometimes in a matter of hours.
+
+It’s not about fidelity. It’s about speed to feedback.
+
+Instead of waiting 2–3 sprints to see if a feature resonates, I can test a flow within the same week.
+And if users struggle or disengage, I know it’s not worth building yet.
+
+That changes everything — from how I define MVPs, to how I prioritize backlog items, to how I communicate product direction internally.
+
+When you get signal early, you reduce waste later.
+
+📊 Strategy sharpens with real-time data and feedback.
+One of the biggest unlocks of AI is how it changes the tempo of product strategy.
+
+Data dashboards become promptable.
+
+Cohort analysis happens in seconds.
+
+Forecast models are no longer spreadsheet-only territory.
+
+This means you’re no longer waiting for an analyst or BI team to weigh in.
+You can move from question to insight — on your own — and in minutes.
+
+It leads to more confident decisions.
+Faster iterations.
+And better conversations with stakeholders who now expect product to lead, not just respond.
+
+AI doesn’t replace strategic thinking — it clears the path for it.
+
+🤝 Product and Engineering are overlapping more than ever.
+The days of handing off tickets and hoping for the best are behind us.
+
+PMs today are scripting, prototyping, automating, and — in many cases — even fine-tuning small models themselves.
+
+I’ve been building quick internal tools to test flows or data ideas on my own.
+Not because I have to. But because I can — and it helps me collaborate better with engineers.
+
+When you speak their language, understand technical tradeoffs, and test your ideas without waiting on a sprint,
+you unlock a new layer of respect and velocity.
+
+The best PMs aren’t just storytellers or strategists.
+They’re builders too.
+
+🧠 Better insights, higher ceilings.
+From clustering behaviours to generating hypotheses, AI helps raise the ceiling of what a single PM can handle.
+
+You still need taste. You still need sense.
+But you also now have scale.
+
+You can:
+
+Connect more dots.
+
+Run more simulations.
+
+Build stronger narratives from messier data.
+
+The craft is still yours.
+But the surface area you can cover just multiplied.
+
+🚨 But AI is not a silver bullet.
+There are real pitfalls if you’re not careful.
+
+1. Shiny features ≠ real user needs
+AI makes it dangerously easy to generate cool ideas.
+But “easy” doesn’t mean valuable.
+You still need to anchor everything to real problems and real users. That hasn’t changed.
+
+2. Early signals ≠ final truth
+A vibe-coded prototype flops — does that mean the idea is bad? Or just not framed right yet?
+Too many PMs will kill good ideas too early.
+Judgement still matters. Pattern recognition still matters.
+Product sense is still what separates noise from insight.
+
+✅ The truth?
+AI won’t replace Product Managers.
+But it will absolutely expose them.
+
+It will reveal who relies on fluff — and who’s got real product chops.
+It will show who’s guessing — and who’s validating.
+It will separate the good from the great.
+
+Because the best PMs won’t be replaced by AI.
+They’ll be replaced by a better PM using AI.
+
+The role of Product isn’t dying.
+It’s evolving.
+And it’s evolving fast.
+
+🔗 Want to share this?
+I’ve published the full piece here: [gordonfrois.com/articles/ai-enabled-pm]
+If you're a PM navigating this shift — I’d love to hear how you're using AI in your day-to-day.
+
+#product #ai #productmanagement #pmstack #buildbetter
