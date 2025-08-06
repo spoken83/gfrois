@@ -20,7 +20,7 @@ export const articles: Article[] = [
 
 The role of Product is evolving — not because every product is built with AI, but because every Product Manager can now build smarter with AI.
 
-This shift isn't about becoming an "AI PM."
+This shift isn't about becoming an *"AI PM."*
 It's about being a PM powered by AI — and when done right, it changes everything.
 
 We're entering a new era where AI doesn't just speed things up.
@@ -34,11 +34,11 @@ Traditionally, research was something we scheduled: interviews, survey cycles, c
 
 Now, with AI in the loop, research becomes something you can run every day.
 
-I use ChatGPT to break down unfamiliar domains, quickly ramp up on new topics, or explore edge-case use scenarios. It's like having a research assistant that never tires.
+I use **ChatGPT** to break down unfamiliar domains, quickly ramp up on new topics, or explore edge-case use scenarios. It's like having a research assistant that never tires.
 
-Grok helps me track real-time market sentiment — what users are actually saying, asking, and complaining about in the wild.
+**Grok** helps me track real-time market sentiment — what users are actually saying, asking, and complaining about in the wild.
 
-Claude by Anthropic is my go-to for summarising long documents and support logs, clustering feedback, or identifying themes across large qualitative datasets.
+**Claude** by Anthropic is my go-to for summarising long documents and support logs, clustering feedback, or identifying themes across large qualitative datasets.
 
 What used to take weeks now takes hours.
 But more importantly, I'm closer to my customers and market than ever before.
@@ -47,15 +47,15 @@ But more importantly, I'm closer to my customers and market than ever before.
 
 I no longer write user stories in isolation. I write them with a copilot.
 
-Here's how: I'll draft a story or an epic, then prompt ChatGPT with things like:
+Here's how: I'll draft a story or an epic, then prompt **ChatGPT** with things like:
 
-"What edge cases am I missing?"
-"Does this acceptance criteria hold up?"
-"Challenge the assumptions behind this flow."
+*"What edge cases am I missing?"*
+*"Does this acceptance criteria hold up?"*
+*"Challenge the assumptions behind this flow."*
 
 The point isn't to outsource the thinking — it's to pressure-test it.
 
-The "so that…" has never been more important. If the outcome isn't clear, AI will expose the vagueness. If the job-to-be-done isn't sharp, the story won't hold.
+The *"so that…"* has never been more important. If the outcome isn't clear, AI will expose the vagueness. If the job-to-be-done isn't sharp, the story won't hold.
 
 The result?
 Tighter stories. Stronger logic. Clearer intentions.
@@ -80,9 +80,9 @@ They're living systems grounded in real user behaviour, market signals, and busi
 
 ## Prototyping happens faster — and validation comes earlier.
 
-We often talk about "failing fast." But what if you could validate fast instead?
+We often talk about *"failing fast."* But what if you could validate fast instead?
 
-I use Replit to quickly vibe-code journeys and build rough flows that users can interact with — sometimes in a matter of hours.
+I use **Replit** to quickly vibe-code journeys and build rough flows that users can interact with — sometimes in a matter of hours.
 
 It's not about fidelity. It's about speed to feedback.
 
@@ -147,7 +147,7 @@ There are real pitfalls if you're not careful.
 
 **1. Shiny features ≠ real user needs**
 AI makes it dangerously easy to generate cool ideas.
-But "easy" doesn't mean valuable.
+But *"easy"* doesn't mean valuable.
 You still need to anchor everything to real problems and real users. That hasn't changed.
 
 **2. Early signals ≠ final truth**
