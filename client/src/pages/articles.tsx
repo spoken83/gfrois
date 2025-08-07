@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { articles } from "@/data/articles";
+import { getVisibleArticles } from "@/data/articles";
 import { ArrowRight, Clock, Search } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
@@ -14,6 +14,7 @@ export default function Articles() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
+  const articles = getVisibleArticles();
   const categories = Array.from(new Set(articles.map(article => article.category)));
 
   const filteredArticles = articles.filter(article => {
@@ -118,7 +119,11 @@ export default function Articles() {
                         </div>
                         
                         <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors flex-grow">
-                          <Link href={`/articles/${article.slug}`} className="hover:underline">
+                          <Link 
+                            href={`/articles/${article.slug}`} 
+                            className="hover:underline"
+                            onClick={() => trackEvent('article_click_articles_page', 'article_engagement', article.title)}
+                          >
                             {article.title}
                           </Link>
                         </h3>
@@ -131,9 +136,18 @@ export default function Articles() {
                               {tag}
                             </Badge>
                           ))}
+                          {/* Development visibility indicator */}
+                          {import.meta.env.DEV && article.visibility !== 'public' && (
+                            <Badge variant="destructive" className="text-xs">
+                              {article.visibility === 'preview' ? 'Preview Only' : 'Draft'}
+                            </Badge>
+                          )}
                         </div>
                         
-                        <Link href={`/articles/${article.slug}`}>
+                        <Link 
+                          href={`/articles/${article.slug}`}
+                          onClick={() => trackEvent('read_more_articles_page', 'article_engagement', article.title)}
+                        >
                           <Button variant="ghost" className="inline-flex items-center text-primary font-medium hover:text-blue-700 p-0">
                             Read More <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>

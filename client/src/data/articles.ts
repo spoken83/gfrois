@@ -9,6 +9,7 @@ export interface Article {
   slug: string;
   image: string;
   tags: string[];
+  visibility: 'public' | 'preview' | 'draft'; // public: visible everywhere, preview: visible only in dev/preview, draft: visible only in dev
 }
 
 export const articles: Article[] = [
@@ -176,7 +177,8 @@ And it's evolving fast.`,
     readTime: "7 min read",
     slug: "ai-enabled-pm",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
-    tags: ["Product Management", "AI", "Strategy", "Leadership"]
+    tags: ["Product Management", "AI", "Strategy", "Leadership"],
+    visibility: "public"
   },
   {
     id: "product-led-growth-southeast-asia",
@@ -222,7 +224,8 @@ The companies that will succeed are those that can maintain the efficiency and s
     readTime: "8 min read",
     slug: "product-led-growth-southeast-asia",
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800",
-    tags: ["Product Strategy", "PLG", "APAC", "Growth"]
+    tags: ["Product Strategy", "PLG", "APAC", "Growth"],
+    visibility: "preview"
   },
   {
     id: "building-distributed-teams",
@@ -276,7 +279,8 @@ As remote and distributed work becomes increasingly common, the organizations th
     readTime: "6 min read",
     slug: "building-distributed-teams",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800",
-    tags: ["Leadership", "Remote Teams", "Management", "Culture"]
+    tags: ["Leadership", "Remote Teams", "Management", "Culture"],
+    visibility: "draft"
   },
   {
     id: "financial-butler-journey",
@@ -391,10 +395,30 @@ The fintech space is challenging but full of opportunities for those willing to 
     readTime: "12 min read",
     slug: "financial-butler-journey",
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800",
-    tags: ["Entrepreneurship", "FinTech", "Startup", "Lessons Learned"]
+    tags: ["Entrepreneurship", "FinTech", "Startup", "Lessons Learned"],
+    visibility: "draft"
   }
 ];
 
+// Utility function to filter articles based on environment
+export const getVisibleArticles = (): Article[] => {
+  const isDevelopment = import.meta.env.DEV;
+  
+  return articles.filter(article => {
+    switch (article.visibility) {
+      case 'public':
+        return true; // Always visible
+      case 'preview':
+        return isDevelopment; // Only visible in development/preview
+      case 'draft':
+        return isDevelopment; // Only visible in development
+      default:
+        return true;
+    }
+  });
+};
+
 export const getArticleBySlug = (slug: string): Article | undefined => {
-  return articles.find(article => article.slug === slug);
+  const visibleArticles = getVisibleArticles();
+  return visibleArticles.find(article => article.slug === slug);
 };

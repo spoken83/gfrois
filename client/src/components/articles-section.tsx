@@ -1,13 +1,15 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { articles } from "@/data/articles";
+import { getVisibleArticles } from "@/data/articles";
 import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "./scroll-animation";
 import { trackEvent } from "@/lib/analytics";
 
 export default function ArticlesSection() {
+  const articles = getVisibleArticles();
+  
   return (
     <section id="articles" className="py-20 bg-neutral-bg">
       <div className="max-w-6xl mx-auto px-6">
@@ -44,6 +46,19 @@ export default function ArticlesSection() {
                     </Link>
                   </h3>
                   <p className="text-secondary mb-4 flex-grow">{article.excerpt}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {article.tags.map((tag) => (
+                      <Badge key={tag} className="bg-green-100 text-green-700 hover:bg-green-200 text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
+                    {/* Development visibility indicator */}
+                    {import.meta.env.DEV && article.visibility !== 'public' && (
+                      <Badge variant="destructive" className="text-xs">
+                        {article.visibility === 'preview' ? 'Preview Only' : 'Draft'}
+                      </Badge>
+                    )}
+                  </div>
                   <Link 
                     href={`/articles/${article.slug}`}
                     onClick={() => trackEvent('read_more_article', 'article_engagement', article.title)}
