@@ -397,6 +397,63 @@ The fintech space is challenging but full of opportunities for those willing to 
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800",
     tags: ["Entrepreneurship", "FinTech", "Startup", "Lessons Learned"],
     visibility: "draft"
+  },
+  {
+    id: "business-strategy-lessons-hard-way",
+    title: "3 Business Strategy Lessons I Learnt the Hard Way",
+    excerpt: "Strategy looks simple in slides, but real lessons come from lived experience. Here are 3 business strategy lessons I had to learn the hard way.",
+    content: `3 Business Strategy Lessons I Learnt the Hard Way
+
+Strategy looks simple on slides. In reality, it's messy, political, and full of trade-offs.
+
+Over the last 15+ years, I've built products and ventures across fintech, insurtech, and edtech. Along the way, I didn't just learn frameworks — I learnt the kind of strategy lessons you only get by living through them.
+
+Here are three that stuck with me.
+
+## 1. Good revenue > bad revenue
+
+When I took over a B2C-InsureTech venture, **SNACK**, I inherited a model that looked successful on paper. GMV (or GWP in the insurance world) was growing fast, charts looked great in board decks, and the team had momentum.
+
+But underneath, the growth was fuelled by vanity metrics and subsidized revenue. It wasn't sustainable. Users weren't sticking, costs were ballooning, and the economics didn't make sense.
+
+Turning that around wasn't easy. It meant challenging the *"success story"* others wanted to tell, making unpopular decisions, and pushing for a model that created real user value.
+
+**Takeaway:** sustainable revenue compounds. Vanity revenue collapses.
+
+## 2. Foundations before features
+
+There's always pressure to scale faster. At another start-up, we were adding features rapidly, sometimes selling them before operations were even ready to deliver.
+
+Chasing growth, it looked like we were sprinting ahead. However on the inside, our processes were buckling. Manual operations couldn't keep pace, mistakes were creeping in, and the team was stretched thin.
+
+I had to make the unpopular call to pause new features, rally the teams, and fix the foundations first. It slowed us down in the short term, but gave us the stability to grow again without breaking.
+
+**Takeaway:** true scale doesn't come from stacking features. It comes from resilient infrastructure that can handle growth.
+
+## 3. Don't ignore the elephants
+
+Every venture has elephants in the room — regulatory hurdles, brittle processes, rising costs, or broken revenue models. Spotting them is easy. Getting everyone to admit they're there is the hard part.
+
+I faced this several times. It's uncomfortable to call out the big problems when everyone else wants to keep pushing forward. But I learnt the cost of ignoring them is far greater than the cost of confronting them.
+
+The toughest decisions were the ones that weren't popular — but those were the decisions that actually moved us forward.
+
+**Takeaway:** elephants don't shrink when ignored. They only get bigger.
+
+## Closing thoughts
+
+These weren't neat lessons from a textbook, they were hard-won, sometimes painful, but ultimately transformative.
+
+They've shaped how I approach every new venture: push for real revenue, fix your foundations, and never shy away from the elephants in the room.
+
+I'd love to hear: what's the hardest business lesson you've had to push through?`,
+    category: "Strategy",
+    publishedAt: "Aug 19, 2025",
+    readTime: "4 min read",
+    slug: "business-strategy-lessons-hard-way",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+    tags: ["Strategy", "Entrepreneurship", "Leadership", "Lessons Learned"],
+    visibility: "public"
   }
 ];
 
