@@ -451,7 +451,7 @@ I'd love to hear: what's the hardest business lesson you've had to push through?
     publishedAt: "Aug 19, 2025",
     readTime: "4 min read",
     slug: "business-strategy-lessons-hard-way",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800",
     tags: ["Strategy", "Entrepreneurship", "Leadership", "Lessons Learned"],
     visibility: "public"
   }
