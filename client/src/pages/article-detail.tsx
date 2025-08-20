@@ -6,6 +6,7 @@ import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
 import { trackEvent } from "@/lib/analytics";
+import stratLessonsImage from "@assets/strat-lessons-learnt_1755661305809.png";
 
 // Function to render markdown formatting
 function renderMarkdown(text: string) {
@@ -75,7 +76,7 @@ export default function ArticleDetail() {
         <div className="max-w-4xl mx-auto px-6">
           <ScrollAnimation>
             <img 
-              src={article.image} 
+              src={article.slug === 'business-strategy-lessons-hard-way' ? stratLessonsImage : article.image} 
               alt={article.title} 
               className="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg" 
             />

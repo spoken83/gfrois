@@ -9,6 +9,7 @@ import { Link } from "wouter";
 import ScrollAnimation from "@/components/scroll-animation";
 import SEOHead from "@/components/seo-head";
 import { trackEvent } from "@/lib/analytics";
+import stratLessonsImage from "@assets/strat-lessons-learnt_1755661305809.png";
 
 export default function Articles() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -101,7 +102,7 @@ export default function Articles() {
                     <CardContent className="p-0 flex flex-col h-full">
                       <div className="relative">
                         <img 
-                          src={article.image} 
+                          src={article.slug === 'business-strategy-lessons-hard-way' ? stratLessonsImage : article.image} 
                           alt={article.title} 
                           className="w-full h-48 object-cover rounded-t-lg" 
                         />

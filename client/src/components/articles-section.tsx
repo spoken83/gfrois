@@ -6,6 +6,7 @@ import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "./scroll-animation";
 import { trackEvent } from "@/lib/analytics";
+import stratLessonsImage from "@assets/strat-lessons-learnt_1755661305809.png";
 
 export default function ArticlesSection() {
   const articles = getVisibleArticles();
@@ -26,47 +27,56 @@ export default function ArticlesSection() {
           {articles.map((article, index) => (
             <ScrollAnimation key={article.id} delay={index * 0.1}>
               <Card className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full group">
-                <CardContent className="p-6 flex flex-col h-full">
-                  <div className="mb-4">
-                    <Badge variant="secondary" className="mr-3">
-                      {article.category}
-                    </Badge>
-                    <span className="text-secondary text-sm flex items-center mt-2">
+                <CardContent className="p-0 flex flex-col h-full">
+                  <div className="relative">
+                    <img 
+                      src={article.slug === 'business-strategy-lessons-hard-way' ? stratLessonsImage : article.image} 
+                      alt={article.title} 
+                      className="w-full h-48 object-cover rounded-t-lg" 
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge variant="secondary">
+                        {article.category}
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex items-center text-sm text-secondary mb-3">
                       <Clock className="h-3 w-3 mr-1" />
                       {article.publishedAt} • {article.readTime}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors flex-grow">
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors flex-grow">
+                      <Link 
+                        href={`/articles/${article.slug}`} 
+                        className="hover:underline"
+                        onClick={() => trackEvent('article_click', 'article_engagement', article.title)}
+                      >
+                        {article.title}
+                      </Link>
+                    </h3>
+                    <p className="text-secondary mb-4 flex-grow">{article.excerpt}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {article.tags.map((tag) => (
+                        <Badge key={tag} className="bg-green-100 text-green-700 hover:bg-green-200 text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                      {/* Development visibility indicator */}
+                      {import.meta.env.DEV && article.visibility !== 'public' && (
+                        <Badge variant="destructive" className="text-xs">
+                          {article.visibility === 'preview' ? 'Preview Only' : 'Draft'}
+                        </Badge>
+                      )}
+                    </div>
                     <Link 
-                      href={`/articles/${article.slug}`} 
-                      className="hover:underline"
-                      onClick={() => trackEvent('article_click', 'article_engagement', article.title)}
+                      href={`/articles/${article.slug}`}
+                      onClick={() => trackEvent('read_more_article', 'article_engagement', article.title)}
                     >
-                      {article.title}
+                      <Button variant="ghost" className="inline-flex items-center text-primary font-medium hover:text-blue-700 p-0">
+                        Read More <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
                     </Link>
-                  </h3>
-                  <p className="text-secondary mb-4 flex-grow">{article.excerpt}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {article.tags.map((tag) => (
-                      <Badge key={tag} className="bg-green-100 text-green-700 hover:bg-green-200 text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                    {/* Development visibility indicator */}
-                    {import.meta.env.DEV && article.visibility !== 'public' && (
-                      <Badge variant="destructive" className="text-xs">
-                        {article.visibility === 'preview' ? 'Preview Only' : 'Draft'}
-                      </Badge>
-                    )}
                   </div>
-                  <Link 
-                    href={`/articles/${article.slug}`}
-                    onClick={() => trackEvent('read_more_article', 'article_engagement', article.title)}
-                  >
-                    <Button variant="ghost" className="inline-flex items-center text-primary font-medium hover:text-blue-700 p-0">
-                      Read More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
                 </CardContent>
               </Card>
             </ScrollAnimation>
