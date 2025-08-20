@@ -9,7 +9,10 @@ import SEOHead from "@/components/seo-head";
 export default function Home() {
   return (
     <>
-      <SEOHead />
+      <SEOHead 
+        title="Gordon Frois | Senior Product Leader & Ex-Founder"
+        description="Product Leader with 15+ years scaling fintech, SaaS, and consumer platforms used by millions. Ex-founder turned product executive, specializing in 0→1 innovation and building high-performing teams. Expert in AI-powered products, embedded finance, and driving measurable business impact through strategic product decisions."
+      />
       <main>
       <HeroSection />
       <AboutSection />

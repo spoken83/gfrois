@@ -10,9 +10,9 @@ interface SEOHeadProps {
 }
 
 export default function SEOHead({
-  title = "Gordon Frois - Product Leader & Ex-Founder | 15+ Years Experience",
-  description = "Product leader and ex-founder with 15+ years in fintech, SaaS, APIs, B2B, B2C and consumer tech. Building ventures with purpose across embedded finance, education, and digital experiences.",
-  keywords = "product leader, product manager, ex-founder, startup founder, SaaS, B2B, B2C, fintech, insurtech, product strategy, team leadership, Gordon Frois",
+  title = "Gordon Frois - Product Leader Transforming Ideas Into Scalable Products",
+  description = "Senior Product Leader with 15+ years building fintech, SaaS, and consumer products that millions use daily. From startup founder to leading teams at scale - I turn complex problems into elegant solutions that drive real business impact.",
+  keywords = "product leader, product manager, ex-founder, startup founder, SaaS, B2B, B2C, fintech, insurtech, product strategy, team leadership, Gordon Frois, product management, scale, growth",
   canonicalUrl = "https://gordonfrois.com",
   ogImage = "https://gordonfrois.com/og-image.jpg",
   ogType = "website"
@@ -55,13 +55,22 @@ export default function SEOHead({
     updateMetaTag('keywords', keywords);
     updateMetaTag('og:title', title, true);
     updateMetaTag('og:description', description, true);
+    updateMetaTag('og:site_name', 'Gordon Frois', true);
     updateMetaTag('og:url', canonicalUrl, true);
     updateMetaTag('og:image', ogImage, true);
     updateMetaTag('og:type', ogType, true);
+    updateMetaTag('twitter:card', 'summary_large_image', true);
     updateMetaTag('twitter:title', title, true);
     updateMetaTag('twitter:description', description, true);
     updateMetaTag('twitter:url', canonicalUrl, true);
     updateMetaTag('twitter:image', ogImage, true);
+    updateMetaTag('twitter:creator', '@gordonfrois', true);
+    
+    // LinkedIn specific optimizations
+    updateMetaTag('og:image:width', '1200', true);
+    updateMetaTag('og:image:height', '630', true);
+    updateMetaTag('article:author', 'Gordon Frois', true);
+    updateMetaTag('og:locale', 'en_US', true);
   }, [title, description, keywords, canonicalUrl, ogImage, ogType]);
 
   return null;
