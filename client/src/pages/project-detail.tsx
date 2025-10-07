@@ -406,6 +406,31 @@ export default function ProjectDetail() {
           </div>
         </section>
       )}
+      {/* Thinkerly Platform Link */}
+      {project.id === "thinkerly" && (
+        <section className="py-20 bg-neutral-bg">
+          <div className="max-w-6xl mx-auto px-6">
+            <ScrollAnimation>
+              <div className="text-center">
+                <h2 className="text-3xl font-bold mb-4">Experience Thinkerly</h2>
+                <p className="text-secondary max-w-3xl mx-auto text-[18px] mb-8">
+                  Explore our AI-powered math learning platform designed to help primary students master problem-solving through proven mathematical heuristics.
+                </p>
+                <a 
+                  href="https://thinkerly.app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center"
+                >
+                  <Button className="bg-primary text-white hover:bg-blue-700" data-testid="button-visit-platform">
+                    Visit Platform →
+                  </Button>
+                </a>
+              </div>
+            </ScrollAnimation>
+          </div>
+        </section>
+      )}
       {/* Options Monitor Screenshots */}
       {project.id === "options-monitor" && (
         <section className="py-20 bg-neutral-bg">
