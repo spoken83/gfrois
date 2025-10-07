@@ -11,6 +11,9 @@ import financialButlerLogo from "@assets/Financial-Butler_1754363007000.png";
 import lockketLogo from "@assets/logo-colored_1754411804329.png";
 import thinkerlyImage from "@assets/generated_images/Thinkerly_math_learning_app_c425b595.png";
 import optionsMonitorImage from "@assets/image_1759828033380.png";
+import optionsMonitorAnalysis from "@assets/image_1759828104474.png";
+import optionsMonitorSpread from "@assets/image_1759828142890.png";
+import optionsMonitorPositions from "@assets/image_1759828181681.png";
 import gordonPitchingOnline from "@assets/WIN_20200729_11_39_26_Pro_1754372487151.jpg";
 import gordonMediaInterview from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (2)_1754372504202.jpeg";
 import gordonConference1 from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (1)_1754372516417.jpeg";
@@ -400,6 +403,110 @@ export default function ProjectDetail() {
                 </div>
               </ScrollAnimation>
             </div>
+          </div>
+        </section>
+      )}
+      {/* Options Monitor Screenshots */}
+      {project.id === "options-monitor" && (
+        <section className="py-20 bg-neutral-bg">
+          <div className="max-w-6xl mx-auto px-6">
+            <ScrollAnimation>
+              <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold mb-4">Platform Features</h2>
+                <p className="text-secondary max-w-3xl mx-auto text-[18px]">
+                  Automated scanning, technical analysis, spread validation, and position tracking - all designed to streamline credit spread trading.
+                </p>
+                <div className="mt-6 flex justify-center gap-4 flex-wrap">
+                  <a 
+                    href="https://options.gordonfrois.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center"
+                  >
+                    <Button className="bg-primary text-white hover:bg-blue-700" data-testid="button-visit-platform">
+                      Visit Platform →
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </ScrollAnimation>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <ScrollAnimation delay={0.1}>
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                  <img 
+                    src={optionsMonitorImage} 
+                    alt="Options Monitor Scanner showing qualified setups and signals"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h4 className="font-semibold text-sm mb-2">Automated Scanner</h4>
+                    <p className="text-xs text-secondary">Real-time scanning of 15-20 tickers daily with multi-factor scoring and setup validation</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+
+              <ScrollAnimation delay={0.2}>
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                  <img 
+                    src={optionsMonitorAnalysis} 
+                    alt="Technical analysis showing RSI, StochRSI indicators and signal validation"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h4 className="font-semibold text-sm mb-2">Technical Analysis</h4>
+                    <p className="text-xs text-secondary">RSI, StochRSI indicators with PUT signal triggers and support/resistance levels</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+
+              <ScrollAnimation delay={0.3}>
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                  <img 
+                    src={optionsMonitorSpread} 
+                    alt="Spread analysis with risk-reward calculations and constraint validation"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h4 className="font-semibold text-sm mb-2">Spread Validation</h4>
+                    <p className="text-xs text-secondary">Comprehensive spread testing with risk-reward ratios and constraint checks</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+
+              <ScrollAnimation delay={0.4}>
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                  <img 
+                    src={optionsMonitorPositions} 
+                    alt="Position tracking showing open trades with P/L and DTE monitoring"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    <h4 className="font-semibold text-sm mb-2">Position Tracking</h4>
+                    <p className="text-xs text-secondary">Real-time P/L tracking, DTE monitoring, and position management dashboard</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+            </div>
+
+            <ScrollAnimation>
+              <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                <p className="text-sm text-secondary text-center">
+                  <span className="font-semibold text-text-primary">Learning & Strategy: </span>
+                  Trading strategies implemented in this platform are based on credit spread techniques learned from{" "}
+                  <a 
+                    href="https://optionswithdavis.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-blue-700 underline font-medium"
+                    data-testid="link-options-guru"
+                  >
+                    Options with Davis
+                  </a>
+                  , combined with years of options trading expertise from working at Murex.
+                </p>
+              </div>
+            </ScrollAnimation>
           </div>
         </section>
       )}
