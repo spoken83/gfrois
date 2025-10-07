@@ -10,6 +10,7 @@ import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 import financialButlerLogo from "@assets/Financial-Butler_1754363007000.png";
 import lockketLogo from "@assets/logo-colored_1754411804329.png";
 import thinkerlyImage from "@assets/generated_images/Thinkerly_math_learning_app_c425b595.png";
+import optionsMonitorImage from "@assets/image_1759828033380.png";
 import gordonPitchingOnline from "@assets/WIN_20200729_11_39_26_Pro_1754372487151.jpg";
 import gordonMediaInterview from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (2)_1754372504202.jpeg";
 import gordonConference1 from "@assets/WhatsApp Image 2020-11-14 at 16.46.02 (1)_1754372516417.jpeg";
@@ -110,6 +111,12 @@ export default function ProjectDetail() {
                 <img 
                   src={thinkerlyImage} 
                   alt="Thinkerly Math Learning Interface" 
+                  className="rounded-xl shadow-2xl w-full" 
+                />
+              ) : project.id === "options-monitor" ? (
+                <img 
+                  src={optionsMonitorImage} 
+                  alt="Options Monitor Scanner Interface" 
                   className="rounded-xl shadow-2xl w-full" 
                 />
               ) : (

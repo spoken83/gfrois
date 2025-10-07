@@ -10,6 +10,7 @@ import { trackEvent } from "@/lib/analytics";
 import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 import lockketLogo from "@assets/logo-colored_1754411804329.png";
 import thinkerlyImage from "@assets/generated_images/Thinkerly_math_learning_app_c425b595.png";
+import optionsMonitorImage from "@assets/image_1759828033380.png";
 
 export default function Projects() {
   return (
@@ -47,6 +48,7 @@ export default function Projects() {
                           project.id === "financial-butler" ? financialButlerCover :
                           project.id === "lockket" ? lockketLogo :
                           project.id === "thinkerly" ? thinkerlyImage :
+                          project.id === "options-monitor" ? optionsMonitorImage :
                           project.image
                         } 
                         alt={`${project.title} Interface`} 

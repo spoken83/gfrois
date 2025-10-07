@@ -11,7 +11,16 @@ Content positioning: Tone down "Entrepreneur" emphasis - use "Ex-Founder" instea
 
 ## Recent Changes (January 2025)
 
-### LinkedIn Sharing & SEO Optimization (Latest)
+### Options Monitor Project Addition (Latest)
+- **New Project Entry**: Added Options Monitor - automated credit spread scanner and trading assistant to portfolio
+- **Project Details**: Built in 3 days from idea to production, combining Murex options expertise with credit spread strategies
+- **Key Features**: Automated ticker analysis (15-20 daily), technical analysis (RSI, StochRSI), spread validation, Telegram alerts
+- **Business Impact**: Reduced trading time from hours to 2 hours (10pm-12am) via asynchronous scanning and strategic alerts
+- **Technical Implementation**: React/TypeScript frontend, Node.js backend, market data APIs, Telegram bot integration
+- **Current Status**: Active testing with demo account before transitioning to live trading
+- **Asset Integration**: Added screenshot (scanner interface) to all project display pages with conditional rendering
+
+### LinkedIn Sharing & SEO Optimization
 - **LinkedIn-Optimized Meta Tags**: Enhanced social sharing preview with compelling, professional descriptions specifically crafted for LinkedIn engagement
 - **Improved Page Titles**: Changed from generic "15+ years..." to action-oriented "Product Leader Transforming Ideas Into Scalable Products"
 - **Enhanced Descriptions**: Professional copy focusing on business impact, scale achievements, and measurable outcomes rather than just experience

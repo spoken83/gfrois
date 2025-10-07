@@ -123,6 +123,59 @@ export const projects: Project[] = [
     slug: "lockket"
   },
   {
+    id: "options-monitor",
+    title: "Options Monitor",
+    description: "Automated credit spread scanner and trading assistant - Built in 3 days to transform hours of manual ticker analysis into intelligent, automated setup detection with Telegram alerts.",
+    longDescription: "Options Monitor is a personal trading tool that combines years of options trading expertise from working at Murex with modern credit spread strategies. Built in just 3 days from idea to production, this platform automates the tedious process of analyzing 15-20 tickers daily, running asynchronous scans with intelligent setup detection, technical analysis, and risk validation. The system delivers actionable trade setups via Telegram alerts at strategic market times, reducing active trading time from hours to just 2 hours of focused analysis and execution.",
+    category: "Trading Technology",
+    tags: ["Personal Tool", "Options Trading", "Automation", "Credit Spreads", "Active"],
+    image: "@assets/image_1759828033380.png",
+    status: "active",
+    year: "2024-Present",
+    role: "Creator & Trader",
+    challenges: [
+      "Manual analysis of 15-20 tickers daily was extremely time-consuming and inefficient",
+      "Identifying optimal credit spread setups required complex technical analysis and risk calculations",
+      "Needed timely alerts aligned with market hours (daily digest, pre-market, market open)",
+      "Validating multiple spread combinations against strict risk/reward criteria manually was error-prone",
+      "Transitioning from options theory knowledge to practical credit spread trading execution"
+    ],
+    solutions: [
+      "Built automated scanner with technical analysis engine (RSI, StochRSI, support/resistance levels)",
+      "Implemented intelligent PUT spread setup validation with multi-factor scoring system",
+      "Created asynchronous scanning system with Telegram bot alerts at 6pm SGT (digest), 8pm (pre-market), 10pm (market open)",
+      "Developed comprehensive risk analysis testing multiple spread combinations with constraint validation",
+      "Integrated real-time position tracking with P/L calculations and DTE monitoring"
+    ],
+    currentExecution: [
+      "Live platform currently testing with demo trading account for validation phase",
+      "Automated daily scans across 15-20 tickers with qualified setup detection",
+      "Telegram integration delivering timely market alerts at strategic trading hours",
+      "Reduced active trading time from hours of manual analysis to 2 hours (10pm-12am) of focused execution",
+      "Platform ready for transition to live trading account after one-week testing period"
+    ],
+    techStack: {
+      frontend: ["React", "TypeScript", "Real-time UI", "Responsive Design"],
+      backend: ["Node.js", "Async Processing", "Market Data APIs", "Telegram Bot API"],
+      database: ["Position Tracking", "Scan History", "Alert Management"],
+      thirdPartyIntegrations: ["Telegram Bot", "Market Data Providers", "Options Pricing APIs"]
+    },
+    technologies: ["React", "TypeScript", "Node.js", "Technical Analysis Algorithms", "Telegram API", "Async Processing", "Options Pricing Models"],
+    learnings: [
+      "Rapid prototyping (3 days from idea to production) is possible when combining domain expertise with focused execution",
+      "Automation transforms trading from time-intensive manual analysis to strategic decision-making",
+      "Asynchronous processing and timely alerts enable efficient participation in time-sensitive markets",
+      "Systematic risk validation and scoring algorithms reduce emotional trading decisions"
+    ],
+    roadmap: [
+      "Transition to live trading account after successful demo validation period",
+      "Expand scanner to support additional options strategies beyond PUT credit spreads",
+      "Integrate machine learning for pattern recognition and setup prediction",
+      "Build comprehensive backtesting engine to validate strategies against historical data"
+    ],
+    slug: "options-monitor"
+  },
+  {
     id: "thinkerly",
     title: "Thinkerly.app",
     description: "AI-powered math learning platform for primary students using heuristics-based problem solving to build confident, PSLE-ready thinkers beyond traditional rote learning.",
