@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { projects } from "@/data/projects";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 import ScrollAnimation from "./scroll-animation";
 import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
@@ -10,6 +10,15 @@ import lockketLogo from "@assets/logo-colored_1754411804329.png";
 import thinkerlyImage from "@assets/generated_images/Thinkerly_math_learning_app_c425b595.png";
 import optionsMonitorImage from "@assets/image_1759828033380.png";
 import { trackEvent } from "@/lib/analytics";
+
+const getLiveUrl = (projectId: string): string | null => {
+  const urls: Record<string, string> = {
+    'thinkerly': 'https://thinkerly.app',
+    'options-monitor': 'https://options.gordonfrois.com',
+    'lockket': 'https://lockket.app'
+  };
+  return urls[projectId] || null;
+};
 
 export default function ProjectsSection() {
   return (
@@ -56,14 +65,29 @@ export default function ProjectsSection() {
                         </Badge>
                       ))}
                     </div>
-                    <Link 
-                      href={`/projects/${project.slug}`}
-                      onClick={() => trackEvent('view_case_study', 'project_engagement', project.title)}
-                    >
-                      <Button variant="ghost" className="inline-flex items-center text-primary font-medium hover:text-blue-700 p-0">
-                        View Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
+                    <div className="flex flex-wrap gap-4 items-center">
+                      <Link 
+                        href={`/projects/${project.slug}`}
+                        onClick={() => trackEvent('view_case_study', 'project_engagement', project.title)}
+                      >
+                        <Button variant="ghost" className="inline-flex items-center text-primary font-medium hover:text-blue-700 p-0" data-testid={`button-case-study-${project.slug}`}>
+                          View Case Study <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                      
+                      {getLiveUrl(project.id) && (
+                        <a 
+                          href={getLiveUrl(project.id)!} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          onClick={() => trackEvent('view_live_app_homepage', 'project_engagement', project.title)}
+                        >
+                          <Button variant="ghost" className="inline-flex items-center text-primary font-medium hover:text-blue-700 p-0" data-testid={`button-live-app-${project.slug}`}>
+                            View Live App <ExternalLink className="ml-2 h-4 w-4" />
+                          </Button>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
