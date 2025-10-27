@@ -136,6 +136,34 @@ export default function ProjectDetail() {
       {/* Project Details */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
+          {/* Problem to Solve - Thinkerly Only */}
+          {project.id === "thinkerly" && (
+            <ScrollAnimation>
+              <Card className="shadow-lg mb-12">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-semibold mb-6 flex items-center">
+                    <Target className="h-6 w-6 text-primary mr-3" />
+                    Problem to Solve
+                  </h3>
+                  <div className="grid md:grid-cols-1 gap-6">
+                    <div className="flex items-start">
+                      <span className="text-accent mr-3 mt-1 text-lg">•</span>
+                      <p className="text-secondary">Majority of students pass maths, few score AL1. The difference is the 10-20% of heuristic questions that stumble them</p>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="text-accent mr-3 mt-1 text-lg">•</span>
+                      <p className="text-secondary">Teachers have to spend most of the time focusing on the fundamentals, leaving students to practice themselves or go for multiple tuitions to get a leg up on the heuristics</p>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="text-accent mr-3 mt-1 text-lg">•</span>
+                      <p className="text-secondary">Heuristics, and more so critical thinking should be built consistently over time, understanding and application not through rote drilling</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollAnimation>
+          )}
+
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {/* Challenges */}
             <ScrollAnimation>
