@@ -141,10 +141,10 @@ export default function ProjectDetail() {
             <ScrollAnimation>
               <Card className="shadow-lg mb-12">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-semibold mb-6 flex items-center">
-                    <Target className="h-6 w-6 text-primary mr-3" />
-                    Problem to Solve
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <Target className="h-6 w-6 text-primary mr-2" />
+                    <h3 className="font-semibold">Problem to Solve</h3>
+                  </div>
                   <ul className="space-y-2 text-sm text-secondary">
                     <li className="flex items-start">
                       <span className="text-accent mr-2 mt-1">•</span>
