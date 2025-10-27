@@ -39,7 +39,7 @@ export const projects: Project[] = [
     tags: ["EdTech", "AI Learning", "Math Heuristics", "Singapore Curriculum", "Production Platform"],
     image: "https://images.unsplash.com/photo-1596496050827-8299e0220269?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
     status: "current",
-    year: "2024-Present",
+    year: "2025-Present",
     role: "Product Lead & Co-founder", 
     challenges: [
       "Mathematical Accuracy at Scale: Ensuring AI-generated questions maintain 100% mathematical correctness across diverse problem types and difficulty levels",
