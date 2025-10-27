@@ -137,7 +137,7 @@ export const projects: Project[] = [
     description:
       "Automated credit spread scanner and trading assistant - Built in 3 days to transform hours of manual ticker analysis into intelligent, automated setup detection with Telegram alerts.",
     longDescription:
-      "Options Monitor is a personal trading tool that combines years of options trading expertise from working at Murex with modern credit spread strategies. Built in just 3 days from idea to production, this platform automates the tedious process of analyzing 15-20 tickers daily, running asynchronous scans with intelligent setup detection, technical analysis, and risk validation. The system delivers actionable trade setups via Telegram alerts at strategic market times, reducing active trading time from hours to just 2 hours of focused analysis and execution.",
+      "Options Monitor is a personal trading utility that combines years of options trading expertise from working at Murex with modern credit spread strategies. Built in just 3 days from idea to production, this platform automates the tedious process of analyzing 15-20 tickers daily, running asynchronous scans with intelligent setup detection, technical analysis, and risk validation. The system delivers actionable trade setups via Telegram alerts at strategic market times, reducing active trading time from hours to just 2 hours of focused analysis and execution.",
     category: "Trading Technology",
     tags: [
       "Personal Tool",
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     ],
     image: "@assets/image_1759828033380.png",
     status: "current",
-    year: "2024-Present",
+    year: "2025-Present",
     role: "Creator & Trader",
     challenges: [
       "Manual analysis of 15-20 tickers daily was extremely time-consuming and inefficient",
