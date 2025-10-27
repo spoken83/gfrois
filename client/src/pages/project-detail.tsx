@@ -136,7 +136,7 @@ export default function ProjectDetail() {
       {/* Project Details */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             {/* Challenges */}
             <ScrollAnimation>
               <Card className="h-full">
