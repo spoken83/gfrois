@@ -171,7 +171,7 @@ export default function ProjectDetail() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <Target className="h-6 w-6 text-primary mr-2" />
-                    <h3 className="font-semibold">Challenges</h3>
+                    <h3 className="font-semibold">Product Challenges</h3>
                   </div>
                   <ul className="space-y-2 text-sm text-secondary">
                     {project.challenges.map((challenge, index) => (
