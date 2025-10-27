@@ -145,20 +145,20 @@ export default function ProjectDetail() {
                     <Target className="h-6 w-6 text-primary mr-3" />
                     Problem to Solve
                   </h3>
-                  <div className="grid md:grid-cols-1 gap-6">
-                    <div className="flex items-start">
-                      <span className="text-accent mr-3 mt-1 text-lg">•</span>
-                      <p className="text-secondary">Majority of students pass maths, few score AL1. The difference is the 10-20% of heuristic questions that stumble them</p>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-accent mr-3 mt-1 text-lg">•</span>
-                      <p className="text-secondary">Teachers have to spend most of the time focusing on the fundamentals, leaving students to practice themselves or go for multiple tuitions to get a leg up on the heuristics</p>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-accent mr-3 mt-1 text-lg">•</span>
-                      <p className="text-secondary">Heuristics, and more so critical thinking should be built consistently over time, understanding and application not through rote drilling</p>
-                    </div>
-                  </div>
+                  <ul className="space-y-2 text-sm text-secondary">
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">•</span>
+                      Majority of students pass maths, few score AL1. The difference is the 10-20% of heuristic questions that stumble them
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">•</span>
+                      Teachers have to spend most of the time focusing on the fundamentals, leaving students to practice themselves or go for multiple tuitions to get a leg up on the heuristics
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">•</span>
+                      Heuristics, and more so critical thinking should be built consistently over time, understanding and application not through rote drilling
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
             </ScrollAnimation>
