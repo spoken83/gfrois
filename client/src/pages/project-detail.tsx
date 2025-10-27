@@ -9,7 +9,7 @@ import ScrollAnimation from "@/components/scroll-animation";
 import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 import financialButlerLogo from "@assets/Financial-Butler_1754363007000.png";
 import lockketLogo from "@assets/logo-colored_1754411804329.png";
-import thinkerlyImage from "@assets/generated_images/Thinkerly_math_learning_app_c425b595.png";
+import thinkerlyImage from "@assets/featured-web-article-thinkerly-updated_1761581792700.png";
 import optionsMonitorImage from "@assets/image_1759828033380.png";
 import optionsMonitorAnalysis from "@assets/image_1759828104474.png";
 import optionsMonitorSpread from "@assets/image_1759828142890.png";
