@@ -33,45 +33,50 @@ export const projects: Project[] = [
   {
     id: "thinkerly",
     title: "Thinkerly.app",
-    description: "AI-powered math learning platform for primary students using heuristics-based problem solving to build confident, PSLE-ready thinkers beyond traditional rote learning.",
-    longDescription: "Thinkerly is a comprehensive math heuristics assessment and learning platform designed for primary school students. The platform goes beyond traditional drilling methods by teaching students structured problem-solving approaches through proven mathematical heuristics, helping them become confident and strategic thinkers ready for PSLE and beyond.",
+    description: "Production-ready AI-powered math assessment platform for Singapore primary students (P1-6) combining curriculum mastery tracking with mathematical heuristics proficiency.",
+    longDescription: "Thinkerly is a production-ready AI-powered math assessment platform for Singapore primary school students (P1-6). The platform uniquely combines curriculum mastery tracking with mathematical heuristics proficiency using multi-model AI validation, school-verified learning patterns, and sophisticated dual-proficiency algorithms—helping students become confident problem-solvers ready for PSLE and beyond.",
     category: "EdTech",
-    tags: ["EdTech", "AI Learning", "Math Heuristics", "Current"],
+    tags: ["EdTech", "AI Learning", "Math Heuristics", "Singapore Curriculum", "Production Platform"],
     image: "https://images.unsplash.com/photo-1596496050827-8299e0220269?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
     status: "current",
     year: "2024-Present",
     role: "Product Lead & Co-founder", 
     challenges: [
-      "Moving beyond traditional rote learning methods to conceptual understanding",
-      "Teaching structured problem-solving heuristics to young learners effectively",
-      "Creating engaging math content that builds confidence rather than anxiety",
-      "Designing assessment tools that accurately measure mathematical thinking skills"
+      "Mathematical Accuracy at Scale: Ensuring AI-generated questions maintain 100% mathematical correctness across diverse problem types and difficulty levels",
+      "Dual-Proficiency Tracking: Measuring both curriculum mastery AND problem-solving heuristics simultaneously with appropriate weighting",
+      "Visual Engagement Balance: Creating educational diagrams that enhance understanding without revealing answers or creating confusion",
+      "Age-Appropriate AI Content: Generating contextually appropriate questions for Primary 1-6 range with Singapore cultural relevance",
+      "Quality Assurance: Validating thousands of AI-generated questions while maintaining educational standards",
+      "User Experience for Children: Designing interfaces that work for young learners who may not be case-sensitive or tech-savvy"
     ],
     solutions: [
-      "Developed comprehensive heuristics-based problem solving framework covering key strategies",
-      "Built AI-powered assessment system that evaluates mathematical thinking processes",
-      "Created role-based platform serving students, parents, and educators with tailored experiences",
-      "Implemented structured learning pathways that gradually introduce complex problem-solving concepts"
+      "Multi-Model AI Validation Pipeline: GPT-4o-mini for generation, GPT-5 for marking/validation, Deepseek R1 for verification, and Gemini for OCR—with emergency-stop safeguards for educational safety",
+      "Sophisticated Dual-Proficiency System: 70% curriculum sub-strand proficiency + 30% heuristic proficiency weighting with mastery-based advancement algorithms",
+      "Template-Based Visual Generation: Deterministic mathematical calculations with targeted AI enhancement for wording/distractors, ensuring accuracy while maintaining engagement",
+      "School-Verified Learning System: Uploads real exam questions, extracts pedagogical patterns via AI, continuously improves question generation quality",
+      "Maker-Checker Quality Control: Visual vetting workflow where all AI-generated visuals are manually reviewed before student delivery",
+      "Child-Friendly UX: Case-insensitive login, real-time username availability, clear error messages, and iPad-optimized interface",
+      "Adaptive Assessment Orchestration: Diagnostic tests, targeted practice, and personalized learning paths based on real-time proficiency data"
     ],
     currentExecution: [
-      "Live platform with demo accounts showcasing full student assessment journey",
-      "Multi-role system supporting admin, parent, and student user experiences",
-      "Comprehensive heuristics curriculum covering mathematical problem-solving strategies",
-      "AI-powered assessment engine providing detailed analysis of student thinking patterns"
+      "Core Assessment Engine: Comprehensive AI-powered question generation with multi-model validation, three assessment types (Diagnostic, Adaptive Practice, Targeted Review), real-time dual-proficiency calculation, context-aware AI feedback with OCR analysis, visual enhancement engine with 5+ question types",
+      "Multi-Role Platform: Student experience with gamification (points, achievements, custom avatars), parent dashboard with multi-child support and detailed analytics, admin controls for user management and analytics",
+      "Advanced Features: School-verified question upload pipeline with AI pattern extraction, heuristic learning system, visual vetting maker-checker workflow, PMF feedback collection system, feature flag infrastructure, comprehensive admin analytics",
+      "Business Infrastructure: Stripe integration (subscription checkout, billing, webhooks - currently dormant), session-based authentication with role-based access control, PostgreSQL database with optimized proficiency tracking, monetization system ready to activate post-PMF"
     ],
     techStack: {
-      frontend: ["React", "TypeScript", "Responsive Design", "Modern UI"],
-      backend: ["Node.js", "Express", "Authentication System", "Role Management"],
-      database: ["PostgreSQL", "User Management", "Assessment Data", "Progress Tracking"],
-      ai: ["AI Assessment Engine", "Problem Analysis", "Personalized Learning"],
-      education: ["Heuristics Framework", "PSLE Preparation", "Math Curriculum"]
+      frontend: ["React 18 with TypeScript", "Radix UI + shadcn/ui", "TanStack Query v5", "Wouter routing", "Canvas Drawing API", "Tailwind CSS", "iPad-optimized responsive design"],
+      backend: ["Node.js + Express.js with TypeScript", "Service-Oriented Architecture (AssessmentService, QuestionManagementService, ProficiencyService, CurriculumService)", "Drizzle ORM", "Session-based authentication", "Role-Based Access Control (Admin, Parent, Child)", "Multer file uploads"],
+      database: ["PostgreSQL 16 via Neon serverless", "Optimized schema with separated proficiency tracking", "Comprehensive data model (users, children, assessments, questions, proficiency, achievements, feedback)", "Session persistence with connect-pg-simple", "Automated migrations via Drizzle Kit"],
+      ai: ["Multi-Model Strategy: OpenAI GPT-4o-mini (generation), GPT-5 (marking/validation), Deepseek R1 (verification), Google Gemini (OCR)", "Template-based visual generation", "Pattern learning engine", "Context-aware feedback with OCR", "Emergency-stop safeguards"],
+      thirdPartyIntegrations: ["Stripe Integration (Checkout, webhooks, Customer Portal)", "Subscription management system", "Feature gating ready for monetization"],
+      education: ["Singapore MOE Curriculum Standards (P1-P6)", "12 Mathematical Heuristics (PSLE-aligned)", "Dual-Proficiency Algorithms (70/30 weighting)", "Mastery-based progression", "Curriculum-driven decision framework"]
     },
-    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "AI Assessment", "Educational Framework"],
+    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Multi-Model AI", "Stripe", "Educational Framework"],
     roadmap: [
-      "Expanded heuristics library covering advanced problem-solving strategies for higher primary levels",
-      "Parent dashboard with detailed progress analytics and home practice recommendations",
-      "Integration with Singapore math curriculum standards and school assessment systems",
-      "Adaptive learning algorithms that personalize difficulty based on individual student progress"
+      "Near-Term (6-12 months): Teacher dashboard for classroom deployment, school partnership integrations, advanced geometry visual rendering, mobile native apps (iOS/Android)",
+      "Medium-Term (12-24 months): Peer collaboration features for group problem-solving, expanded heuristics library for secondary school, real-time tutoring mode with live AI assistance, parent community features",
+      "Long-Term Vision: Regional expansion beyond Singapore (Malaysia, Hong Kong), integration with school management systems, predictive analytics for PSLE performance, AI-powered personalized learning journey builder"
     ],
     slug: "thinkerly"
   },
