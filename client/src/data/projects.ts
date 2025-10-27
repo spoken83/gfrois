@@ -65,7 +65,7 @@ export const projects: Project[] = [
       "Business Infrastructure: Stripe integration (subscription checkout, billing, webhooks - currently dormant), session-based authentication with role-based access control, PostgreSQL database with optimized proficiency tracking, monetization system ready to activate post-PMF"
     ],
     techStack: {
-      frontend: ["React 18 with TypeScript", "Radix UI + shadcn/ui", "Wouter routing", "Canvas Drawing API", "Tailwind CSS", "iPad-optimized responsive design"],
+      frontend: ["React 18 with TypeScript", "Radix UI + shadcn/ui", "Canvas Drawing API", "Tailwind CSS", "iPad-optimized responsive design"],
       backend: ["Node.js + Express.js with TypeScript", "Service-Oriented Architecture (AssessmentService, QuestionManagementService, ProficiencyService, CurriculumService)", "Drizzle ORM", "Session-based authentication", "Role-Based Access Control (Admin, Parent, Child)", "Multer file uploads"],
       database: ["PostgreSQL 16 via Neon serverless", "Optimized schema with separated proficiency tracking", "Comprehensive data model (users, children, assessments, questions, proficiency, achievements, feedback)", "Session persistence with connect-pg-simple", "Automated migrations via Drizzle Kit"],
       ai: ["Multi-Model Strategy: OpenAI GPT-4o-mini (generation), GPT-5 (marking/validation), Deepseek R1 (verification), Google Gemini (OCR)", "Template-based visual generation", "Pattern learning engine", "Context-aware feedback with OCR", "Emergency-stop safeguards"],
