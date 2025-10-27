@@ -221,8 +221,8 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
     status: "current",
-    year: "2024-Present",
-    role: "Product Lead & Co-founder",
+    year: "2025-Present",
+    role: "Product Advisor & Co-Founder",
     challenges: [
       "Creating engaging real-time experiences for diverse event types (weddings, funerals, graduations, corporate)",
       "Ensuring appropriate content through AI moderation while maintaining authentic user expression",
