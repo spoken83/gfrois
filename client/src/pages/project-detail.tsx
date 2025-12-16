@@ -116,10 +116,10 @@ export default function ProjectDetail() {
                   alt="Thinkerly Math Learning Interface" 
                   className="rounded-xl shadow-2xl w-full" 
                 />
-              ) : project.id === "options-monitor" ? (
+              ) : project.id === "zenoptions" ? (
                 <img 
                   src={optionsMonitorImage} 
-                  alt="Options Monitor Scanner Interface" 
+                  alt="ZenOptions Scanner Interface" 
                   className="rounded-xl shadow-2xl w-full" 
                 />
               ) : (
@@ -459,8 +459,8 @@ export default function ProjectDetail() {
           </div>
         </section>
       )}
-      {/* Options Monitor Screenshots */}
-      {project.id === "options-monitor" && (
+      {/* ZenOptions Screenshots */}
+      {project.id === "zenoptions" && (
         <section className="py-20 bg-neutral-bg">
           <div className="max-w-6xl mx-auto px-6">
             <ScrollAnimation>
@@ -471,7 +471,7 @@ export default function ProjectDetail() {
                 </p>
                 <div className="mt-6 flex justify-center gap-4 flex-wrap">
                   <a 
-                    href="https://options.gordonfrois.com" 
+                    href="https://zenoptions.app" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center"
@@ -489,7 +489,7 @@ export default function ProjectDetail() {
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                   <img 
                     src={optionsMonitorImage} 
-                    alt="Options Monitor Scanner showing qualified setups and signals"
+                    alt="ZenOptions Scanner showing qualified setups and signals"
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4">

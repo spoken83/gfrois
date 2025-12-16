@@ -57,7 +57,7 @@ export default function Projects() {
                           project.id === "financial-butler" ? financialButlerCover :
                           project.id === "lockket" ? lockketLogo :
                           project.id === "thinkerly" ? thinkerlyImage :
-                          project.id === "options-monitor" ? optionsMonitorImage :
+                          project.id === "zenoptions" ? optionsMonitorImage :
                           project.image
                         } 
                         alt={`${project.title} Interface`} 

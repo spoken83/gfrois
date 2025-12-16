@@ -132,12 +132,12 @@ export const projects: Project[] = [
     slug: "thinkerly",
   },
   {
-    id: "options-monitor",
-    title: "Options Monitor",
+    id: "zenoptions",
+    title: "ZenOptions",
     description:
-      "Automated credit spread scanner and trading assistant - Built in 3 days to transform hours of manual ticker analysis into intelligent, automated setup detection with Telegram alerts.",
+      "Automated credit spread scanner and trading assistant SaaS - Transform hours of manual ticker analysis into intelligent, automated setup detection with Telegram alerts.",
     longDescription:
-      "Options Monitor is a personal trading utility that combines years of options trading expertise from working at Murex with modern credit spread strategies. Built in just 3 days from idea to production, this platform automates the tedious process of analyzing 15-20 tickers daily, running asynchronous scans with intelligent setup detection, technical analysis, and risk validation. The system delivers actionable trade setups via Telegram alerts at strategic market times, reducing active trading time from hours to just 2 hours of focused analysis and execution.",
+      "ZenOptions is a trading SaaS that combines years of options trading expertise from working at Murex with modern credit spread strategies. Built in just 3 days from idea to production, this platform automates the tedious process of analyzing 15-20 tickers daily, running asynchronous scans with intelligent setup detection, technical analysis, and risk validation. The system delivers actionable trade setups via Telegram alerts at strategic market times, reducing active trading time from hours to just 2 hours of focused analysis and execution.",
     category: "Trading Technology",
     tags: [
       "Personal Tool",
@@ -207,7 +207,7 @@ export const projects: Project[] = [
       "Integrate machine learning for pattern recognition and setup prediction",
       "Build comprehensive backtesting engine to validate strategies against historical data",
     ],
-    slug: "options-monitor",
+    slug: "zenoptions",
   },
   {
     id: "lockket",

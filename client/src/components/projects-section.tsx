@@ -14,7 +14,7 @@ import { trackEvent } from "@/lib/analytics";
 const getLiveUrl = (projectId: string): string | null => {
   const urls: Record<string, string> = {
     'thinkerly': 'https://thinkerly.app',
-    'options-monitor': 'https://options.gordonfrois.com',
+    'zenoptions': 'https://zenoptions.app',
     'lockket': 'https://lockket.app'
   };
   return urls[projectId] || null;
@@ -44,7 +44,7 @@ export default function ProjectsSection() {
                         project.id === "financial-butler" ? financialButlerCover :
                         project.id === "lockket" ? lockketLogo :
                         project.id === "thinkerly" ? thinkerlyImage :
-                        project.id === "options-monitor" ? optionsMonitorImage :
+                        project.id === "zenoptions" ? optionsMonitorImage :
                         project.image
                       } 
                       alt={`${project.title} Interface`} 
