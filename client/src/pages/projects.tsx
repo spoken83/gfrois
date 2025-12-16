@@ -15,7 +15,7 @@ import optionsMonitorImage from "@assets/image_1759828033380.png";
 const getLiveUrl = (projectId: string): string | null => {
   const urls: Record<string, string> = {
     'thinkerly': 'https://thinkerly.app',
-    'options-monitor': 'https://options.gordonfrois.com',
+    'ZenOptions': 'https://zenoptions.app',
     'lockket': 'https://lockket.app'
   };
   return urls[projectId] || null;
