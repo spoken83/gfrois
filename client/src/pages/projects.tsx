@@ -11,11 +11,12 @@ import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 import lockketLogo from "@assets/logo-colored_1754411804329.png";
 import thinkerlyImage from "@assets/featured-web-article-thinkerly-updated_1761581792700.png";
 import optionsMonitorImage from "@assets/image_1759828033380.png";
+import zenoptionsLogo from "@assets/logo-whitebg_(1)_1765908773268.png";
 
 const getLiveUrl = (projectId: string): string | null => {
   const urls: Record<string, string> = {
     'thinkerly': 'https://thinkerly.app',
-    'ZenOptions': 'https://zenoptions.app',
+    'zenoptions': 'https://zenoptions.app',
     'lockket': 'https://lockket.app'
   };
   return urls[projectId] || null;
@@ -57,12 +58,12 @@ export default function Projects() {
                           project.id === "financial-butler" ? financialButlerCover :
                           project.id === "lockket" ? lockketLogo :
                           project.id === "thinkerly" ? thinkerlyImage :
-                          project.id === "zenoptions" ? optionsMonitorImage :
+                          project.id === "zenoptions" ? zenoptionsLogo :
                           project.image
                         } 
                         alt={`${project.title} Interface`} 
                         className={`w-full h-64 md:h-full ${
-                          project.id === "lockket" ? "object-contain bg-gray-50 p-8" : "object-cover"
+                          project.id === "lockket" || project.id === "zenoptions" ? "object-contain bg-gray-50 p-8" : "object-cover"
                         }`}
                       />
                       <div className="absolute top-4 left-4">

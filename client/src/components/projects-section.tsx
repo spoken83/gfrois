@@ -9,6 +9,7 @@ import financialButlerCover from "@assets/Cover-2-phones_1754362987125.png";
 import lockketLogo from "@assets/logo-colored_1754411804329.png";
 import thinkerlyImage from "@assets/featured-web-article-thinkerly-updated_1761581792700.png";
 import optionsMonitorImage from "@assets/image_1759828033380.png";
+import zenoptionsLogo from "@assets/logo-whitebg_(1)_1765908773268.png";
 import { trackEvent } from "@/lib/analytics";
 
 const getLiveUrl = (projectId: string): string | null => {
@@ -44,12 +45,12 @@ export default function ProjectsSection() {
                         project.id === "financial-butler" ? financialButlerCover :
                         project.id === "lockket" ? lockketLogo :
                         project.id === "thinkerly" ? thinkerlyImage :
-                        project.id === "zenoptions" ? optionsMonitorImage :
+                        project.id === "zenoptions" ? zenoptionsLogo :
                         project.image
                       } 
                       alt={`${project.title} Interface`} 
                       className={`w-full h-48 rounded-t-lg ${
-                        project.id === "lockket" ? "object-contain bg-gray-50 p-8" : "object-cover"
+                        project.id === "lockket" || project.id === "zenoptions" ? "object-contain bg-gray-50 p-8" : "object-cover"
                       }`}
                     />
                   </div>
