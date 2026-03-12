@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Download, MapPin, Clock } from "lucide-react";
 import ScrollAnimation from "@/components/scroll-animation";
 import SEOHead from "@/components/seo-head";
-import cvFile from "@assets/GordonFrois_cv_2025_1754244128872.pdf";
+import CvDownloadButton from "@/components/cv-download-button";
 
 export default function ContactPage() {
   return (
     <>
       <SEOHead
-        title="Contact Gordon Frois - Product Leader & Entrepreneur"
+        title="Contact Gordon Frois - Product Leader & Builder"
         description="Get in touch with Gordon Frois for product leadership opportunities, strategic consulting, or collaboration. Download CV, connect on LinkedIn, or send an email. Based in Singapore."
         keywords="contact Gordon Frois, product leader hire, product consultant Singapore, Gordon Frois email, LinkedIn Gordon Frois, product manager contact"
         canonicalUrl="https://gordonfrois.com/contact"
@@ -19,7 +19,7 @@ export default function ContactPage() {
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold text-primary mb-6">Let's Connect</h1>
             <p className="text-xl text-secondary max-w-2xl mx-auto">
-              Whether you're looking for a product leader, entrepreneur, or strategic advisor, I'd love to explore how we can create meaningful impact together.
+              Whether you're looking for a product leader, builder, or strategic partner, I'd love to explore how we can create meaningful impact together.
             </p>
           </div>
         </ScrollAnimation>
@@ -31,9 +31,9 @@ export default function ContactPage() {
                 <Mail className="text-primary h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Email</h3>
-              <p className="text-secondary text-center mb-4">gordon.matthew@gmail.com</p>
+              <p className="text-secondary text-center mb-4">gordon.frois@gmail.com</p>
               <div className="text-center">
-                <a href="mailto:gordon.matthew@gmail.com">
+                <a href="mailto:gordon.frois@gmail.com">
                   <Button className="bg-primary text-white hover:bg-blue-700">
                     Send Email
                   </Button>
@@ -70,12 +70,10 @@ export default function ContactPage() {
               <p className="text-secondary mb-6">
                 Get detailed information about my professional experience, achievements, and technical expertise.
               </p>
-              <a href={cvFile} download="Gordon_Frois_CV_2025.pdf">
-                <Button className="bg-accent text-white hover:bg-orange-600 px-8 py-3">
-                  <Download className="mr-2 h-4 w-4" />
-                  Download CV (PDF)
-                </Button>
-              </a>
+              <CvDownloadButton
+                variant="default"
+                className="bg-accent text-white hover:bg-orange-600 px-8 py-3"
+              />
             </div>
           </div>
         </ScrollAnimation>

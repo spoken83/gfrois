@@ -1,0 +1,7 @@
+name = "gordonfrois"
+compatibility_date = "2024-12-01"
+pages_build_output_dir = "dist/public"
+
+[[kv_namespaces]]
+binding = "CV_DOWNLOADS"
+id = ""

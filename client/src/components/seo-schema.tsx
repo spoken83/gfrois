@@ -6,24 +6,24 @@ interface WebsiteSchemaProps {
 
 export default function SEOSchema({ 
   pageType = 'homepage',
-  title = "Gordon Frois - Product Leader & Entrepreneur",
-  description = "Entrepreneurial product leader with 15+ years driving innovation across SaaS, B2B, and B2C markets"
+  title = "Gordon Frois - Product Leader & Builder",
+  description = "Founder and builder with 17 years across fintech, SaaS, and consumer platforms. Building Thinkerly, ZenOptions, and AI agent systems."
 }: WebsiteSchemaProps) {
   const getSchema = () => {
     const baseSchema = {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Gordon Frois",
-      "jobTitle": "Product Leader & Entrepreneur",
+      "jobTitle": "Product Leader & Builder",
       "description": description,
       "url": "https://gordonfrois.com",
-      "email": "gordon.matthew@gmail.com",
+      "email": "gordon.frois@gmail.com",
       "sameAs": [
         "https://linkedin.com/in/gordonfrois"
       ],
       "worksFor": {
         "@type": "Organization",
-        "name": "Income Insurance"
+        "name": "Thinkerly.app"
       },
       "alumniOf": {
         "@type": "CollegeOrUniversity",

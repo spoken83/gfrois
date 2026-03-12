@@ -572,7 +572,7 @@ export default function ProjectDetail() {
               I'd love to discuss this project in more detail and share insights about the challenges and solutions.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="mailto:gordon.matthew@gmail.com?subject=Question about %20{project.title}">
+              <a href="mailto:gordon.frois@gmail.com?subject=Question about %20{project.title}">
                 <Button className="bg-primary text-white hover:bg-blue-700">
                   Get In Touch
                 </Button>

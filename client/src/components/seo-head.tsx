@@ -10,9 +10,9 @@ interface SEOHeadProps {
 }
 
 export default function SEOHead({
-  title = "Gordon Frois - Product Leader Transforming Ideas Into Scalable Products",
-  description = "Senior Product Leader with 15+ years building fintech, SaaS, and consumer products that millions use daily. From startup founder to leading teams at scale - I turn complex problems into elegant solutions that drive real business impact.",
-  keywords = "product leader, product manager, ex-founder, startup founder, SaaS, B2B, B2C, fintech, insurtech, product strategy, team leadership, Gordon Frois, product management, scale, growth",
+  title = "Gordon Frois - Product Leader & Builder | AI, Fintech, and Beyond",
+  description = "Founder and builder with 17 years across fintech, SaaS, and consumer platforms. Currently building Thinkerly, ZenOptions, and AI agent systems. Ex-product leader at Income Insurance, Railsr, and Murex.",
+  keywords = "Gordon Frois, founder, builder, Thinkerly, ZenOptions, AI agents, fintech, edtech, SaaS, product leader, Singapore, startup founder",
   canonicalUrl = "https://gordonfrois.com",
   ogImage = "https://gordonfrois.com/og-image.jpg",
   ogType = "website"

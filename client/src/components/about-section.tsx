@@ -28,10 +28,10 @@ export default function AboutSection() {
             <div className="flex-1">
               
               <div className="space-y-6">
-                <p className="text-secondary leading-relaxed">I’m Gordon, a founder, product lead and venture builder with deep experience across tech, SaaS, B2B and B2C consumer apps in Asia-Pacific.</p>
-                <p className="text-secondary leading-relaxed">I've shaped capital markets Sales-API solutions at Murex, founded and scaled a personal finance app, expanded embedded banking products at Railsr in Singapore and into Australia, and led product transformation at Income Insurance's SNACK vertical.</p>
-                <p className="text-secondary leading-relaxed">These days, I’m building ventures like Lockket and Thinkerly, and always open to collaborating on meaningful products in embedded finance, education, or digital life.</p>
-                <p className="text-secondary leading-relaxed">My guiding principle is to always Be Humble & Stay Hungry.</p>
+                <p className="text-secondary leading-relaxed">I’m Gordon — product leader, builder, and founder with 17 years across fintech, SaaS, and consumer platforms in Asia-Pacific.</p>
+                <p className="text-secondary leading-relaxed">I’ve shipped capital markets APIs at Murex, founded a personal finance app (Financial Butler), launched embedded banking products at Railsr across Singapore and Australia, and led product and venture strategy at Income Insurance.</p>
+                <p className="text-secondary leading-relaxed">Now I’m building full-time: Thinkerly (AI-powered math assessment for Singapore primary students), ZenOptions (automated options trading SaaS), and autonomous AI agents that orchestrate real workflows across messaging, calendars, and external APIs.</p>
+                <p className="text-secondary leading-relaxed">My guiding principle: Be Humble & Stay Hungry.</p>
               </div>
               
               <div className="mt-8">

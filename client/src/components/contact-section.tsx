@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, Download } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 import ScrollAnimation from "./scroll-animation";
-import cvFile from "@assets/GordonFrois_cv_2025_1754244128872.pdf";
+import CvDownloadButton from "./cv-download-button";
 
 export default function ContactSection() {
   return (
@@ -10,7 +10,7 @@ export default function ContactSection() {
         <ScrollAnimation>
           <h2 className="text-4xl font-bold mb-6">Let's Build Something Great Together</h2>
           <p className="text-xl text-secondary mb-12 max-w-2xl mx-auto">
-            Whether you're looking for a product leader, entrepreneur, or strategic advisor, I'd love to explore how we can create meaningful impact together.
+            Whether you're looking for a product leader, builder, or strategic partner, I'd love to explore how we can create meaningful impact together.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto">
@@ -19,7 +19,7 @@ export default function ContactSection() {
                 <Mail className="text-primary h-8 w-8" />
               </div>
               <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-secondary">gordon.matthew@gmail.com</p>
+              <p className="text-secondary">gordon.frois@gmail.com</p>
             </div>
             <div className="p-6">
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -33,7 +33,7 @@ export default function ContactSection() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="mailto:gordon.matthew@gmail.com">
+            <a href="mailto:gordon.frois@gmail.com">
               <Button className="bg-primary text-white px-8 py-3 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-200">
                 <Mail className="mr-2 h-4 w-4" />
                 Get In Touch
@@ -45,12 +45,7 @@ export default function ContactSection() {
                 Connect on LinkedIn
               </Button>
             </a>
-            <a href={cvFile} download="Gordon_Frois_CV_2025.pdf">
-              <Button variant="outline" className="border-2 border-accent text-accent px-8 py-3 hover:bg-accent hover:text-white transition-all duration-200">
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-              </Button>
-            </a>
+            <CvDownloadButton />
           </div>
         </ScrollAnimation>
       </div>

@@ -210,6 +210,61 @@ export const projects: Project[] = [
     slug: "zenoptions",
   },
   {
+    id: "ai-finance-dashboard",
+    title: "AI Finance Dashboard",
+    description:
+      "AI-powered financial intelligence platform — automated bank statement processing, transaction categorisation, and spending analytics. A blueprint for business dashboards in accounting, tax, HR, and sustainability reporting.",
+    longDescription:
+      "An AI-powered finance dashboard that transforms raw bank statements into structured, categorised financial data with actionable insights. Upload PDFs or CSVs from any bank, and the system automatically detects the institution, extracts transactions using GPT-4.1, applies rule-based and AI categorisation, and surfaces spending trends, anomalies, and budget tracking through interactive visualisations. Built as a full-stack platform, it demonstrates how AI document processing and intelligent data pipelines can be applied to any domain — from SME accounting and tax reporting to HR analytics, reconciliation, and sustainability disclosures.",
+    category: "AI & Data Intelligence",
+    tags: ["AI", "Finance", "Document Processing", "Data Pipeline", "Full-Stack"],
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    status: "current",
+    year: "2025-Present",
+    role: "Creator",
+    challenges: [
+      "Bank statements come in wildly different formats across institutions (Citibank, OCBC, DBS, Trust Bank) with no standard schema",
+      "Accurate transaction extraction from unstructured PDF text requires bank-specific parsing logic",
+      "Categorising thousands of transactions consistently across merchant names, amounts, and patterns",
+      "Surfacing meaningful spending insights without overwhelming the user with raw data",
+    ],
+    solutions: [
+      "Multi-bank document pipeline: PDF text extraction with bank detection heuristics, followed by GPT-4.1 extraction with bank-specific prompts",
+      "Hybrid categorisation engine combining AI classification with user-defined pattern-matching rules for consistency",
+      "Interactive analytics with stacked bar charts, trend lines, anomaly detection, and drill-down by category",
+      "Amortisation engine for spreading large one-off transactions across months for clearer budget tracking",
+    ],
+    currentExecution: [
+      "Live platform processing statements from 4 Singapore banks (Citibank, OCBC, DBS, Trust Bank)",
+      "AI-powered transaction extraction and categorisation with 95%+ accuracy",
+      "Monthly spending breakdown, category pivot tables, and 3-month trend comparisons",
+      "Budget tracking with configurable limits per category and overspend alerts",
+    ],
+    techStack: {
+      frontend: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "Recharts", "shadcn/ui"],
+      backend: ["Next.js API Routes", "Prisma ORM", "NextAuth"],
+      database: ["PostgreSQL via Neon serverless"],
+      ai: ["OpenAI GPT-4.1 (extraction & categorisation)", "Bank-specific prompt engineering", "Rule-based pattern matching"],
+    },
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "OpenAI GPT-4.1",
+      "Prisma",
+      "PDF Processing",
+      "Recharts",
+    ],
+    learnings: [
+      "AI document processing pipelines are highly transferable — the same extract-classify-visualise pattern applies to invoices, HR documents, compliance reports, and more",
+      "Hybrid AI + rules categorisation outperforms pure AI: rules handle known patterns instantly, AI handles novel merchants",
+      "Bank-specific prompt engineering dramatically improves extraction accuracy over generic prompts",
+    ],
+    slug: "ai-finance-dashboard",
+  },
+  {
     id: "lockket",
     title: "Lockket.app",
     description:

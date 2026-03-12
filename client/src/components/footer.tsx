@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-2xl font-semibold mb-4">Gordon Frois</h3>
             <p className="text-gray-300 mb-4">
-              Product Leader & Entrepreneur passionate about creating meaningful technology experiences that drive business growth and user satisfaction.
+              Product Leader & Builder — helping businesses harness AI, fintech, and modern product strategy to drive growth.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -22,7 +22,7 @@ export default function Footer() {
                 <Linkedin className="h-6 w-6" />
               </a>
               <a 
-                href="mailto:gordon.matthew@gmail.com"
+                href="mailto:gordon.frois@gmail.com"
                 className="text-gray-300 hover:text-white transition-colors"
               >
                 <Mail className="h-6 w-6" />
@@ -41,10 +41,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Projects</h4>
             <ul className="space-y-2">
-              <li><a href="/projects/financial-butler" className="text-gray-300 hover:text-white transition-colors">Financial Butler</a></li>
-              <li><a href="/projects/lockket" className="text-gray-300 hover:text-white transition-colors">Lockket</a></li>
               <li><a href="/projects/thinkerly" className="text-gray-300 hover:text-white transition-colors">Thinkerly</a></li>
-              <li><a href="/projects" className="text-gray-300 hover:text-white transition-colors">Case Studies</a></li>
+              <li><a href="/projects/zenoptions" className="text-gray-300 hover:text-white transition-colors">ZenOptions</a></li>
+              <li><a href="/projects/ai-finance-dashboard" className="text-gray-300 hover:text-white transition-colors">AI Finance Dashboard</a></li>
+              <li><a href="/projects" className="text-gray-300 hover:text-white transition-colors">All Projects</a></li>
             </ul>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Footer() {
             © {currentYear} Gordon Frois. All rights reserved.
           </p>
           <p className="text-gray-300 mt-2">
-            Building meaningful products in fintech, edtech, and beyond. Be humble. Stay hungry.
+            Building meaningful products. Be humble. Stay hungry.
           </p>
         </div>
       </div>

@@ -8,9 +8,9 @@ export default function About() {
   return (
     <>
       <SEOHead
-        title="About Gordon Frois - Product Leader Journey & Background"
-        description="Learn about Gordon Frois's journey from Computer Engineering at NTU to product leadership at Income Insurance. 15+ years experience across enterprise software, fintech startups, and digital transformation."
-        keywords="Gordon Frois background, product leader career, Nanyang Technological University, Murex, Financial Butler founder, Income Insurance, Singapore product manager"
+        title="About Gordon Frois - Product Leader, Builder & Founder"
+        description="Learn about Gordon Frois's journey from Computer Engineering at NTU to founding Thinkerly and ZenOptions. 17 years across enterprise software, fintech startups, AI agents, and digital transformation."
+        keywords="Gordon Frois background, founder, builder, Thinkerly, ZenOptions, AI agents, Nanyang Technological University, Murex, Financial Butler, Singapore"
         canonicalUrl="https://gordonfrois.com/about"
       />
       <main className="pt-20">
@@ -20,7 +20,7 @@ export default function About() {
           <ScrollAnimation>
             <h1 className="text-5xl font-bold text-primary mb-6">👋 About Me</h1>
             <p className="text-xl text-secondary max-w-3xl mx-auto">
-              A journey from capital markets to consumer apps, from enterprise software to startup founding, across fintech, insurtech, and beyond.
+              From capital markets to consumer apps, from enterprise software to startup founding — now applying that experience to build AI-powered products.
             </p>
           </ScrollAnimation>
         </div>
@@ -40,8 +40,9 @@ export default function About() {
                   <p>
                     Post-startup, I joined Railsr (formerly Railsbank) as the APAC Product Lead, where I helped launch multi-currency ledgers, FX services, and compliance APIs across Singapore and Australia — contributing over $1M in ARR and leading distributed teams from the UK to Vietnam.
                   </p>
-                  <p>Most recently, I've been driving product and venture strategy at SNACK, Income Insurance's embedded micro-insurance platform for digital-first consumers. I lead a cross-functional team (product, growth, CX), own the P&L, and have doubled revenue while shifting the portfolio toward higher-margin products. I also prototyped an AI advisor-assist tool, launched an RBAC system for 2,000+ users, and won a hackathon with a pay-as-you-use insurance product.</p>
-                  <p>At the core of everything I do: I build with strategy, lead with empathy, and deliver with urgency. I'm now working on two new ventures — Lockket (a digital memory wall for life's milestones) and Thinkerly (an AI-powered heuristics math app for primary students) — and always looking to partner with others building meaningful, mission-driven products.</p>
+                  <p>At Income Insurance, I drove product and venture strategy for SNACK, their embedded micro-insurance platform. I led a cross-functional team (product, growth, CX), owned the P&L, doubled revenue while shifting toward higher-margin products, prototyped an AI advisor-assist tool, launched an RBAC system for 2,000+ users, and won a hackathon with a pay-as-you-use insurance product.</p>
+                  <p>Now I'm channelling 17 years of product leadership into my own ventures. Thinkerly is an AI-powered math assessment platform for Singapore primary students. ZenOptions is an automated options trading SaaS with technical analysis and Telegram alerts. I'm also deep in the AI agent space — designing autonomous assistants that integrate across messaging, calendars, task management, and external APIs to handle real workflows end-to-end.</p>
+                  <p>At the core of everything I do: I build with strategy, lead with empathy, and deliver with urgency. Always looking to partner with others building meaningful, mission-driven products.</p>
                   <p>Outside of work, I'm a dad to two curious daughters, a tennis enthusiast, and a firm believer in doing purposeful work with great people.</p>
                 </div>
               </ScrollAnimation>
@@ -71,7 +72,7 @@ export default function About() {
                         <Calendar className="h-5 w-5 text-primary mt-0.5" />
                         <div>
                           <p className="font-medium">Experience</p>
-                          <p className="text-sm text-secondary">15+ years in tech</p>
+                          <p className="text-sm text-secondary">17 years in tech</p>
                         </div>
                       </div>
                       <div className="flex items-start space-x-3">

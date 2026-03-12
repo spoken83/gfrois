@@ -21,11 +21,11 @@ export default function HeroSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <ScrollAnimation>
             <h1 className="text-5xl md:text-6xl font-bold text-text-primary mb-6 leading-tight">
-              Product Leader
-              <span className="text-primary text-[50px]"> Tech, startups,  enterprise</span>
+              Product Leader & Builder
+              <span className="text-primary text-[50px]"> AI, fintech, and beyond</span>
             </h1>
             <p className="text-xl text-secondary mb-8 leading-relaxed">
-              Product leader with 15+ years of experience across fintech, insurtech, B2B SaaS, and consumer apps in Asia-Pacific. Ex-founder, team builder, and strategic product executive.
+              17 years building products across fintech, SaaS, and consumer platforms. Currently building Thinkerly, ZenOptions, and autonomous AI agents. Ex-product lead at Income Insurance, Railsr, and Murex.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button 
@@ -49,7 +49,7 @@ export default function HeroSection() {
               </div>
               <div className="text-secondary flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
-                Available for opportunities
+                Open to collaborate
               </div>
             </div>
           </ScrollAnimation>

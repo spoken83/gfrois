@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <>
       <SEOHead 
-        title="Gordon Frois | Senior Product Leader & Ex-Founder"
-        description="Product Leader with 15+ years scaling fintech, SaaS, and consumer platforms used by millions. Ex-founder turned product executive, specializing in 0→1 innovation and building high-performing teams. Expert in AI-powered products, embedded finance, and driving measurable business impact through strategic product decisions."
+        title="Gordon Frois | Product Leader & Builder — AI, Fintech, and Beyond"
+        description="Founder and builder with 17 years across fintech, SaaS, and consumer platforms. Currently building Thinkerly (AI-powered math assessment), ZenOptions (options trading SaaS), and AI agent systems. Ex-product leader at Income Insurance, Railsr, and Murex."
       />
       <main>
       <HeroSection />

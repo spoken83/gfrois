@@ -1,5 +1,9 @@
 node_modules
 dist
+.env
+cv-downloads.json
+logs/
+.wrangler/
 .DS_Store
 server/public
 vite.config.ts.*
