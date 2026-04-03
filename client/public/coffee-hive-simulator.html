@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Hive Franchise Simulator</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5EFE0;
+    --warm-white: #FAF7F2;
+    --espresso: #2C1A0E;
+    --roast: #5C3317;
+    --caramel: #C07830;
+    --gold: #D4A843;
+    --steam: #E8DCC8;
+    --muted: #9B8B7A;
+    --green: #2E6B4F;
+    --red: #8B2E2E;
+    --shadow: rgba(44,26,14,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--cream); font-family: 'Inter', sans-serif; color: var(--espresso); min-height: 100vh; }
+
+  header {
+    background: var(--espresso);
+    padding: 20px 36px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 24px var(--shadow);
+  }
+  header h1 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: var(--gold); line-height: 1; }
+  .header-sub { font-family: 'Inter', sans-serif; font-size: 0.78rem; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-left: auto; }
+
+  .tab-nav { display: flex; background: var(--espresso); padding: 0 36px; border-bottom: 1px solid rgba(255,255,255,0.06); gap: 2px; }
+  .tab-btn { font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); background: none; border: none; padding: 11px 18px; cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  .tab-btn:hover { color: var(--cream); }
+  .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+  .app { display: grid; grid-template-columns: 340px 1fr; min-height: calc(100vh - 108px); }
+
+  .sidebar { background: var(--warm-white); border-right: 1px solid var(--steam); padding: 22px 18px; overflow-y: auto; position: sticky; top: 108px; height: calc(100vh - 108px); }
+  .sidebar-section { margin-bottom: 22px; }
+  .sidebar-section h3 { font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 11px; padding-bottom: 6px; border-bottom: 1px solid var(--steam); display: flex; justify-content: space-between; align-items: center; }
+  .section-total { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--caramel); background: rgba(192,120,48,0.1); padding: 2px 7px; border-radius: 4px; letter-spacing: 0; font-weight: 500; }
+
+  .cost-item { display: grid; grid-template-columns: 1fr 88px 22px; gap: 5px; align-items: center; margin-bottom: 6px; }
+  .cost-item input[type="text"] { padding: 5px 7px; border: 1.5px solid var(--steam); border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--espresso); background: var(--warm-white); outline: none; transition: border-color 0.2s; width: 100%; }
+  .cost-item input[type="text"]:focus { border-color: var(--caramel); }
+  .cost-item input[type="number"] { padding: 5px 6px; border: 1.5px solid var(--steam); border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--espresso); background: var(--warm-white); outline: none; transition: border-color 0.2s; width: 100%; text-align: right; }
+  .cost-item input[type="number"]:focus { border-color: var(--caramel); }
+  .del-btn { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 0.9rem; line-height: 1; padding: 3px 5px; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+  .del-btn:hover { color: var(--red); background: rgba(139,46,46,0.08); }
+  .add-btn { width: 100%; padding: 6px; background: none; border: 1.5px dashed var(--steam); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); cursor: pointer; transition: border-color 0.2s, color 0.2s; margin-top: 3px; }
+  .add-btn:hover { border-color: var(--caramel); color: var(--caramel); }
+
+  .input-row { margin-bottom: 11px; }
+  .input-row label { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; font-weight: 500; color: var(--roast); margin-bottom: 5px; }
+  .input-row label span { font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--caramel); background: rgba(192,120,48,0.08); padding: 1px 6px; border-radius: 4px; }
+  input[type="range"] { width: 100%; appearance: none; height: 4px; border-radius: 2px; background: var(--steam); outline: none; cursor: pointer; }
+  input[type="range"]::-webkit-slider-thumb { appearance: none; width: 15px; height: 15px; border-radius: 50%; background: var(--caramel); border: 3px solid var(--warm-white); box-shadow: 0 1px 6px var(--shadow); transition: transform 0.15s; }
+  input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 5px; margin-top: 3px; }
+  .phase-input { text-align: center; }
+  .phase-input label { font-size: 0.78rem; color: var(--muted); font-family: 'Inter', sans-serif; display: block; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 1px; }
+  .phase-input input[type="number"] { text-align: center; padding: 5px 2px; font-size: 0.85rem; }
+  .reset-btn { width: 100%; padding: 9px; background: var(--espresso); color: var(--gold); border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; margin-top: 6px; }
+  .reset-btn:hover { background: var(--roast); }
+
+  .main { padding: 26px 30px; overflow-y: auto; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; margin-bottom: 22px; }
+  .kpi-card { background: var(--warm-white); border: 1px solid var(--steam); border-radius: 12px; padding: 15px 17px; position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+  .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--shadow); }
+  .kpi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--caramel); border-radius: 12px 12px 0 0; }
+  .kpi-card.highlight::before { background: var(--gold); }
+  .kpi-card.danger::before { background: var(--red); }
+  .kpi-card.success::before { background: var(--green); }
+  .kpi-label { font-size: 0.78rem; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .kpi-value { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--espresso); line-height: 1; }
+  .kpi-sub { font-size: 0.8rem; color: var(--muted); margin-top: 5px; }
+
+  /* CAPITAL PANEL */
+  .capital-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 22px; }
+  .capital-card { border-radius: 12px; padding: 20px 22px; border: 1px solid var(--steam); }
+  .capital-card.worst { background: rgba(139,46,46,0.04); border-color: rgba(139,46,46,0.2); }
+  .capital-card.best { background: rgba(46,107,79,0.04); border-color: rgba(46,107,79,0.2); }
+  .capital-card h3 { font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+  .capital-card.worst h3 { color: var(--red); }
+  .capital-card.best h3 { color: var(--green); }
+  .capital-total { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 900; margin-bottom: 14px; line-height: 1; }
+  .capital-card.worst .capital-total { color: var(--red); }
+  .capital-card.best .capital-total { color: var(--green); }
+  .cap-line { display: flex; justify-content: space-between; font-size: 0.88rem; padding: 5px 0; border-bottom: 1px solid var(--steam); }
+  .cap-line:last-child { border-bottom: none; font-weight: 600; }
+  .cap-label { color: var(--muted); font-size: 0.85rem; }
+  .cap-val { font-family: 'Inter', sans-serif; font-size: 0.85rem; }
+
+  /* VERDICT */
+  .verdict-panel { background: var(--espresso); border-radius: 12px; padding: 22px 26px; margin-bottom: 22px; display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start; }
+  .verdict-label { font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .verdict-score { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; line-height: 1; }
+  .verdict-score.good { color: var(--gold); }
+  .verdict-score.ok { color: #D4A843; }
+  .verdict-score.bad { color: #C05050; }
+  .verdict-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .v-metric { border-left: 1px solid rgba(255,255,255,0.08); padding-left: 14px; }
+  .v-metric:first-child { border-left: none; padding-left: 0; }
+  .v-val { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--gold); display: block; }
+  .v-desc { font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .verdict-note { grid-column: 1/-1; font-size: 0.88rem; color: var(--muted); margin-top: 8px; line-height: 1.65; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px; }
+
+  /* ROI COMPARE */
+  .roi-compare { background: var(--warm-white); border: 1px solid var(--steam); border-radius: 12px; padding: 20px 22px; margin-bottom: 22px; }
+  .roi-compare h3 { font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .roi-bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 9px; }
+  .roi-bar-label { font-size: 0.85rem; color: var(--roast); width: 170px; flex-shrink: 0; }
+  .roi-bar-track { flex: 1; background: var(--steam); border-radius: 3px; height: 9px; overflow: hidden; }
+  .roi-bar-fill { height: 100%; border-radius: 3px; transition: width 0.5s cubic-bezier(0.4,0,0.2,1); }
+  .roi-bar-val { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--muted); width: 55px; text-align: right; }
+
+  /* COSTS SUMMARY */
+  .costs-summary { background: var(--warm-white); border: 1px solid var(--steam); border-radius: 12px; padding: 20px 22px; margin-bottom: 20px; }
+  .costs-summary h3 { font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+  .costs-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .cost-list-table { width: 100%; border-collapse: collapse; }
+  .cost-list-table th { font-family: 'Inter', sans-serif; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); text-align: left; padding: 4px 0 10px; border-bottom: 1px solid var(--steam); }
+  .cost-list-table th:last-child { text-align: right; }
+  .cost-list-table td { padding: 8px 0; font-size: 0.95rem; border-bottom: 1px solid rgba(232,220,200,0.4); }
+  .cost-list-table td:last-child { text-align: right; font-family: 'Inter', sans-serif; font-size: 0.85rem; }
+  .cost-list-table tr.total-row td { font-weight: 700; border-top: 1px solid var(--steam); border-bottom: none; padding-top: 10px; }
+
+  /* CHARTS */
+  .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .chart-card { background: var(--warm-white); border: 1px solid var(--steam); border-radius: 12px; padding: 18px 20px; }
+  .chart-card h3 { font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+  .bar-chart { display: flex; align-items: flex-end; gap: 3px; height: 120px; padding-bottom: 16px; position: relative; }
+  .bar-chart::after { content: ''; position: absolute; bottom: 16px; left: 0; right: 0; height: 1px; background: var(--steam); }
+  .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; gap: 2px; }
+  .bar { width: 100%; border-radius: 3px 3px 0 0; transition: height 0.4s cubic-bezier(0.4,0,0.2,1); min-height: 2px; }
+  .bar.profit { background: var(--green); }
+  .bar.profit.negative { background: var(--red); }
+  .bar-label { font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--muted); white-space: nowrap; }
+  .line-chart-container { position: relative; height: 150px; }
+  svg.line-chart { width: 100%; height: 100%; }
+
+  /* TABLE */
+  .table-card { background: var(--warm-white); border: 1px solid var(--steam); border-radius: 12px; overflow: hidden; margin-bottom: 18px; }
+  .table-header { padding: 14px 20px 11px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--steam); }
+  .table-header h3 { font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); }
+  .phase-legend { display: flex; gap: 10px; }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 0.8rem; color: var(--muted); }
+  .legend-dot { width: 7px; height: 7px; border-radius: 50%; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { background: rgba(44,26,14,0.04); padding: 10px 14px; text-align: right; font-family: 'Inter', sans-serif; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-weight: 400; border-bottom: 1px solid var(--steam); }
+  thead th:first-child, thead th:nth-child(2) { text-align: left; }
+  tbody tr { border-bottom: 1px solid rgba(232,220,200,0.5); transition: background 0.15s; }
+  tbody tr:hover { background: rgba(192,120,48,0.04); }
+  tbody tr.phase-awareness { border-left: 3px solid #E07B39; }
+  tbody tr.phase-growth { border-left: 3px solid var(--caramel); }
+  tbody tr.phase-stable { border-left: 3px solid var(--green); }
+  tbody tr.ttl-row { background: rgba(44,26,14,0.04); font-weight: 600; border-left: 3px solid var(--espresso); }
+  td { padding: 9px 14px; text-align: right; font-family: 'Inter', sans-serif; font-size: 0.95rem; }
+  td:first-child, td:nth-child(2) { text-align: left; }
+  td:first-child { font-weight: 600; color: var(--roast); font-size: 0.85rem; }
+  td:nth-child(2) { color: var(--muted); font-size: 0.82rem; }
+  .profit-positive { color: var(--green); font-weight: 600; }
+  .profit-negative { color: var(--red); font-weight: 600; }
+  .accum-positive { color: var(--green); }
+  .accum-negative { color: var(--red); }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="/coffee-hive-logo.png" alt="Coffee Hive" style="height:42px;border-radius:6px;">
+  <h1>Coffee Hive Franchise Simulator</h1>
+  <span class="header-sub">24-Month Projection Model · SGD</span>
+</header>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('projections',this)">📊 Projections</button>
+  <button class="tab-btn" onclick="showTab('investment',this)">💰 Capital &amp; Investment</button>
+</nav>
+
+<div class="app">
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <h3>Revenue</h3>
+      <div class="input-row">
+        <label>Avg Monthly Revenue <span id="v-revenue">$47,318</span></label>
+        <input type="range" id="s-revenue" min="20000" max="120000" step="500" value="47318">
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Monthly Fixed Costs <span class="section-total" id="fixed-total">$0</span></h3>
+      <div style="display:grid;grid-template-columns:1fr 88px 22px;gap:4px;margin-bottom:5px;">
+        <span style="font-size:0.57rem;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;">ITEM</span>
+        <span style="font-size:0.57rem;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;text-align:right;">AMT / MO</span>
+        <span></span>
+      </div>
+      <div id="fixed-costs-list"></div>
+      <button class="add-btn" onclick="addFixedCost()">+ Add cost item</button>
+      <div style="margin-top:10px;padding:8px 10px;background:rgba(192,120,48,0.07);border-radius:6px;">
+        <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:5px;">
+          <span style="color:var(--muted);">Royalty fee (% of revenue)</span>
+          <span id="v-royalty" style="font-family:'DM Mono',monospace;color:var(--caramel);">5%</span>
+        </div>
+        <input type="range" id="s-royalty" min="0" max="15" step="0.5" value="5">
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Startup &amp; One-Time Costs <span class="section-total" id="startup-total">$0</span></h3>
+      <div style="display:grid;grid-template-columns:1fr 88px 22px;gap:4px;margin-bottom:5px;">
+        <span style="font-size:0.57rem;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;">ITEM</span>
+        <span style="font-size:0.57rem;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;text-align:right;">AMOUNT</span>
+        <span></span>
+      </div>
+      <div id="startup-costs-list"></div>
+      <button class="add-btn" onclick="addStartupCost()">+ Add startup cost</button>
+      <div style="margin-top:10px;padding:8px 10px;background:rgba(139,46,46,0.05);border-radius:6px;">
+        <div class="input-row" style="margin-bottom:0;">
+          <label style="font-size:0.7rem;">Working Capital Buffer <span id="v-buffer">$20,000</span></label>
+          <input type="range" id="s-buffer" min="0" max="150000" step="1000" value="20000" style="margin-top:5px;">
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Revenue Ramp-Up (%)</h3>
+      <div class="phase-grid">
+        <div class="phase-input"><label>M1</label><input type="number" id="p-m1" min="1" max="100" value="50"></div>
+        <div class="phase-input"><label>M2</label><input type="number" id="p-m2" min="1" max="100" value="60"></div>
+        <div class="phase-input"><label>M3</label><input type="number" id="p-m3" min="1" max="100" value="70"></div>
+        <div class="phase-input"><label>M4</label><input type="number" id="p-m4" min="1" max="100" value="80"></div>
+        <div class="phase-input"><label>M5</label><input type="number" id="p-m5" min="1" max="100" value="85"></div>
+        <div class="phase-input"><label>M6</label><input type="number" id="p-m6" min="1" max="100" value="90"></div>
+        <div class="phase-input"><label>M7</label><input type="number" id="p-m7" min="1" max="100" value="95"></div>
+        <div class="phase-input"><label>M8+</label><input type="number" id="p-m8" min="1" max="100" value="100"></div>
+      </div>
+    </div>
+
+    <button class="reset-btn" onclick="saveToServer()" id="save-btn">Save</button>
+  </aside>
+
+  <main class="main">
+
+    <!-- PROJECTIONS TAB -->
+    <div class="tab-panel active" id="tab-projections">
+      <div class="kpi-grid">
+        <div class="kpi-card highlight">
+          <div class="kpi-label">Yr 1 Net Profit</div>
+          <div class="kpi-value" id="kpi-y1profit">—</div>
+          <div class="kpi-sub">M1–M12 cumulative</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Yr 2 Net Profit</div>
+          <div class="kpi-value" id="kpi-y2profit">—</div>
+          <div class="kpi-sub">M13–M24 cumulative</div>
+        </div>
+        <div class="kpi-card" id="kpi-be-card">
+          <div class="kpi-label">Operating Breakeven</div>
+          <div class="kpi-value" id="kpi-be">—</div>
+          <div class="kpi-sub">monthly profit turns +ve</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Steady-State Monthly</div>
+          <div class="kpi-value" id="kpi-monthly">—</div>
+          <div class="kpi-sub">at 100% capacity</div>
+        </div>
+      </div>
+
+      <div class="costs-summary">
+        <h3>Cost Structure at Full Capacity</h3>
+        <div class="costs-two-col">
+          <div>
+            <table class="cost-list-table">
+              <thead><tr><th>Monthly Fixed Costs</th><th>Per Month</th></tr></thead>
+              <tbody id="fixed-summary-body"></tbody>
+            </table>
+          </div>
+          <div>
+            <table class="cost-list-table">
+              <thead><tr><th>P&amp;L Bridge (100% Revenue)</th><th>Amount</th></tr></thead>
+              <tbody id="pl-summary-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="charts-row">
+        <div class="chart-card">
+          <h3>Monthly Net Profit — M1 to M24</h3>
+          <div class="bar-chart" id="profit-chart"></div>
+        </div>
+        <div class="chart-card">
+          <h3>Cumulative Operating Profit</h3>
+          <div class="line-chart-container">
+            <svg class="line-chart" id="accum-chart"></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header">
+          <h3>Year 1 Detail — M1 to M12</h3>
+          <div class="phase-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#E07B39"></div>Awareness</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--caramel)"></div>Growth</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Stable</div>
+          </div>
+        </div>
+        <table><thead><tr><th>Month</th><th>% Cap</th><th>Revenue</th><th>Fixed Costs</th><th>Royalty</th><th>Net Profit</th><th>Accum</th></tr></thead>
+        <tbody id="tbody-y1"></tbody></table>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header"><h3>Year 2 Detail — M13 to M24</h3></div>
+        <table><thead><tr><th>Month</th><th>% Cap</th><th>Revenue</th><th>Fixed Costs</th><th>Royalty</th><th>Net Profit</th><th>Accum</th></tr></thead>
+        <tbody id="tbody-y2"></tbody></table>
+      </div>
+    </div>
+
+    <!-- INVESTMENT TAB -->
+    <div class="tab-panel" id="tab-investment">
+
+      <div class="capital-panel">
+        <div class="capital-card worst">
+          <h3>⚠ Worst-Case Capital Required</h3>
+          <div class="capital-total" id="cap-worst">—</div>
+          <div id="cap-worst-breakdown"></div>
+        </div>
+        <div class="capital-card best">
+          <h3>✓ Best-Case Capital Required</h3>
+          <div class="capital-total" id="cap-best">—</div>
+          <div id="cap-best-breakdown"></div>
+        </div>
+      </div>
+
+      <div class="verdict-panel">
+        <div>
+          <div class="verdict-label">Investment Grade</div>
+          <div class="verdict-score" id="verdict-score">—</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.58rem;color:var(--muted);margin-top:4px;" id="verdict-grade">—</div>
+        </div>
+        <div>
+          <div class="verdict-metrics">
+            <div class="v-metric">
+              <span class="v-val" id="v-roi2">—</span>
+              <span class="v-desc">2-Yr ROI on Capital</span>
+            </div>
+            <div class="v-metric">
+              <span class="v-val" id="v-roce">—</span>
+              <span class="v-desc">Yr2 Ann. Return on Capital</span>
+            </div>
+            <div class="v-metric">
+              <span class="v-val" id="v-payback">—</span>
+              <span class="v-desc">Full Capital Payback</span>
+            </div>
+          </div>
+          <div class="verdict-note" id="verdict-note">—</div>
+        </div>
+      </div>
+
+      <div class="roi-compare">
+        <h3>Return on Capital vs. Passive &amp; Active Investment Alternatives (annualised Yr 2)</h3>
+        <div id="roi-bars"></div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header"><h3>Startup &amp; Capital Costs Detail</h3><span style="font-size:0.65rem;color:var(--muted);">Startup costs fixed; working capital varies by ramp speed</span></div>
+        <table>
+          <thead><tr><th style="text-align:left">Item</th><th>Best Case</th><th>Worst Case</th><th>Notes</th></tr></thead>
+          <tbody id="startup-detail-tbody"></tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script>
+let fixedCosts = [
+  { label: 'Rent / Lease', amount: 12000 },
+  { label: 'Staff Salaries', amount: 14000 },
+  { label: 'Utilities', amount: 2000 },
+  { label: 'Supplies & Packaging', amount: 3500 },
+  { label: 'Marketing', amount: 1500 },
+  { label: 'Insurance & Misc', amount: 800 },
+];
+let startupCosts = [
+  { label: 'Franchise Fee', amount: 50000 },
+  { label: 'Renovation & Fitout', amount: 80000 },
+  { label: 'Equipment & Machines', amount: 40000 },
+  { label: 'Signage & Branding', amount: 8000 },
+  { label: 'Initial Inventory', amount: 5000 },
+  { label: 'Deposits (Rent 3 mo)', amount: 36000 },
+  { label: 'Legal & Setup Fees', amount: 5000 },
+];
+const DEFAULTS = {
+  revenue: 47318, royalty: 5, buffer: 20000,
+  ramp: [50, 60, 70, 80, 85, 90, 95, 100],
+  fixedCosts: JSON.parse(JSON.stringify(fixedCosts)),
+  startupCosts: JSON.parse(JSON.stringify(startupCosts)),
+};
+
+function fmt(n) {
+  if (isNaN(n)) return '$—';
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-$' : '$') + abs.toLocaleString('en-SG');
+}
+function fmtPct(n) { return isNaN(n) ? '—' : n.toFixed(1) + '%'; }
+function getRevenue() { return +document.getElementById('s-revenue').value; }
+function getRoyaltyPct() { return +document.getElementById('s-royalty').value / 100; }
+function getBuffer() { return +document.getElementById('s-buffer').value; }
+function getRamp() {
+  const ids = ['p-m1','p-m2','p-m3','p-m4','p-m5','p-m6','p-m7','p-m8'];
+  const r = ids.map(id => +(document.getElementById(id).value) || 0);
+  return [...r, r[7], r[7], r[7], r[7]];
+}
+function getTotalFixed() { return fixedCosts.reduce((s,c) => s + (Number(c.amount)||0), 0); }
+function getTotalStartup() { return startupCosts.reduce((s,c) => s + (Number(c.amount)||0), 0); }
+
+function renderFixedList() {
+  const el = document.getElementById('fixed-costs-list');
+  el.innerHTML = '';
+  fixedCosts.forEach((c, i) => {
+    const row = document.createElement('div');
+    row.className = 'cost-item';
+    row.innerHTML = `
+      <input type="text" value="${c.label}" placeholder="Label" oninput="fixedCosts[${i}].label=this.value;syncUpdate()">
+      <input type="number" value="${c.amount}" min="0" placeholder="0" oninput="fixedCosts[${i}].amount=+this.value;syncUpdate()">
+      <button class="del-btn" onclick="removeFixed(${i})">×</button>`;
+    el.appendChild(row);
+  });
+  document.getElementById('fixed-total').textContent = fmt(getTotalFixed());
+}
+
+function renderStartupList() {
+  const el = document.getElementById('startup-costs-list');
+  el.innerHTML = '';
+  startupCosts.forEach((c, i) => {
+    const row = document.createElement('div');
+    row.className = 'cost-item';
+    row.innerHTML = `
+      <input type="text" value="${c.label}" placeholder="Label" oninput="startupCosts[${i}].label=this.value;syncUpdate()">
+      <input type="number" value="${c.amount}" min="0" placeholder="0" oninput="startupCosts[${i}].amount=+this.value;syncUpdate()">
+      <button class="del-btn" onclick="removeStartup(${i})">×</button>`;
+    el.appendChild(row);
+  });
+  document.getElementById('startup-total').textContent = fmt(getTotalStartup());
+}
+
+function addFixedCost() { fixedCosts.push({label:'',amount:0}); renderFixedList(); update(); }
+function removeFixed(i) { fixedCosts.splice(i,1); renderFixedList(); update(); }
+function addStartupCost() { startupCosts.push({label:'',amount:0}); renderStartupList(); update(); }
+function removeStartup(i) { startupCosts.splice(i,1); renderStartupList(); update(); }
+function syncUpdate() {
+  document.getElementById('fixed-total').textContent = fmt(getTotalFixed());
+  document.getElementById('startup-total').textContent = fmt(getTotalStartup());
+  update();
+}
+
+function computeRows() {
+  const revenue = getRevenue();
+  const royaltyPct = getRoyaltyPct();
+  const ramp = getRamp();
+  const totalFixed = getTotalFixed();
+  let accum = 0;
+  return Array.from({length:24}, (_,i) => {
+    const pct = i < 12 ? ramp[i] : ramp[11];
+    const projRevenue = revenue * pct / 100;
+    const royalty = projRevenue * royaltyPct;
+    const profit = projRevenue - totalFixed - royalty;
+    accum += profit;
+    return { month:i+1, pct, projRevenue, costs:totalFixed, royalty, profit, accum };
+  });
+}
+
+function renderProjections(rows) {
+  const y1p = rows.slice(0,12).reduce((s,r)=>s+r.profit,0);
+  const y2p = rows.slice(12,24).reduce((s,r)=>s+r.profit,0);
+  const fullRow = rows.find(r=>r.pct===100) || rows[rows.length-1];
+  const beIdx = rows.findIndex(r=>r.profit>=0);
+
+  document.getElementById('kpi-y1profit').textContent = fmt(y1p);
+  document.getElementById('kpi-y1profit').style.color = y1p>=0?'var(--espresso)':'var(--red)';
+  document.getElementById('kpi-y2profit').textContent = fmt(y2p);
+  document.getElementById('kpi-be').textContent = beIdx>=0?`M${rows[beIdx].month}`:'Beyond M24';
+  document.getElementById('kpi-be-card').className = 'kpi-card '+(beIdx>=0?'success':'danger');
+  document.getElementById('kpi-monthly').textContent = fmt(fullRow.profit);
+  document.getElementById('kpi-monthly').style.color = fullRow.profit>=0?'var(--espresso)':'var(--red)';
+
+  renderTable(rows,'tbody-y1',0,12);
+  renderTable(rows,'tbody-y2',12,24);
+  renderBarChart(rows);
+  renderLineChart(rows);
+  renderCostSummary();
+}
+
+function renderTable(rows, tbId, s, e) {
+  const tb = document.getElementById(tbId); tb.innerHTML='';
+  let tR=0,tC=0,tRo=0,tP=0;
+  for(let i=s;i<e;i++){
+    const r=rows[i]; tR+=r.projRevenue; tC+=r.costs; tRo+=r.royalty; tP+=r.profit;
+    const ph=r.month<=3?'awareness':r.month<=8?'growth':'stable';
+    const tr=document.createElement('tr'); tr.className='phase-'+ph;
+    tr.innerHTML=`<td>M${r.month}</td><td>${r.pct}%</td><td>${fmt(r.projRevenue)}</td><td>${fmt(r.costs)}</td><td>${fmt(r.royalty)}</td>
+      <td class="${r.profit>=0?'profit-positive':'profit-negative'}">${fmt(r.profit)}</td>
+      <td class="${r.accum>=0?'accum-positive':'accum-negative'}">${fmt(r.accum)}</td>`;
+    tb.appendChild(tr);
+  }
+  const ttl=document.createElement('tr'); ttl.className='ttl-row';
+  ttl.innerHTML=`<td colspan="2">TOTAL</td><td>${fmt(tR)}</td><td>${fmt(tC)}</td><td>${fmt(tRo)}</td>
+    <td class="${tP>=0?'profit-positive':'profit-negative'}">${fmt(tP)}</td><td></td>`;
+  tb.appendChild(ttl);
+}
+
+function renderCostSummary() {
+  const revenue = getRevenue();
+  const royaltyPct = getRoyaltyPct();
+  const totalFixed = getTotalFixed();
+  const royaltyAmt = revenue * royaltyPct;
+  const netProfit = revenue - totalFixed - royaltyAmt;
+  const margin = revenue > 0 ? (netProfit / revenue) * 100 : 0;
+
+  // Fixed costs list
+  const fb = document.getElementById('fixed-summary-body'); fb.innerHTML='';
+  fixedCosts.forEach(c => {
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${c.label||'Unnamed'}</td><td>${fmt(c.amount||0)}</td>`;
+    fb.appendChild(tr);
+  });
+  const ftot=document.createElement('tr'); ftot.className='total-row';
+  ftot.innerHTML=`<td>Total Monthly Fixed</td><td>${fmt(totalFixed)}</td>`;
+  fb.appendChild(ftot);
+
+  // P&L bridge
+  const pb = document.getElementById('pl-summary-body'); pb.innerHTML='';
+  [
+    ['Gross Revenue', revenue, ''],
+    ['Less: Royalty', -royaltyAmt, `${(royaltyPct*100).toFixed(1)}% of rev`],
+    ['Less: Fixed Costs', -totalFixed, ''],
+    ['Net Operating Profit', netProfit, `${fmtPct(margin)} margin`],
+  ].forEach(([label,val,note],idx)=>{
+    const isTotal=idx===3;
+    const color=isTotal?(val>=0?'var(--green)':'var(--red)'):val<0?'var(--red)':'inherit';
+    const tr=document.createElement('tr'); if(isTotal) tr.className='total-row';
+    tr.innerHTML=`<td>${label}${note?` <span style="color:var(--muted);font-size:0.65rem;">(${note})</span>`:''}</td>
+      <td style="color:${color};${isTotal?'font-weight:700;':''}">${fmt(val)}</td>`;
+    pb.appendChild(tr);
+  });
+}
+
+function renderBarChart(rows) {
+  const c = document.getElementById('profit-chart');
+  const maxV = Math.max(...rows.map(r=>Math.abs(r.profit)),1);
+  c.innerHTML='';
+  rows.forEach(r=>{
+    const h=Math.max(2,(Math.abs(r.profit)/maxV)*100);
+    const g=document.createElement('div'); g.className='bar-group';
+    g.title=`M${r.month}: ${fmt(r.profit)}`;
+    g.innerHTML=`<div class="bar profit ${r.profit<0?'negative':''}" style="height:${h}px"></div><span class="bar-label">M${r.month}</span>`;
+    c.appendChild(g);
+  });
+}
+
+function renderLineChart(rows) {
+  const svg=document.getElementById('accum-chart');
+  const W=svg.clientWidth||420, H=svg.clientHeight||150;
+  const PAD={top:12,right:14,bottom:20,left:54};
+  const vals=rows.map(r=>r.accum);
+  const minV=Math.min(...vals), maxV=Math.max(...vals);
+  const range=maxV-minV||1;
+  const x=i=>PAD.left+(i/(rows.length-1))*(W-PAD.left-PAD.right);
+  const y=v=>PAD.top+(1-(v-minV)/range)*(H-PAD.top-PAD.bottom);
+  const zeroY=y(0);
+  const pts=rows.map((r,i)=>`${x(i)},${y(r.accum)}`).join(' ');
+  const beIdx=rows.findIndex(r=>r.accum>=0);
+  svg.innerHTML=`
+    <defs>
+      <linearGradient id="posG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#2E6B4F" stop-opacity="0.28"/><stop offset="100%" stop-color="#2E6B4F" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="negG" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0%" stop-color="#8B2E2E" stop-opacity="0.2"/><stop offset="100%" stop-color="#8B2E2E" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    ${minV<0&&maxV>0?`<line x1="${PAD.left}" y1="${zeroY}" x2="${W-PAD.right}" y2="${zeroY}" stroke="#E8DCC8" stroke-width="1.5" stroke-dasharray="4,3"/>`:''}
+    ${minV<0?`<polygon points="${PAD.left},${Math.min(zeroY,H-PAD.bottom)} ${rows.map((r,i)=>`${x(i)},${y(Math.min(r.accum,0))}`).join(' ')} ${W-PAD.right},${Math.min(zeroY,H-PAD.bottom)}" fill="url(#negG)"/>`:''}
+    <polygon points="${PAD.left},${Math.max(zeroY,PAD.top)} ${rows.map((r,i)=>`${x(i)},${y(Math.max(r.accum,0))}`).join(' ')} ${W-PAD.right},${Math.max(zeroY,PAD.top)}" fill="url(#posG)"/>
+    <polyline points="${pts}" fill="none" stroke="#2E6B4F" stroke-width="2.5" stroke-linejoin="round"/>
+    ${beIdx>=0?`<circle cx="${x(beIdx)}" cy="${y(rows[beIdx].accum)}" r="4.5" fill="#2E6B4F" stroke="white" stroke-width="2"/>
+    <text x="${x(beIdx)+7}" y="${y(rows[beIdx].accum)-4}" font-size="9" font-family="Inter,sans-serif" fill="#2E6B4F">BE M${rows[beIdx].month}</text>`:''}
+    ${[0,5,11,17,23].map(i=>`<text x="${x(i)}" y="${H-3}" text-anchor="middle" font-size="8" font-family="Inter,sans-serif" fill="#9B8B7A">M${i+1}</text>`).join('')}
+    <text x="${PAD.left-4}" y="${PAD.top+6}" text-anchor="end" font-size="7.5" font-family="Inter,sans-serif" fill="#9B8B7A">${fmt(maxV)}</text>
+    <text x="${PAD.left-4}" y="${H-PAD.bottom+4}" text-anchor="end" font-size="7.5" font-family="Inter,sans-serif" fill="#9B8B7A">${fmt(minV)}</text>`;
+}
+
+function renderInvestment(rows) {
+  const revenue = getRevenue();
+  const royaltyPct = getRoyaltyPct();
+  const buffer = getBuffer();
+  const totalStartup = getTotalStartup(); // fixed in both scenarios
+  const totalFixed = getTotalFixed();
+
+  // Ramp losses from the current (base) revenue projection
+  const rampLosses = rows.slice(0,12).filter(r=>r.profit<0).reduce((s,r)=>s+Math.abs(r.profit),0);
+
+  // Worst case: revenue ramps 20% slower than projected — more months losing money
+  // We model this by scaling each month's ramp % down by 20% (capped at actual)
+  const ramp = getRamp();
+  const worstRamp = ramp.map(pct => Math.max(pct * 0.8, 1));
+  const worstRows = computeRowsWithRamp(revenue, royaltyPct, totalFixed, worstRamp);
+  const worstRampLosses = worstRows.slice(0,12).filter(r=>r.profit<0).reduce((s,r)=>s+Math.abs(r.profit),0);
+
+  // Best case: revenue ramps 20% faster than projected (capped at 100%)
+  const bestRamp = ramp.map(pct => Math.min(pct * 1.2, 100));
+  const bestRows = computeRowsWithRamp(revenue, royaltyPct, totalFixed, bestRamp);
+  const bestRampLosses = bestRows.slice(0,12).filter(r=>r.profit<0).reduce((s,r)=>s+Math.abs(r.profit),0);
+
+  // Capital = fixed startup costs (same both cases) + working capital buffer + ramp losses
+  const worstWorkingCapital = worstRampLosses + buffer;
+  const bestWorkingCapital = bestRampLosses + buffer;
+  const worstCapital = totalStartup + worstWorkingCapital;
+  const bestCapital = totalStartup + bestWorkingCapital;
+
+  // Investment metrics use base (current) projection
+  const baseCapital = totalStartup + rampLosses + buffer;
+  const y2profit = rows.slice(12,24).reduce((s,r)=>s+r.profit,0);
+  const totalProfit24 = rows[23].accum;
+  const roi2yr = baseCapital > 0 ? (totalProfit24 / baseCapital) * 100 : 0;
+  const roce = baseCapital > 0 ? (y2profit / baseCapital) * 100 : 0;
+  const fullRowProfit = (rows.find(r=>r.pct===100)||rows[rows.length-1]).profit;
+  const monthsToPayback = baseCapital > 0 && fullRowProfit > 0 ? Math.ceil(baseCapital / fullRowProfit) : null;
+
+  // Capital cards — startup costs shown as-is (fixed), working capital differs
+  const makeBreakdown = (id, capital, workingCapAmt, rampLossAmt) => {
+    document.getElementById(id).textContent = fmt(capital);
+    const el = document.getElementById(id + '-breakdown'); el.innerHTML = '';
+
+    // Startup cost lines (identical in both cases)
+    startupCosts.forEach(c => {
+      const d = document.createElement('div'); d.className = 'cap-line';
+      d.innerHTML = `<span class="cap-label">${c.label || 'Item'}</span><span class="cap-val">${fmt(c.amount || 0)}</span>`;
+      el.appendChild(d);
+    });
+
+    // Separator
+    const sep = document.createElement('div');
+    sep.style.cssText = 'border-top:1px dashed var(--steam);margin:6px 0 4px;';
+    el.appendChild(sep);
+
+    // Working capital breakdown
+    const wcLabel = rampLossAmt > 0
+      ? `Ramp-period operating losses`
+      : `No ramp losses (fast ramp)`;
+    if (rampLossAmt > 0) {
+      const wc1 = document.createElement('div'); wc1.className = 'cap-line';
+      wc1.innerHTML = `<span class="cap-label">${wcLabel}</span><span class="cap-val" style="color:var(--red)">${fmt(rampLossAmt)}</span>`;
+      el.appendChild(wc1);
+    }
+    const wc2 = document.createElement('div'); wc2.className = 'cap-line';
+    wc2.innerHTML = `<span class="cap-label">Safety buffer</span><span class="cap-val">${fmt(buffer)}</span>`;
+    el.appendChild(wc2);
+
+    // Total line
+    const totLine = document.createElement('div'); totLine.className = 'cap-line';
+    totLine.style.cssText = 'border-top:1.5px solid var(--steam);margin-top:6px;padding-top:8px;font-weight:700;';
+    totLine.innerHTML = `<span>TOTAL CAPITAL</span><span class="cap-val">${fmt(capital)}</span>`;
+    el.appendChild(totLine);
+  };
+
+  makeBreakdown('cap-worst', worstCapital, worstWorkingCapital, worstRampLosses);
+  makeBreakdown('cap-best',  bestCapital,  bestWorkingCapital,  bestRampLosses);
+
+  // Verdict
+  document.getElementById('v-roi2').textContent = fmtPct(roi2yr);
+  document.getElementById('v-roce').textContent = fmtPct(roce);
+  document.getElementById('v-payback').textContent = monthsToPayback ? `M${monthsToPayback}` : 'N/A';
+
+  let score, grade, cls, note;
+  if (!isFinite(roce) || fullRowProfit <= 0) {
+    score='D'; grade='Not Viable'; cls='bad';
+    note=`At current fixed costs of ${fmt(totalFixed)}/mo, the business loses money even at full revenue capacity. Fixed costs must come down or revenue needs to go up before this makes sense.`;
+  } else if (roce>=30 && roi2yr>=20) {
+    score='A'; grade='Strong Investment'; cls='good';
+    note=`${fmtPct(roce)} return on capital comfortably beats passive alternatives. Steady-state monthly profit of ${fmt(fullRowProfit)} means you recover total capital around M${monthsToPayback}. Main risk is execution during the ramp — worst case you need ${fmt(worstCapital)} ready on day one.`;
+  } else if (roce>=15) {
+    score='B'; grade='Viable — Decent Return'; cls='good';
+    note=`${fmtPct(roce)} ROCE beats most passive investments for the risk profile of F&B. Capital required ranges from ${fmt(bestCapital)} (fast ramp) to ${fmt(worstCapital)} (slow ramp). Every dollar saved on fixed costs goes straight to the bottom line.`;
+  } else if (roce>=5) {
+    score='C'; grade='Marginal — Needs Better Numbers'; cls='ok';
+    note=`Returns are positive but thin for F&B operational risk. At ${fmtPct(roce)} ROCE, you need the ramp to go well to justify the capital. Renegotiate rent, reduce early headcount, or find a higher-revenue location before committing.`;
+  } else {
+    score='D'; grade='Weak — Reconsider Assumptions'; cls='bad';
+    note=`Very low return relative to capital at risk. At ${fmtPct(roce)} ROCE, a diversified equity fund beats this with far less stress. Push revenue assumptions up or cut fixed costs meaningfully before committing.`;
+  }
+
+  document.getElementById('verdict-score').textContent = score;
+  document.getElementById('verdict-score').className = 'verdict-score ' + cls;
+  document.getElementById('verdict-grade').textContent = grade;
+  document.getElementById('verdict-note').textContent = note;
+
+  // Benchmarks — split into passive and active
+  const passive = [
+    { label: 'SG T-Bills / Fixed Deposit', val: 3.5, color: '#9B8B7A', note: 'Risk-free, capital guaranteed' },
+    { label: 'SG Savings Bonds (SSB)', val: 3.0, color: '#A89880', note: 'Government-backed, redeemable' },
+    { label: 'SG REITs (avg dividend yield)', val: 6.5, color: '#7A8B9B', note: 'CapLand, Mapletree, Frasers avg' },
+    { label: 'STI ETF (10yr avg total return)', val: 8.0, color: '#5C8A6B', note: 'SGX blue chips, dividends included' },
+    { label: 'S&P 500 ETF (10yr avg)', val: 10.0, color: '#6B7A5C', note: 'USD-denominated, FX risk applies' },
+  ];
+  const active = [
+    { label: 'SG Rental Property (gross yield)', val: 3.3, color: '#8B7A9B', note: 'Avg 2025; net after costs ~2–2.5%' },
+    { label: 'SG Rental + Capital Appreciation', val: 8.0, color: '#7A6B8B', note: 'Gross yield + ~4–5% capital gain avg' },
+    { label: 'SME Lending / P2P (Funding Societies)', val: 7.1, color: '#9B7A5C', note: 'Higher risk; 12–18mo tenors' },
+    { label: 'Angel Investing (portfolio avg)', val: 22.0, color: '#C07830', note: '2–3x capital over 5–7 yrs; high failure rate' },
+    { label: 'F&B Franchise (industry avg ROCE)', val: 18.0, color: '#B85C38', note: 'Mature outlets; excludes ramp period' },
+    { label: 'This Franchise (your ROCE, Yr2)', val: Math.max(0, roce), color: '#D4A843', note: 'Based on your current inputs', bold: true },
+  ];
+
+  const allVals = [...passive, ...active].map(b=>b.val);
+  const maxB = Math.max(...allVals, 1);
+
+  const makeSection = (title, items) => `
+    <div style="font-family:'DM Mono',monospace;font-size:0.56rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.06);">${title}</div>
+    ${items.map(b=>`
+      <div class="roi-bar-row" style="margin-bottom:11px;">
+        <div style="width:200px;flex-shrink:0;">
+          <div class="roi-bar-label" style="${b.bold?'font-weight:700;color:var(--roast)':''}">${b.label}</div>
+          <div style="font-size:0.95rem;color:var(--muted);margin-top:1px;">${b.note}</div>
+        </div>
+        <div class="roi-bar-track" style="margin-top:2px;">
+          <div class="roi-bar-fill" style="width:${Math.min(100,(b.val/maxB*100)).toFixed(1)}%;background:${b.color};${b.bold?'box-shadow:0 0 6px rgba(212,168,67,0.4)':''}"></div>
+        </div>
+        <div class="roi-bar-val" style="${b.bold?'color:var(--caramel);font-weight:700;font-size:0.95rem':''}">${b.val.toFixed(1)}%</div>
+      </div>`).join('')}`;
+
+  document.getElementById('roi-bars').innerHTML =
+    makeSection('Passive Investments — set and forget', passive) +
+    '<div style="margin:18px 0 14px;"></div>' +
+    makeSection('Active Investments — time, expertise, or risk required', active);
+
+  // Startup detail table — startup costs are the same in all scenarios; only working capital differs
+  document.getElementById('startup-detail-tbody').innerHTML = startupCosts.map(c=>`
+    <tr>
+      <td style="text-align:left">${c.label || 'Item'}</td>
+      <td>${fmt(c.amount||0)}</td>
+      <td>${fmt(c.amount||0)}</td>
+      <td style="text-align:left;color:var(--muted);font-size:0.67rem;">Fixed commitment</td>
+    </tr>`).join('') + `
+  <tr class="ttl-row">
+    <td style="text-align:left">Subtotal: Startup Costs</td>
+    <td>${fmt(totalStartup)}</td><td>${fmt(totalStartup)}</td><td></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;color:var(--muted)">Ramp-period operating losses</td>
+    <td style="color:var(--green)">${fmt(bestRampLosses)}</td>
+    <td style="color:var(--red)">${fmt(worstRampLosses)}</td>
+    <td style="text-align:left;color:var(--muted);font-size:0.67rem;">Based on fast / slow ramp (±20% revenue)</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;color:var(--muted)">Safety buffer</td>
+    <td>${fmt(buffer)}</td><td>${fmt(buffer)}</td>
+    <td style="text-align:left;color:var(--muted);font-size:0.67rem;">Adjust with slider</td>
+  </tr>
+  <tr class="ttl-row" style="background:rgba(44,26,14,0.07)">
+    <td style="text-align:left">TOTAL CAPITAL REQUIRED</td>
+    <td style="color:var(--green);font-weight:700">${fmt(bestCapital)}</td>
+    <td style="color:var(--red);font-weight:700">${fmt(worstCapital)}</td>
+    <td></td>
+  </tr>`;
+}
+
+// Helper: compute rows with a custom ramp array (for scenario modelling)
+function computeRowsWithRamp(revenue, royaltyPct, totalFixed, ramp) {
+  let accum = 0;
+  return Array.from({length:24}, (_,i) => {
+    const pct = i < ramp.length ? ramp[Math.min(i, ramp.length-1)] : ramp[ramp.length-1];
+    const projRevenue = revenue * pct / 100;
+    const royalty = projRevenue * royaltyPct;
+    const profit = projRevenue - totalFixed - royalty;
+    accum += profit;
+    return { month:i+1, pct, projRevenue, costs:totalFixed, royalty, profit, accum };
+  });
+}
+
+function update() {
+  const revenue = getRevenue();
+  const royaltyPct = getRoyaltyPct();
+  const buffer = getBuffer();
+  document.getElementById('v-revenue').textContent = fmt(revenue);
+  document.getElementById('v-royalty').textContent = (royaltyPct*100).toFixed(1)+'%';
+  document.getElementById('v-buffer').textContent = fmt(buffer);
+  document.getElementById('fixed-total').textContent = fmt(getTotalFixed());
+  document.getElementById('startup-total').textContent = fmt(getTotalStartup());
+  const rows = computeRows();
+  renderProjections(rows);
+  renderInvestment(rows);
+}
+
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+  setTimeout(()=>renderLineChart(computeRows()), 50);
+}
+
+function resetDefaults() {
+  document.getElementById('s-revenue').value = DEFAULTS.revenue;
+  document.getElementById('s-royalty').value = DEFAULTS.royalty;
+  document.getElementById('s-buffer').value = DEFAULTS.buffer;
+  ['p-m1','p-m2','p-m3','p-m4','p-m5','p-m6','p-m7','p-m8'].forEach((id,i)=>{
+    document.getElementById(id).value = DEFAULTS.ramp[i];
+  });
+  fixedCosts = JSON.parse(JSON.stringify(DEFAULTS.fixedCosts));
+  startupCosts = JSON.parse(JSON.stringify(DEFAULTS.startupCosts));
+  renderFixedList();
+  renderStartupList();
+  update();
+}
+
+['s-revenue','s-royalty','s-buffer'].forEach(id=>document.getElementById(id).addEventListener('input',update));
+['p-m1','p-m2','p-m3','p-m4','p-m5','p-m6','p-m7','p-m8'].forEach(id=>document.getElementById(id).addEventListener('input',update));
+
+// --- Server Persistence ---
+function getState() {
+  return {
+    revenue: +document.getElementById('s-revenue').value,
+    royalty: +document.getElementById('s-royalty').value,
+    buffer: +document.getElementById('s-buffer').value,
+    ramp: ['p-m1','p-m2','p-m3','p-m4','p-m5','p-m6','p-m7','p-m8'].map(id => +document.getElementById(id).value),
+    fixedCosts: JSON.parse(JSON.stringify(fixedCosts)),
+    startupCosts: JSON.parse(JSON.stringify(startupCosts)),
+  };
+}
+
+function applyState(state) {
+  if (!state) return;
+  if (state.revenue) document.getElementById('s-revenue').value = state.revenue;
+  if (state.royalty !== undefined) document.getElementById('s-royalty').value = state.royalty;
+  if (state.buffer !== undefined) document.getElementById('s-buffer').value = state.buffer;
+  if (state.ramp) {
+    ['p-m1','p-m2','p-m3','p-m4','p-m5','p-m6','p-m7','p-m8'].forEach((id, i) => {
+      if (state.ramp[i] !== undefined) document.getElementById(id).value = state.ramp[i];
+    });
+  }
+  if (state.fixedCosts) fixedCosts = state.fixedCosts;
+  if (state.startupCosts) startupCosts = state.startupCosts;
+}
+
+function saveToServer() {
+  const btn = document.getElementById('save-btn');
+  btn.textContent = 'Saving...';
+  btn.disabled = true;
+  fetch('/api/coffee/save', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(getState()),
+  }).then(r => r.json()).then(() => {
+    btn.textContent = 'Saved!';
+    setTimeout(() => { btn.textContent = 'Save'; btn.disabled = false; }, 1500);
+  }).catch(() => {
+    btn.textContent = 'Error';
+    setTimeout(() => { btn.textContent = 'Save'; btn.disabled = false; }, 2000);
+  });
+}
+
+window.addEventListener('load', () => {
+  fetch('/api/coffee/load').then(r => r.json()).then(state => {
+    if (state) applyState(state);
+    renderFixedList();
+    renderStartupList();
+    update();
+    setTimeout(() => renderLineChart(computeRows()), 120);
+  }).catch(() => {
+    renderFixedList();
+    renderStartupList();
+    update();
+    setTimeout(() => renderLineChart(computeRows()), 120);
+  });
+});
+</script>
+</body>
+</html>
