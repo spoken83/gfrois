@@ -11,7 +11,7 @@ const COFFEE_STATE_FILE = path.resolve(__dirname, "..", "tmp", "coffee-hive-stat
 export async function registerRoutes(app: Express): Promise<Server> {
   // Serve Coffee Hive Simulator as a standalone page
   app.get("/coffee", (_req, res) => {
-    res.sendFile(path.resolve(__dirname, "..", "client", "public", "coffee-hive-simulator.html"));
+    res.sendFile(path.resolve(__dirname, "..", "client", "public", "coffee.html"));
   });
 
   // Save coffee simulator state to file
