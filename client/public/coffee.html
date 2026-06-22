@@ -16,6 +16,7 @@
     --steam: #E8DCC8;
     --muted: #9B8B7A;
     --green: #2E6B4F;
+    --amber: #D9942B;
     --red: #8B2E2E;
     --shadow: rgba(44,26,14,0.12);
   }
@@ -48,7 +49,12 @@
   .sidebar-section h3 { font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 11px; padding-bottom: 6px; border-bottom: 1px solid var(--steam); display: flex; justify-content: space-between; align-items: center; }
   .section-total { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--caramel); background: rgba(192,120,48,0.1); padding: 2px 7px; border-radius: 4px; letter-spacing: 0; font-weight: 500; }
 
-  .cost-item { display: grid; grid-template-columns: 1fr 88px 22px; gap: 5px; align-items: center; margin-bottom: 6px; }
+  .cost-item { display: grid; grid-template-columns: 14px 1fr 88px 22px; gap: 5px; align-items: center; margin-bottom: 6px; }
+  .drag-handle { cursor: grab; color: var(--muted); font-size: 0.95rem; line-height: 1; text-align: center; user-select: none; opacity: 0.6; transition: opacity 0.15s, color 0.15s; }
+  .drag-handle:hover { opacity: 1; color: var(--caramel); }
+  .drag-handle:active { cursor: grabbing; }
+  .cost-item.dragging { opacity: 0.4; }
+  .cost-item.drag-over { box-shadow: inset 0 2px 0 0 var(--caramel); }
   .cost-item input[type="text"] { padding: 5px 7px; border: 1.5px solid var(--steam); border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--espresso); background: var(--warm-white); outline: none; transition: border-color 0.2s; width: 100%; }
   .cost-item input[type="text"]:focus { border-color: var(--caramel); }
   .cost-item input[type="number"] { padding: 5px 6px; border: 1.5px solid var(--steam); border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--espresso); background: var(--warm-white); outline: none; transition: border-color 0.2s; width: 100%; text-align: right; }
@@ -76,16 +82,20 @@
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
-  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; margin-bottom: 22px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; margin-bottom: 22px; }
   .kpi-card { background: var(--warm-white); border: 1px solid var(--steam); border-radius: 12px; padding: 15px 17px; position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
   .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--shadow); }
   .kpi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--caramel); border-radius: 12px 12px 0 0; }
   .kpi-card.highlight::before { background: var(--gold); }
   .kpi-card.danger::before { background: var(--red); }
   .kpi-card.success::before { background: var(--green); }
+  .kpi-card.warn::before { background: var(--amber); }
   .kpi-label { font-size: 0.78rem; font-family: 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
   .kpi-value { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--espresso); line-height: 1; }
   .kpi-sub { font-size: 0.8rem; color: var(--muted); margin-top: 5px; }
+  .kpi-inline-sub { font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 500; color: var(--muted); margin-left: 6px; }
+  .kpi-icon { position: absolute; top: 12px; right: 13px; font-size: 1rem; line-height: 1; }
+  .kpi-icon:empty { display: none; }
 
   /* CAPITAL PANEL */
   .capital-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 22px; }
@@ -175,6 +185,54 @@
   .profit-negative { color: var(--red); font-weight: 600; }
   .accum-positive { color: var(--green); }
   .accum-negative { color: var(--red); }
+
+  /* LOCATION SWITCHER */
+  .location-bar { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .loc-label { font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .loc-btn { background: var(--gold); color: var(--espresso); border: none; border-radius: 6px; padding: 7px 12px; font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: filter 0.2s, background 0.2s, border-color 0.2s, color 0.2s; }
+  .loc-btn:hover { filter: brightness(1.08); }
+  .loc-btn:disabled { opacity: 0.6; cursor: default; }
+  .loc-btn.ghost { background: transparent; color: var(--steam); border: 1.5px solid rgba(255,255,255,0.18); }
+  .loc-btn.ghost:hover { border-color: var(--gold); color: var(--gold); filter: none; }
+  .loc-btn.ghost.danger:hover { border-color: var(--red); color: #E08A8A; }
+  .dirty-dot { font-size: 0.62rem; letter-spacing: 1px; text-transform: uppercase; color: var(--amber); white-space: nowrap; }
+  .dirty-dot.hidden { display: none; }
+
+  /* VENUE BAR */
+  .venue-bar { display: flex; align-items: center; gap: 12px; background: var(--warm-white); border-bottom: 1px solid var(--steam); padding: 9px 36px; flex-wrap: wrap; }
+  .venue-bar-label { font-size: 0.62rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); font-weight: 600; flex-shrink: 0; }
+  .venue-list { display: flex; gap: 7px; flex-wrap: wrap; flex: 1; min-width: 0; }
+  .venue-pill { background: var(--cream); border: 1.5px solid var(--steam); border-radius: 20px; padding: 5px 14px; font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 500; color: var(--roast); cursor: pointer; transition: border-color 0.2s, background 0.2s, color 0.2s; white-space: nowrap; }
+  .venue-pill:hover { border-color: var(--caramel); color: var(--caramel); }
+  .venue-pill.active { background: var(--espresso); border-color: var(--espresso); color: var(--gold); font-weight: 600; }
+  .venue-actions { display: flex; gap: 6px; flex-shrink: 0; }
+  .venue-act { background: transparent; border: 1.5px solid var(--steam); border-radius: 6px; padding: 5px 11px; font-family: 'Inter', sans-serif; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; color: var(--muted); cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+  .venue-act:hover { border-color: var(--caramel); color: var(--caramel); }
+  .venue-act.danger:hover { border-color: var(--red); color: var(--red); }
+
+  /* COLLAPSIBLE SECTIONS */
+  .section-toggle { cursor: pointer; user-select: none; }
+  .section-title-wrap { display: flex; align-items: center; gap: 8px; }
+  .section-toggle .chev { color: var(--muted); font-size: 0.7rem; transition: transform 0.2s; flex-shrink: 0; }
+  .sidebar-section.collapsed .chev { transform: rotate(-90deg); }
+  .sidebar-section.collapsed h3 { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .sidebar-section.collapsed .section-body { display: none; }
+
+  /* LOCATION TYPE */
+  .type-select { display: flex; flex-direction: column; gap: 6px; }
+  .type-btn { text-align: left; padding: 9px 12px; border: 1.5px solid var(--steam); border-radius: 7px; background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 0.84rem; font-weight: 500; color: var(--roast); cursor: pointer; transition: border-color 0.2s, background 0.2s, color 0.2s; }
+  .type-btn:hover { border-color: var(--caramel); }
+  .type-btn.active { background: var(--espresso); border-color: var(--espresso); color: var(--gold); font-weight: 600; }
+  .type-note { font-size: 0.74rem; line-height: 1.5; color: var(--muted); margin-top: 9px; }
+
+  /* SPACE & RENT */
+  .space-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .space-field label { display: block; font-size: 0.72rem; letter-spacing: 0.5px; color: var(--roast); margin-bottom: 4px; font-weight: 500; }
+  .space-field input[type="number"] { width: 100%; padding: 6px 8px; border: 1.5px solid var(--steam); border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--espresso); background: var(--warm-white); outline: none; text-align: right; transition: border-color 0.2s; }
+  .space-field input[type="number"]:focus { border-color: var(--caramel); }
+  .space-readout { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 9px; font-size: 0.8rem; color: var(--muted); }
+  .space-readout strong { color: var(--roast); font-weight: 600; margin-left: 4px; }
+  .psf-note { font-size: 0.7rem; color: var(--muted); text-align: right; }
 </style>
 </head>
 <body>
@@ -182,7 +240,11 @@
 <header>
   <img src="/coffee-hive-logo.png" alt="Coffee Hive" style="height:42px;border-radius:6px;">
   <h1>Coffee Hive Franchise Simulator</h1>
-  <span class="header-sub">24-Month Projection Model · SGD</span>
+  <span class="header-sub" style="margin-left:0;">24-Mo · SGD</span>
+  <div class="location-bar">
+    <span class="dirty-dot hidden" id="dirty-dot">● Unsaved</span>
+    <button class="loc-btn js-save" onclick="saveActive()" title="Save changes to the current venue">Save</button>
+  </div>
 </header>
 
 <nav class="tab-nav">
@@ -190,8 +252,51 @@
   <button class="tab-btn" onclick="showTab('investment',this)">💰 Capital &amp; Investment</button>
 </nav>
 
+<div class="venue-bar">
+  <span class="venue-bar-label">Venues</span>
+  <div class="venue-list" id="venue-list"></div>
+  <div class="venue-actions">
+    <button class="venue-act" onclick="newScenario()" title="Start a new blank venue">+ New venue</button>
+    <button class="venue-act" onclick="duplicateActive()" title="Copy the current venue and its numbers under a new name">Duplicate</button>
+    <button class="venue-act" onclick="renameActive()" title="Rename the current venue">Rename</button>
+    <button class="venue-act danger" onclick="deleteActive()" title="Delete the current venue">Delete</button>
+  </div>
+</div>
+
 <div class="app">
   <aside class="sidebar">
+
+    <div class="sidebar-section collapsible" data-section="type">
+      <h3 class="section-toggle" onclick="toggleSection(this)"><span class="section-title-wrap">Location Type</span><span class="chev">▾</span></h3>
+      <div class="section-body">
+      <div class="type-select" id="type-select">
+        <button type="button" class="type-btn" data-type="coffee" onclick="setLocationType('coffee')">☕ Existing coffee outlet</button>
+        <button type="button" class="type-btn" data-type="fnb" onclick="setLocationType('fnb')">🍽 Existing F&amp;B outlet</button>
+        <button type="button" class="type-btn" data-type="newspace" onclick="setLocationType('newspace')">🏢 New space (landlord)</button>
+      </div>
+      <div class="type-note" id="type-note"></div>
+      </div>
+    </div>
+
+    <div class="sidebar-section collapsible" data-section="space">
+      <h3 class="section-toggle" onclick="toggleSection(this)"><span class="section-title-wrap">Space &amp; Rent <span class="section-total" id="psf-badge">$0 psf</span></span><span class="chev">▾</span></h3>
+      <div class="section-body">
+      <div class="space-grid">
+        <div class="space-field">
+          <label>Size (sqft)</label>
+          <input type="number" id="s-size" min="0" step="50" value="800" oninput="onSizeInput()">
+        </div>
+        <div class="space-field">
+          <label>Rent PSF ($/mo)</label>
+          <input type="number" id="s-psf" min="0" step="0.5" value="0" oninput="onPsfInput()">
+        </div>
+      </div>
+      <div class="space-readout">
+        <span>Monthly rent <strong id="v-spacerent">$0</strong></span>
+        <span id="psf-note" class="psf-note">—</span>
+      </div>
+      </div>
+    </div>
 
     <div class="sidebar-section">
       <h3>Revenue</h3>
@@ -199,11 +304,19 @@
         <label>Avg Monthly Revenue <span id="v-revenue">$47,318</span></label>
         <input type="range" id="s-revenue" min="20000" max="120000" step="500" value="47318">
       </div>
+      <div style="margin-top:10px;padding:8px 10px;background:rgba(139,46,46,0.05);border-radius:6px;">
+        <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:5px;">
+          <span style="color:var(--muted);">COGS (% of revenue)</span>
+          <span id="v-cogs" style="font-family:'DM Mono',monospace;color:var(--red);">30%</span>
+        </div>
+        <input type="range" id="s-cogs" min="0" max="60" step="0.5" value="30">
+      </div>
     </div>
 
     <div class="sidebar-section">
       <h3>Monthly Fixed Costs <span class="section-total" id="fixed-total">$0</span></h3>
-      <div style="display:grid;grid-template-columns:1fr 88px 22px;gap:4px;margin-bottom:5px;">
+      <div style="display:grid;grid-template-columns:14px 1fr 88px 22px;gap:4px;margin-bottom:5px;">
+        <span></span>
         <span style="font-size:0.57rem;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;">ITEM</span>
         <span style="font-size:0.57rem;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;text-align:right;">AMT / MO</span>
         <span></span>
@@ -213,15 +326,16 @@
       <div style="margin-top:10px;padding:8px 10px;background:rgba(192,120,48,0.07);border-radius:6px;">
         <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:5px;">
           <span style="color:var(--muted);">Royalty fee (% of revenue)</span>
-          <span id="v-royalty" style="font-family:'DM Mono',monospace;color:var(--caramel);">5%</span>
+          <span id="v-royalty" style="font-family:'DM Mono',monospace;color:var(--caramel);">4%</span>
         </div>
-        <input type="range" id="s-royalty" min="0" max="15" step="0.5" value="5">
+        <input type="range" id="s-royalty" min="0" max="15" step="0.5" value="4">
       </div>
     </div>
 
     <div class="sidebar-section">
       <h3>Startup &amp; One-Time Costs <span class="section-total" id="startup-total">$0</span></h3>
-      <div style="display:grid;grid-template-columns:1fr 88px 22px;gap:4px;margin-bottom:5px;">
+      <div style="display:grid;grid-template-columns:14px 1fr 88px 22px;gap:4px;margin-bottom:5px;">
+        <span></span>
         <span style="font-size:0.57rem;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;">ITEM</span>
         <span style="font-size:0.57rem;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;text-align:right;">AMOUNT</span>
         <span></span>
@@ -238,6 +352,9 @@
 
     <div class="sidebar-section">
       <h3>Revenue Ramp-Up (%)</h3>
+      <label style="display:flex;align-items:center;gap:7px;font-size:0.78rem;color:var(--roast);margin:2px 0 8px;cursor:pointer;">
+        <input type="checkbox" id="c-noramp" onchange="toggleNoRamp(this.checked)"> No ramp-up (100% from M1)
+      </label>
       <div class="phase-grid">
         <div class="phase-input"><label>M1</label><input type="number" id="p-m1" min="1" max="100" value="50"></div>
         <div class="phase-input"><label>M2</label><input type="number" id="p-m2" min="1" max="100" value="60"></div>
@@ -250,7 +367,7 @@
       </div>
     </div>
 
-    <button class="reset-btn" onclick="saveToServer()" id="save-btn">Save</button>
+    <button class="reset-btn js-save" onclick="saveActive()" id="save-btn">Save Venue</button>
   </aside>
 
   <main class="main">
@@ -269,13 +386,21 @@
           <div class="kpi-sub">M13–M24 cumulative</div>
         </div>
         <div class="kpi-card" id="kpi-be-card">
+          <span class="kpi-icon" id="kpi-be-icon"></span>
           <div class="kpi-label">Operating Breakeven</div>
           <div class="kpi-value" id="kpi-be">—</div>
           <div class="kpi-sub">monthly profit turns +ve</div>
         </div>
-        <div class="kpi-card">
+        <div class="kpi-card" id="kpi-capbe-card">
+          <span class="kpi-icon" id="kpi-capbe-icon"></span>
+          <div class="kpi-label">Capital Breakeven</div>
+          <div class="kpi-value" id="kpi-capbe">—</div>
+          <div class="kpi-sub">cumulative profit repays startup costs</div>
+        </div>
+        <div class="kpi-card" id="kpi-monthly-card">
+          <span class="kpi-icon" id="kpi-monthly-icon"></span>
           <div class="kpi-label">Steady-State Monthly</div>
-          <div class="kpi-value" id="kpi-monthly">—</div>
+          <div class="kpi-value"><span id="kpi-monthly">—</span><span class="kpi-inline-sub" id="kpi-monthly-margin"></span></div>
           <div class="kpi-sub">at 100% capacity</div>
         </div>
       </div>
@@ -320,13 +445,13 @@
             <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Stable</div>
           </div>
         </div>
-        <table><thead><tr><th>Month</th><th>% Cap</th><th>Revenue</th><th>Fixed Costs</th><th>Royalty</th><th>Net Profit</th><th>Accum</th></tr></thead>
+        <table><thead><tr><th>Month</th><th>% Cap</th><th>Revenue</th><th>COGS</th><th>Fixed Costs</th><th>Royalty</th><th>Net Profit</th><th>Accum</th></tr></thead>
         <tbody id="tbody-y1"></tbody></table>
       </div>
 
       <div class="table-card">
         <div class="table-header"><h3>Year 2 Detail — M13 to M24</h3></div>
-        <table><thead><tr><th>Month</th><th>% Cap</th><th>Revenue</th><th>Fixed Costs</th><th>Royalty</th><th>Net Profit</th><th>Accum</th></tr></thead>
+        <table><thead><tr><th>Month</th><th>% Cap</th><th>Revenue</th><th>COGS</th><th>Fixed Costs</th><th>Royalty</th><th>Net Profit</th><th>Accum</th></tr></thead>
         <tbody id="tbody-y2"></tbody></table>
       </div>
     </div>
@@ -391,28 +516,51 @@
 
 <script>
 let fixedCosts = [
-  { label: 'Rent / Lease', amount: 12000 },
-  { label: 'Staff Salaries', amount: 14000 },
+  { label: 'Rent / Lease', amount: 10500 },
+  { label: 'Staff Salaries', amount: 10000 },
   { label: 'Utilities', amount: 2000 },
-  { label: 'Supplies & Packaging', amount: 3500 },
-  { label: 'Marketing', amount: 1500 },
+  { label: 'Supplies & Packaging', amount: 500 },
+  { label: 'Marketing', amount: 500 },
   { label: 'Insurance & Misc', amount: 800 },
 ];
 let startupCosts = [
-  { label: 'Franchise Fee', amount: 50000 },
+  { label: 'Franchise Fee', amount: 40000 },
+  { label: 'Takeover', amount: 1 },
   { label: 'Renovation & Fitout', amount: 80000 },
   { label: 'Equipment & Machines', amount: 40000 },
   { label: 'Signage & Branding', amount: 8000 },
   { label: 'Initial Inventory', amount: 5000 },
-  { label: 'Deposits (Rent 3 mo)', amount: 36000 },
+  { label: 'Deposits (Rent 3 mo)', amount: 31500 },
   { label: 'Legal & Setup Fees', amount: 5000 },
 ];
 const DEFAULTS = {
-  revenue: 47318, royalty: 5, buffer: 20000,
+  revenue: 47318, royalty: 4, cogs: 30, buffer: 20000,
+  size: 800, locationType: 'fnb',
   ramp: [50, 60, 70, 80, 85, 90, 95, 100],
   fixedCosts: JSON.parse(JSON.stringify(fixedCosts)),
   startupCosts: JSON.parse(JSON.stringify(startupCosts)),
 };
+
+// Location-type presets only touch reno / equipment / signage — the items that
+// differ by how "built-out" the unit already is. Franchise fee, takeover, etc.
+// are left to the user.
+const TYPE_PRESETS = {
+  coffee:   { reno: 0,     equipment: 0,     signage: 1000, noRamp: true },
+  fnb:      { reno: 80000, equipment: 40000, signage: 8000 },
+  newspace: { reno: 80000, equipment: 40000, signage: 8000 },
+};
+const TYPE_NOTES = {
+  coffee:   'Taking over a coffee outlet — no reno or equipment, and revenue starts at 100% (no ramp-up, established base). Signage ~$1k to rebrand (set to $0 if it is already a Coffee Hive). Franchise fee + takeover are the main spend.',
+  fnb:      'Converting an existing F&B unit — full reno, equipment and signage at default estimates.',
+  newspace: 'Bare landlord space — full reno, equipment and signage at default estimates.',
+};
+
+// --- Multi-location (scenario) state ---
+let scenarios = [];      // [{ id, name, state, updatedAt }]
+let activeId = null;     // id of the currently-loaded location
+let dirty = false;       // unsaved edits to the active location
+let isApplying = false;  // true while loading a location into the UI (suppresses dirty)
+let currentType = 'fnb'; // active location type
 
 function fmt(n) {
   if (isNaN(n)) return '$—';
@@ -420,8 +568,16 @@ function fmt(n) {
   return (n < 0 ? '-$' : '$') + abs.toLocaleString('en-SG');
 }
 function fmtPct(n) { return isNaN(n) ? '—' : n.toFixed(1) + '%'; }
+const STATUS_COLORS = { success:'var(--green)', warn:'var(--amber)', danger:'var(--red)' };
+// Distinct icons so amber vs red read at a glance without relying on colour.
+const STATUS_ICONS = { success:'', warn:'⚠️', danger:'⛔' };
+function setKpiIcon(id, cls) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = STATUS_ICONS[cls] || '';
+}
 function getRevenue() { return +document.getElementById('s-revenue').value; }
 function getRoyaltyPct() { return +document.getElementById('s-royalty').value / 100; }
+function getCogsPct() { return +document.getElementById('s-cogs').value / 100; }
 function getBuffer() { return +document.getElementById('s-buffer').value; }
 function getRamp() {
   const ids = ['p-m1','p-m2','p-m3','p-m4','p-m5','p-m6','p-m7','p-m8'];
@@ -431,6 +587,179 @@ function getRamp() {
 function getTotalFixed() { return fixedCosts.reduce((s,c) => s + (Number(c.amount)||0), 0); }
 function getTotalStartup() { return startupCosts.reduce((s,c) => s + (Number(c.amount)||0), 0); }
 
+// The deposits row is derived: always 3 × the monthly rent fixed-cost item.
+// Matched by label so renaming/deleting either row turns it back into a manual value.
+function isDepositRow(c) { return /deposit/i.test(c.label||''); }
+function getRentAmount() {
+  const r = fixedCosts.find(c => /rent/i.test(c.label||''));
+  return r ? (Number(r.amount)||0) : null;
+}
+function syncDeposit() {
+  const rent = getRentAmount();
+  if (rent === null) return;
+  startupCosts.forEach((c, i) => {
+    if (!isDepositRow(c)) return;
+    c.amount = rent * 3;
+    const inp = document.querySelector(`#startup-costs-list .cost-item:nth-child(${i+1}) input[type=number]`);
+    if (inp && +inp.value !== c.amount) inp.value = c.amount;
+  });
+}
+
+// --- Space & rent (size ⇄ PSF ⇄ rent) ---
+function getSize() { return +document.getElementById('s-size').value || 0; }
+function getPsf() { return +document.getElementById('s-psf').value || 0; }
+
+// Write a new monthly rent into the "Rent / Lease" fixed-cost item and re-sync
+// everything that depends on it (deposit, totals, projections).
+function setRentAmount(amount) {
+  const r = fixedCosts.find(c => /rent/i.test(c.label || ''));
+  if (!r) return;
+  r.amount = amount;
+  renderFixedList();
+  renderStartupList();
+  document.getElementById('fixed-total').textContent = fmt(getTotalFixed());
+  document.getElementById('startup-total').textContent = fmt(getTotalStartup());
+  update();
+}
+
+// Refresh the PSF badge + readout from the current rent and size.
+// updatePsfInput=false avoids stomping the PSF field while the user types in it.
+function refreshSpace(updatePsfInput) {
+  const size = getSize();
+  const rent = getRentAmount() || 0;
+  const psf = size > 0 ? rent / size : 0;
+  if (updatePsfInput) document.getElementById('s-psf').value = psf ? psf.toFixed(2) : 0;
+  document.getElementById('psf-badge').textContent = '$' + psf.toFixed(2) + ' psf';
+  document.getElementById('v-spacerent').textContent = fmt(rent);
+  document.getElementById('psf-note').textContent = size > 0
+    ? `$${psf.toFixed(2)}/sqft × ${size.toLocaleString('en-SG')} sqft`
+    : 'enter size';
+}
+
+// Editing size keeps the rent obligation fixed and recomputes the PSF rate.
+function onSizeInput() { refreshSpace(true); update(); }
+
+// Editing PSF drives the rent: rent = PSF × size.
+function onPsfInput() {
+  const rent = Math.round(getPsf() * getSize());
+  setRentAmount(rent);
+  refreshSpace(false);
+}
+
+// --- Location type ---
+const TYPE_LABELS = { coffee: 'Existing coffee outlet', fnb: 'Existing F&B outlet', newspace: 'New space (landlord)' };
+function findCost(re) { return startupCosts.find(c => re.test(c.label || '')); }
+
+// True when every ramp month is already at 100% (i.e. effectively no ramp-up).
+function isNoRampNow() { return RAMP_IDS.every(id => +document.getElementById(id).value === 100); }
+
+// Force the "no ramp-up" toggle on/off without double-backing-up the ramp.
+function setNoRamp(on) {
+  const cb = document.getElementById('c-noramp');
+  if (cb.checked === on) return;
+  cb.checked = on;
+  toggleNoRamp(on);
+}
+
+// Which things the preset would actually change (for the confirm prompt).
+function presetChanges(p) {
+  const rows = [[/reno/i, p.reno], [/equip/i, p.equipment], [/signage|sign/i, p.signage]];
+  const changes = [];
+  rows.forEach(([re, val]) => {
+    const c = findCost(re);
+    if (c && (Number(c.amount) || 0) !== val) changes.push(`  • ${c.label}: ${fmt(c.amount || 0)} → ${fmt(val)}`);
+  });
+  if (p.noRamp && !isNoRampNow()) changes.push('  • Revenue ramp-up → none (100% from month 1)');
+  return changes;
+}
+
+function applyTypePreset(type) {
+  const p = TYPE_PRESETS[type];
+  if (!p) return;
+  const setItem = (re, val) => { const c = findCost(re); if (c) c.amount = val; };
+  setItem(/reno/i, p.reno);
+  setItem(/equip/i, p.equipment);
+  setItem(/signage|sign/i, p.signage);
+  if (p.noRamp) setNoRamp(true);
+  renderStartupList();
+  document.getElementById('startup-total').textContent = fmt(getTotalStartup());
+  update();
+}
+
+function highlightType(type) {
+  document.querySelectorAll('#type-select .type-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.type === type));
+  document.getElementById('type-note').textContent = TYPE_NOTES[type] || '';
+}
+
+// opts.silent = reflect the selection only (on load). Otherwise confirm before
+// overwriting any custom reno/equipment/signage values, then apply the preset.
+function setLocationType(type, opts) {
+  const silent = opts && opts.silent;
+  if (!silent) {
+    const changes = presetChanges(TYPE_PRESETS[type]);
+    if (changes.length && !confirm(
+      `Switch to "${TYPE_LABELS[type]}" and apply its preset?\n\n` +
+      `This overwrites:\n${changes.join('\n')}\n\n` +
+      `Franchise fee, takeover and everything else are kept. Nothing is saved until you click Save.`
+    )) {
+      highlightType(currentType); // user cancelled — keep the previous selection
+      return;
+    }
+  }
+  currentType = type;
+  highlightType(type);
+  if (!silent) applyTypePreset(type);
+}
+
+// --- Drag-to-reorder for the cost lists ---
+let dragState = null; // { listKey: 'fixed' | 'startup', from: number }
+function clearDragOver() {
+  document.querySelectorAll('.cost-item.drag-over').forEach(el => el.classList.remove('drag-over'));
+}
+function reorderCost(listKey, from, to) {
+  const arr = listKey === 'fixed' ? fixedCosts : startupCosts;
+  if (from === to || from < 0 || to < 0 || from >= arr.length || to >= arr.length) return;
+  const [moved] = arr.splice(from, 1);
+  arr.splice(to, 0, moved);
+  dragState = null;
+  clearDragOver();
+  if (listKey === 'fixed') renderFixedList(); else renderStartupList();
+  document.getElementById('fixed-total').textContent = fmt(getTotalFixed());
+  document.getElementById('startup-total').textContent = fmt(getTotalStartup());
+  update();
+}
+// Only the grip handle starts a drag, so the label/amount inputs stay editable.
+function wireRowDrag(row, listKey, index) {
+  const handle = row.querySelector('.drag-handle');
+  if (handle) {
+    handle.addEventListener('dragstart', (e) => {
+      dragState = { listKey, from: index };
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', String(index));
+      try { e.dataTransfer.setDragImage(row, 12, 12); } catch (_) {}
+      row.classList.add('dragging');
+    });
+    handle.addEventListener('dragend', () => {
+      row.classList.remove('dragging');
+      clearDragOver();
+      dragState = null;
+    });
+  }
+  row.addEventListener('dragover', (e) => {
+    if (!dragState || dragState.listKey !== listKey) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    clearDragOver();
+    if (index !== dragState.from) row.classList.add('drag-over');
+  });
+  row.addEventListener('drop', (e) => {
+    if (!dragState || dragState.listKey !== listKey) return;
+    e.preventDefault();
+    reorderCost(listKey, dragState.from, index);
+  });
+}
+
 function renderFixedList() {
   const el = document.getElementById('fixed-costs-list');
   el.innerHTML = '';
@@ -438,25 +767,33 @@ function renderFixedList() {
     const row = document.createElement('div');
     row.className = 'cost-item';
     row.innerHTML = `
+      <span class="drag-handle" draggable="true" title="Drag to reorder">⠿</span>
       <input type="text" value="${c.label}" placeholder="Label" oninput="fixedCosts[${i}].label=this.value;syncUpdate()">
-      <input type="number" value="${c.amount}" min="0" placeholder="0" oninput="fixedCosts[${i}].amount=+this.value;syncUpdate()">
+      <input type="number" value="${c.amount}" min="0" step="100" placeholder="0" oninput="fixedCosts[${i}].amount=+this.value;syncUpdate()">
       <button class="del-btn" onclick="removeFixed(${i})">×</button>`;
     el.appendChild(row);
+    wireRowDrag(row, 'fixed', i);
   });
   document.getElementById('fixed-total').textContent = fmt(getTotalFixed());
 }
 
 function renderStartupList() {
+  syncDeposit();
   const el = document.getElementById('startup-costs-list');
   el.innerHTML = '';
   startupCosts.forEach((c, i) => {
+    const isDep = isDepositRow(c) && getRentAmount() !== null;
     const row = document.createElement('div');
     row.className = 'cost-item';
     row.innerHTML = `
+      <span class="drag-handle" draggable="true" title="Drag to reorder">⠿</span>
       <input type="text" value="${c.label}" placeholder="Label" oninput="startupCosts[${i}].label=this.value;syncUpdate()">
-      <input type="number" value="${c.amount}" min="0" placeholder="0" oninput="startupCosts[${i}].amount=+this.value;syncUpdate()">
+      ${isDep
+        ? `<input type="number" value="${c.amount}" disabled title="Auto-calculated: 3 × monthly rent" style="opacity:0.65;">`
+        : `<input type="number" value="${c.amount}" min="0" step="100" placeholder="0" oninput="startupCosts[${i}].amount=+this.value;syncUpdate()">`}
       <button class="del-btn" onclick="removeStartup(${i})">×</button>`;
     el.appendChild(row);
+    wireRowDrag(row, 'startup', i);
   });
   document.getElementById('startup-total').textContent = fmt(getTotalStartup());
 }
@@ -466,24 +803,28 @@ function removeFixed(i) { fixedCosts.splice(i,1); renderFixedList(); update(); }
 function addStartupCost() { startupCosts.push({label:'',amount:0}); renderStartupList(); update(); }
 function removeStartup(i) { startupCosts.splice(i,1); renderStartupList(); update(); }
 function syncUpdate() {
+  syncDeposit();
   document.getElementById('fixed-total').textContent = fmt(getTotalFixed());
   document.getElementById('startup-total').textContent = fmt(getTotalStartup());
+  refreshSpace(true); // rent may have changed in the list → recompute PSF + readout
   update();
 }
 
 function computeRows() {
   const revenue = getRevenue();
   const royaltyPct = getRoyaltyPct();
+  const cogsPct = getCogsPct();
   const ramp = getRamp();
   const totalFixed = getTotalFixed();
   let accum = 0;
   return Array.from({length:24}, (_,i) => {
     const pct = i < 12 ? ramp[i] : ramp[11];
     const projRevenue = revenue * pct / 100;
+    const cogs = projRevenue * cogsPct;
     const royalty = projRevenue * royaltyPct;
-    const profit = projRevenue - totalFixed - royalty;
+    const profit = projRevenue - cogs - totalFixed - royalty;
     accum += profit;
-    return { month:i+1, pct, projRevenue, costs:totalFixed, royalty, profit, accum };
+    return { month:i+1, pct, projRevenue, cogs, costs:totalFixed, royalty, profit, accum };
   });
 }
 
@@ -498,8 +839,34 @@ function renderProjections(rows) {
   document.getElementById('kpi-y2profit').textContent = fmt(y2p);
   document.getElementById('kpi-be').textContent = beIdx>=0?`M${rows[beIdx].month}`:'Beyond M24';
   document.getElementById('kpi-be-card').className = 'kpi-card '+(beIdx>=0?'success':'danger');
+  setKpiIcon('kpi-be-icon', beIdx>=0?'success':'danger');
+
+  // Capital breakeven: cumulative operating profit recovers startup capital.
+  // Ramp losses are already netted inside accum; the safety buffer is unspent reserve, so it's excluded.
+  const totalStartup = getTotalStartup();
+  const capIdx = rows.findIndex(r=>r.accum>=totalStartup);
+  const steadyProfit = rows[23].profit;
+  // Capital breakeven tiers: within 12 months green, within 24 amber, beyond red
+  let capText, capCls;
+  if (capIdx>=0) {
+    capText = `M${rows[capIdx].month}`;
+    capCls = rows[capIdx].month <= 12 ? 'success' : 'warn';
+  }
+  else if (steadyProfit>0) { capText=`~M${24+Math.ceil((totalStartup-rows[23].accum)/steadyProfit)}`; capCls='danger'; }
+  else { capText='Never'; capCls='danger'; }
+  document.getElementById('kpi-capbe').textContent = capText;
+  document.getElementById('kpi-capbe').style.color = STATUS_COLORS[capCls];
+  document.getElementById('kpi-capbe-card').className = 'kpi-card ' + capCls;
+  setKpiIcon('kpi-capbe-icon', capCls);
+  // Steady-state monthly tiers: >$8k green, $4k–8k amber, <$4k red —
+  // but a healthy margin (≥20%) earns green even below the $8k cash threshold.
+  const spMargin = fullRow.projRevenue > 0 ? (fullRow.profit / fullRow.projRevenue) * 100 : 0;
+  const spCls = (fullRow.profit > 8000 || spMargin >= 20) ? 'success' : fullRow.profit >= 4000 ? 'warn' : 'danger';
   document.getElementById('kpi-monthly').textContent = fmt(fullRow.profit);
-  document.getElementById('kpi-monthly').style.color = fullRow.profit>=0?'var(--espresso)':'var(--red)';
+  document.getElementById('kpi-monthly').style.color = STATUS_COLORS[spCls];
+  document.getElementById('kpi-monthly-card').className = 'kpi-card ' + spCls;
+  setKpiIcon('kpi-monthly-icon', spCls);
+  document.getElementById('kpi-monthly-margin').textContent = `(${fmtPct(spMargin)} margin)`;
 
   renderTable(rows,'tbody-y1',0,12);
   renderTable(rows,'tbody-y2',12,24);
@@ -510,18 +877,18 @@ function renderProjections(rows) {
 
 function renderTable(rows, tbId, s, e) {
   const tb = document.getElementById(tbId); tb.innerHTML='';
-  let tR=0,tC=0,tRo=0,tP=0;
+  let tR=0,tG=0,tC=0,tRo=0,tP=0;
   for(let i=s;i<e;i++){
-    const r=rows[i]; tR+=r.projRevenue; tC+=r.costs; tRo+=r.royalty; tP+=r.profit;
+    const r=rows[i]; tR+=r.projRevenue; tG+=r.cogs; tC+=r.costs; tRo+=r.royalty; tP+=r.profit;
     const ph=r.month<=3?'awareness':r.month<=8?'growth':'stable';
     const tr=document.createElement('tr'); tr.className='phase-'+ph;
-    tr.innerHTML=`<td>M${r.month}</td><td>${r.pct}%</td><td>${fmt(r.projRevenue)}</td><td>${fmt(r.costs)}</td><td>${fmt(r.royalty)}</td>
+    tr.innerHTML=`<td>M${r.month}</td><td>${r.pct}%</td><td>${fmt(r.projRevenue)}</td><td>${fmt(r.cogs)}</td><td>${fmt(r.costs)}</td><td>${fmt(r.royalty)}</td>
       <td class="${r.profit>=0?'profit-positive':'profit-negative'}">${fmt(r.profit)}</td>
       <td class="${r.accum>=0?'accum-positive':'accum-negative'}">${fmt(r.accum)}</td>`;
     tb.appendChild(tr);
   }
   const ttl=document.createElement('tr'); ttl.className='ttl-row';
-  ttl.innerHTML=`<td colspan="2">TOTAL</td><td>${fmt(tR)}</td><td>${fmt(tC)}</td><td>${fmt(tRo)}</td>
+  ttl.innerHTML=`<td colspan="2">TOTAL</td><td>${fmt(tR)}</td><td>${fmt(tG)}</td><td>${fmt(tC)}</td><td>${fmt(tRo)}</td>
     <td class="${tP>=0?'profit-positive':'profit-negative'}">${fmt(tP)}</td><td></td>`;
   tb.appendChild(ttl);
 }
@@ -529,9 +896,12 @@ function renderTable(rows, tbId, s, e) {
 function renderCostSummary() {
   const revenue = getRevenue();
   const royaltyPct = getRoyaltyPct();
+  const cogsPct = getCogsPct();
   const totalFixed = getTotalFixed();
+  const cogsAmt = revenue * cogsPct;
   const royaltyAmt = revenue * royaltyPct;
-  const netProfit = revenue - totalFixed - royaltyAmt;
+  const grossProfit = revenue - cogsAmt;
+  const netProfit = grossProfit - totalFixed - royaltyAmt;
   const margin = revenue > 0 ? (netProfit / revenue) * 100 : 0;
 
   // Fixed costs list
@@ -547,13 +917,16 @@ function renderCostSummary() {
 
   // P&L bridge
   const pb = document.getElementById('pl-summary-body'); pb.innerHTML='';
-  [
+  const rowDefs = [
     ['Gross Revenue', revenue, ''],
+    ['Less: COGS', -cogsAmt, `${(cogsPct*100).toFixed(1)}% of rev`],
+    ['Gross Profit', grossProfit, `${fmtPct(revenue>0?(grossProfit/revenue)*100:0)} margin`],
     ['Less: Royalty', -royaltyAmt, `${(royaltyPct*100).toFixed(1)}% of rev`],
     ['Less: Fixed Costs', -totalFixed, ''],
     ['Net Operating Profit', netProfit, `${fmtPct(margin)} margin`],
-  ].forEach(([label,val,note],idx)=>{
-    const isTotal=idx===3;
+  ];
+  rowDefs.forEach(([label,val,note],idx)=>{
+    const isTotal=idx===rowDefs.length-1;
     const color=isTotal?(val>=0?'var(--green)':'var(--red)'):val<0?'var(--red)':'inherit';
     const tr=document.createElement('tr'); if(isTotal) tr.className='total-row';
     tr.innerHTML=`<td>${label}${note?` <span style="color:var(--muted);font-size:0.65rem;">(${note})</span>`:''}</td>
@@ -610,6 +983,7 @@ function renderLineChart(rows) {
 function renderInvestment(rows) {
   const revenue = getRevenue();
   const royaltyPct = getRoyaltyPct();
+  const cogsPct = getCogsPct();
   const buffer = getBuffer();
   const totalStartup = getTotalStartup(); // fixed in both scenarios
   const totalFixed = getTotalFixed();
@@ -621,12 +995,12 @@ function renderInvestment(rows) {
   // We model this by scaling each month's ramp % down by 20% (capped at actual)
   const ramp = getRamp();
   const worstRamp = ramp.map(pct => Math.max(pct * 0.8, 1));
-  const worstRows = computeRowsWithRamp(revenue, royaltyPct, totalFixed, worstRamp);
+  const worstRows = computeRowsWithRamp(revenue, royaltyPct, cogsPct, totalFixed, worstRamp);
   const worstRampLosses = worstRows.slice(0,12).filter(r=>r.profit<0).reduce((s,r)=>s+Math.abs(r.profit),0);
 
   // Best case: revenue ramps 20% faster than projected (capped at 100%)
   const bestRamp = ramp.map(pct => Math.min(pct * 1.2, 100));
-  const bestRows = computeRowsWithRamp(revenue, royaltyPct, totalFixed, bestRamp);
+  const bestRows = computeRowsWithRamp(revenue, royaltyPct, cogsPct, totalFixed, bestRamp);
   const bestRampLosses = bestRows.slice(0,12).filter(r=>r.profit<0).reduce((s,r)=>s+Math.abs(r.profit),0);
 
   // Capital = fixed startup costs (same both cases) + working capital buffer + ramp losses
@@ -783,15 +1157,16 @@ function renderInvestment(rows) {
 }
 
 // Helper: compute rows with a custom ramp array (for scenario modelling)
-function computeRowsWithRamp(revenue, royaltyPct, totalFixed, ramp) {
+function computeRowsWithRamp(revenue, royaltyPct, cogsPct, totalFixed, ramp) {
   let accum = 0;
   return Array.from({length:24}, (_,i) => {
     const pct = i < ramp.length ? ramp[Math.min(i, ramp.length-1)] : ramp[ramp.length-1];
     const projRevenue = revenue * pct / 100;
+    const cogs = projRevenue * cogsPct;
     const royalty = projRevenue * royaltyPct;
-    const profit = projRevenue - totalFixed - royalty;
+    const profit = projRevenue - cogs - totalFixed - royalty;
     accum += profit;
-    return { month:i+1, pct, projRevenue, costs:totalFixed, royalty, profit, accum };
+    return { month:i+1, pct, projRevenue, cogs, costs:totalFixed, royalty, profit, accum };
   });
 }
 
@@ -801,12 +1176,31 @@ function update() {
   const buffer = getBuffer();
   document.getElementById('v-revenue').textContent = fmt(revenue);
   document.getElementById('v-royalty').textContent = (royaltyPct*100).toFixed(1)+'%';
+  document.getElementById('v-cogs').textContent = (getCogsPct()*100).toFixed(1)+'%';
   document.getElementById('v-buffer').textContent = fmt(buffer);
   document.getElementById('fixed-total').textContent = fmt(getTotalFixed());
   document.getElementById('startup-total').textContent = fmt(getTotalStartup());
   const rows = computeRows();
   renderProjections(rows);
   renderInvestment(rows);
+  if (!isApplying) setDirty(true);
+}
+
+const RAMP_IDS = ['p-m1','p-m2','p-m3','p-m4','p-m5','p-m6','p-m7','p-m8'];
+let rampBackup = null;
+function toggleNoRamp(on) {
+  if (on) {
+    rampBackup = RAMP_IDS.map(id => document.getElementById(id).value);
+    RAMP_IDS.forEach(id => { const e = document.getElementById(id); e.value = 100; e.disabled = true; });
+  } else {
+    RAMP_IDS.forEach((id, i) => {
+      const e = document.getElementById(id);
+      e.disabled = false;
+      if (rampBackup) e.value = rampBackup[i];
+    });
+    rampBackup = null;
+  }
+  update();
 }
 
 function showTab(name, btn) {
@@ -820,9 +1214,14 @@ function showTab(name, btn) {
 function resetDefaults() {
   document.getElementById('s-revenue').value = DEFAULTS.revenue;
   document.getElementById('s-royalty').value = DEFAULTS.royalty;
+  document.getElementById('s-cogs').value = DEFAULTS.cogs;
   document.getElementById('s-buffer').value = DEFAULTS.buffer;
+  document.getElementById('c-noramp').checked = false;
+  rampBackup = null;
   ['p-m1','p-m2','p-m3','p-m4','p-m5','p-m6','p-m7','p-m8'].forEach((id,i)=>{
-    document.getElementById(id).value = DEFAULTS.ramp[i];
+    const e = document.getElementById(id);
+    e.disabled = false;
+    e.value = DEFAULTS.ramp[i];
   });
   fixedCosts = JSON.parse(JSON.stringify(DEFAULTS.fixedCosts));
   startupCosts = JSON.parse(JSON.stringify(DEFAULTS.startupCosts));
@@ -831,7 +1230,7 @@ function resetDefaults() {
   update();
 }
 
-['s-revenue','s-royalty','s-buffer'].forEach(id=>document.getElementById(id).addEventListener('input',update));
+['s-revenue','s-royalty','s-cogs','s-buffer'].forEach(id=>document.getElementById(id).addEventListener('input',update));
 ['p-m1','p-m2','p-m3','p-m4','p-m5','p-m6','p-m7','p-m8'].forEach(id=>document.getElementById(id).addEventListener('input',update));
 
 // --- Server Persistence ---
@@ -839,8 +1238,11 @@ function getState() {
   return {
     revenue: +document.getElementById('s-revenue').value,
     royalty: +document.getElementById('s-royalty').value,
+    cogs: +document.getElementById('s-cogs').value,
     buffer: +document.getElementById('s-buffer').value,
     ramp: ['p-m1','p-m2','p-m3','p-m4','p-m5','p-m6','p-m7','p-m8'].map(id => +document.getElementById(id).value),
+    size: getSize(),
+    locationType: currentType,
     fixedCosts: JSON.parse(JSON.stringify(fixedCosts)),
     startupCosts: JSON.parse(JSON.stringify(startupCosts)),
   };
@@ -850,7 +1252,9 @@ function applyState(state) {
   if (!state) return;
   if (state.revenue) document.getElementById('s-revenue').value = state.revenue;
   if (state.royalty !== undefined) document.getElementById('s-royalty').value = state.royalty;
+  if (state.cogs !== undefined) document.getElementById('s-cogs').value = state.cogs;
   if (state.buffer !== undefined) document.getElementById('s-buffer').value = state.buffer;
+  if (state.size !== undefined) document.getElementById('s-size').value = state.size;
   if (state.ramp) {
     ['p-m1','p-m2','p-m3','p-m4','p-m5','p-m6','p-m7','p-m8'].forEach((id, i) => {
       if (state.ramp[i] !== undefined) document.getElementById(id).value = state.ramp[i];
@@ -858,38 +1262,211 @@ function applyState(state) {
   }
   if (state.fixedCosts) fixedCosts = state.fixedCosts;
   if (state.startupCosts) startupCosts = state.startupCosts;
+  // Reflect the type selector without re-applying its preset (don't clobber saved numbers).
+  setLocationType(state.locationType || 'fnb', { silent: true });
 }
 
-function saveToServer() {
-  const btn = document.getElementById('save-btn');
-  btn.textContent = 'Saving...';
-  btn.disabled = true;
-  fetch('/api/coffee/save', {
+function genId() {
+  return 'loc_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+}
+function currentScenario() {
+  return scenarios.find(s => s.id === activeId) || null;
+}
+function defaultState() {
+  return {
+    revenue: DEFAULTS.revenue, royalty: DEFAULTS.royalty, cogs: DEFAULTS.cogs, buffer: DEFAULTS.buffer,
+    size: DEFAULTS.size, locationType: DEFAULTS.locationType,
+    ramp: [...DEFAULTS.ramp],
+    fixedCosts: JSON.parse(JSON.stringify(DEFAULTS.fixedCosts)),
+    startupCosts: JSON.parse(JSON.stringify(DEFAULTS.startupCosts)),
+  };
+}
+
+function setDirty(d) {
+  dirty = d;
+  const dot = document.getElementById('dirty-dot');
+  if (dot) dot.classList.toggle('hidden', !d);
+}
+
+// --- Collapsible sidebar sections (state remembered in localStorage) ---
+function toggleSection(h3) {
+  const sec = h3.closest('.sidebar-section');
+  sec.classList.toggle('collapsed');
+  saveCollapsed();
+}
+function saveCollapsed() {
+  const ids = Array.from(document.querySelectorAll('.sidebar-section.collapsible.collapsed'))
+    .map(s => s.dataset.section);
+  try { localStorage.setItem('coffee_collapsed', JSON.stringify(ids)); } catch (e) {}
+}
+function restoreCollapsed() {
+  let ids = [];
+  try { ids = JSON.parse(localStorage.getItem('coffee_collapsed') || '[]'); } catch (e) {}
+  ids.forEach(id => {
+    const s = document.querySelector(`.sidebar-section[data-section="${id}"]`);
+    if (s) s.classList.add('collapsed');
+  });
+}
+
+// Load a saved location's numbers into the inputs without marking the form dirty.
+function loadScenarioIntoUI(state) {
+  isApplying = true;
+  applyState(state);
+  // Reflect "no ramp-up" when the saved ramp is already flat at 100%.
+  const noRamp = isNoRampNow();
+  document.getElementById('c-noramp').checked = noRamp;
+  RAMP_IDS.forEach(id => { document.getElementById(id).disabled = noRamp; });
+  rampBackup = null;
+  renderFixedList();
+  renderStartupList();
+  refreshSpace(true); // derive PSF + readout from the loaded rent & size
+  update();
+  isApplying = false;
+}
+
+function renderVenues() {
+  const list = document.getElementById('venue-list');
+  list.innerHTML = '';
+  scenarios.forEach(s => {
+    const b = document.createElement('button');
+    b.className = 'venue-pill' + (s.id === activeId ? ' active' : '');
+    b.textContent = s.name;
+    b.title = 'Load ' + s.name;
+    b.onclick = () => switchScenario(s.id);
+    list.appendChild(b);
+  });
+}
+
+// Persist the whole collection (all locations + which one is active).
+function persist() {
+  return fetch('/api/coffee/save', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(getState()),
-  }).then(r => r.json()).then(() => {
-    btn.textContent = 'Saved!';
-    setTimeout(() => { btn.textContent = 'Save'; btn.disabled = false; }, 1500);
+    body: JSON.stringify({ scenarios, activeId }),
+  }).then(r => r.json());
+}
+
+function saveActive() {
+  const sc = currentScenario();
+  if (!sc) return;
+  sc.state = getState();
+  sc.updatedAt = Date.now();
+  const btns = Array.from(document.querySelectorAll('.js-save'));
+  const labels = btns.map(b => b.textContent);
+  btns.forEach(b => { b.textContent = 'Saving…'; b.disabled = true; });
+  persist().then(() => {
+    setDirty(false);
+    btns.forEach(b => { b.textContent = 'Saved!'; });
+    setTimeout(() => { btns.forEach((b, i) => { b.textContent = labels[i]; b.disabled = false; }); }, 1300);
   }).catch(() => {
-    btn.textContent = 'Error';
-    setTimeout(() => { btn.textContent = 'Save'; btn.disabled = false; }, 2000);
+    btns.forEach(b => { b.textContent = 'Error'; });
+    setTimeout(() => { btns.forEach((b, i) => { b.textContent = labels[i]; b.disabled = false; }); }, 2000);
   });
+}
+
+// Guard against switching away from unsaved edits.
+function confirmDiscard() {
+  if (!dirty) return true;
+  const sc = currentScenario();
+  return confirm(`You have unsaved changes to "${sc ? sc.name : 'this location'}". Discard them?`);
+}
+
+function switchScenario(id) {
+  if (id === activeId) return;
+  if (!confirmDiscard()) { renderVenues(); return; }
+  activeId = id;
+  loadScenarioIntoUI(currentScenario().state);
+  setDirty(false);
+  renderVenues();
+  persist(); // remember which location was last open
+}
+
+function newScenario() {
+  if (!confirmDiscard()) return;
+  const name = (prompt('Name for the new location:', 'New Location') || '').trim();
+  if (!name) return;
+  const sc = { id: genId(), name, state: defaultState(), updatedAt: Date.now() };
+  scenarios.push(sc);
+  activeId = sc.id;
+  loadScenarioIntoUI(sc.state);
+  setDirty(false);
+  renderVenues();
+  persist();
+}
+
+function duplicateActive() {
+  const cur = currentScenario();
+  if (!cur) return;
+  const name = (prompt('Name for the duplicate:', cur.name + ' (copy)') || '').trim();
+  if (!name) return;
+  // Copy the live inputs so any on-screen tweak carries into the new location.
+  const sc = { id: genId(), name, state: JSON.parse(JSON.stringify(getState())), updatedAt: Date.now() };
+  scenarios.push(sc);
+  activeId = sc.id;
+  loadScenarioIntoUI(sc.state);
+  setDirty(false);
+  renderVenues();
+  persist();
+}
+
+function renameActive() {
+  const cur = currentScenario();
+  if (!cur) return;
+  const name = (prompt('Rename location:', cur.name) || '').trim();
+  if (!name) return;
+  cur.name = name;
+  renderVenues();
+  persist();
+}
+
+function deleteActive() {
+  const cur = currentScenario();
+  if (!cur) return;
+  if (!confirm(`Delete "${cur.name}"? This cannot be undone.`)) return;
+  scenarios = scenarios.filter(s => s.id !== activeId);
+  if (scenarios.length === 0) {
+    scenarios.push({ id: genId(), name: 'New Location', state: defaultState(), updatedAt: Date.now() });
+  }
+  activeId = scenarios[0].id;
+  loadScenarioIntoUI(currentScenario().state);
+  setDirty(false);
+  renderVenues();
+  persist();
+}
+
+// Read whatever the server returns and normalise it into the collection shape,
+// migrating the old single-state format into a first named location.
+function initCollection(data) {
+  if (data && Array.isArray(data.scenarios) && data.scenarios.length) {
+    scenarios = data.scenarios;
+    activeId = (data.activeId && scenarios.some(s => s.id === data.activeId))
+      ? data.activeId : scenarios[0].id;
+  } else if (data && typeof data === 'object' && (data.revenue !== undefined || data.fixedCosts)) {
+    const sc = { id: genId(), name: '110 Robinson', state: data, updatedAt: Date.now() };
+    scenarios = [sc];
+    activeId = sc.id;
+  } else {
+    const sc = { id: genId(), name: '110 Robinson', state: defaultState(), updatedAt: Date.now() };
+    scenarios = [sc];
+    activeId = sc.id;
+  }
+  loadScenarioIntoUI(currentScenario().state);
+  setDirty(false);
+  renderVenues();
+  setTimeout(() => renderLineChart(computeRows()), 120);
 }
 
 window.addEventListener('load', () => {
-  fetch('/api/coffee/load').then(r => r.json()).then(state => {
-    if (state) applyState(state);
-    renderFixedList();
-    renderStartupList();
-    update();
-    setTimeout(() => renderLineChart(computeRows()), 120);
-  }).catch(() => {
-    renderFixedList();
-    renderStartupList();
-    update();
-    setTimeout(() => renderLineChart(computeRows()), 120);
-  });
+  restoreCollapsed();
+  fetch('/api/coffee/load')
+    .then(r => r.json())
+    .then(data => initCollection(data))
+    .catch(() => initCollection(null));
+});
+
+// Warn before leaving the page (tab close / refresh) with unsaved edits.
+window.addEventListener('beforeunload', (e) => {
+  if (dirty) { e.preventDefault(); e.returnValue = ''; }
 });
 </script>
 </body>

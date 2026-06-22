@@ -2,6 +2,8 @@ name = "gordonfrois"
 compatibility_date = "2024-12-01"
 pages_build_output_dir = "dist/public"
 
+# KV namespace backing the coffee simulator + CV downloads.
+# Declared explicitly so `wrangler pages deploy` binds it to the Functions runtime.
 [[kv_namespaces]]
 binding = "CV_DOWNLOADS"
-id = ""
+id = "380e5993e42f4e64a3ef2386854ca6a0"

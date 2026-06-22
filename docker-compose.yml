@@ -1,0 +1,27 @@
+# OrbStack / Docker Compose for local dev of the homepage (incl. /coffee).
+#
+#   docker compose up          # build + run, http://localhost:5050/coffee
+#   docker compose up --build  # rebuild after dependency changes
+#   docker compose down        # stop
+#
+# OrbStack also exposes it at https://coffee.local via the domain label below.
+services:
+  homepage:
+    build: .
+    image: gordonfrois-homepage:dev
+    container_name: gordonfrois-homepage
+    ports:
+      - "5050:5050"
+    environment:
+      - NODE_ENV=development
+      - PORT=5050
+    volumes:
+      # Live-edit: host source shadows the image copy.
+      - .:/app
+      # Keep the container's Linux-built node_modules (don't let the host's
+      # macOS node_modules clobber it).
+      - /app/node_modules
+    labels:
+      # OrbStack serves the app at https://coffee.local
+      - dev.orbstack.domains=coffee.local
+    restart: unless-stopped
